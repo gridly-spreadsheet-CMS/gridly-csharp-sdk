@@ -1,9 +1,6 @@
 .gitignore
-.travis.yml
 Com.Gridly.sln
 README.md
-build.bat
-build.sh
 docs/Branch.md
 docs/Cell.md
 docs/ColumnReference.md
@@ -50,7 +47,6 @@ docs/ViewFileApi.md
 git_push.sh
 mono_nunit_test.sh
 src/Com.Gridly.Test/Com.Gridly.Test.csproj
-src/Com.Gridly.Test/packages.config
 src/Com.Gridly/Api/DatabaseApi.cs
 src/Com.Gridly/Api/GridApi.cs
 src/Com.Gridly/Api/GridMetadataApi.cs
@@ -71,7 +67,6 @@ src/Com.Gridly/Client/IApiAccessor.cs
 src/Com.Gridly/Client/IReadableConfiguration.cs
 src/Com.Gridly/Client/OpenAPIDateConverter.cs
 src/Com.Gridly/Com.Gridly.csproj
-src/Com.Gridly/Com.Gridly.nuspec
 src/Com.Gridly/Model/Branch.cs
 src/Com.Gridly/Model/Cell.cs
 src/Com.Gridly/Model/ColumnReference.cs
@@ -105,5 +100,3 @@ src/Com.Gridly/Model/UpdateProject.cs
 src/Com.Gridly/Model/UploadedFile.cs
 src/Com.Gridly/Model/View.cs
 src/Com.Gridly/Model/ViewColumn.cs
-src/Com.Gridly/Properties/AssemblyInfo.cs
-src/Com.Gridly/packages.config
