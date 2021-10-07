@@ -69,7 +69,7 @@ jobs:
       with:
         draft: true
         prerelease: true
-        release_name: ${{ env:Version }}
-        tag_name: ${{ env:Version }}
+        release_name: $env:Version
+        tag_name: $env:Version
       env:
         GITHUB_TOKEN: ${{ github.token }}
