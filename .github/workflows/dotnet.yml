@@ -4,7 +4,7 @@
 # documentation.
 
 
-name: .NET Desktop
+name: Gridly C# .NET
 
 on:
   push:
@@ -63,3 +63,14 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: src/Com.Gridly/bin/Release
         retention-days: 1
+    - name: Release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: true
+        release_name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ github.ref }}
+        body_path: README.md
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
