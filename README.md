@@ -131,7 +131,7 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**Create**](docs/ProjectApi.md#create) | **POST** /v1/projects | create
 *ProjectApi* | [**Delete**](docs/ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
 *ProjectApi* | [**FindOneDetail**](docs/ProjectApi.md#findonedetail) | **GET** /v1/projects/{projectId} | findOneDetail
-*ProjectApi* | [**ListWithDetail**](docs/ProjectApi.md#listwithdetail) | **GET** /v1/projects | listWithDetail
+*ProjectApi* | [**List**](docs/ProjectApi.md#list) | **GET** /v1/projects | list
 *ProjectApi* | [**Update**](docs/ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update
 *RecordApi* | [**Create**](docs/RecordApi.md#create) | **POST** /v1/views/{viewId}/records | create
 *RecordApi* | [**Delete**](docs/RecordApi.md#delete) | **DELETE** /v1/views/{viewId}/records | delete

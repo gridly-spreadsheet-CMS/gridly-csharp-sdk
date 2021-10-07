@@ -81,7 +81,7 @@ The version of the OpenAPI document: 3.13.0
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\Com.Gridly\Com.Gridly.csproj">
-          <Project>{C51B56E6-3684-4F13-B166-00C09B14F9A6}</Project>
+          <Project>{79697F17-81AE-48FC-9FD8-9CC61664CADB}</Project>
           <Name>Com.Gridly</Name>
       </ProjectReference>
   </ItemGroup>

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Create**](ProjectApi.md#create) | **POST** /v1/projects | create
 [**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
 [**FindOneDetail**](ProjectApi.md#findonedetail) | **GET** /v1/projects/{projectId} | findOneDetail
-[**ListWithDetail**](ProjectApi.md#listwithdetail) | **GET** /v1/projects | listWithDetail
+[**List**](ProjectApi.md#list) | **GET** /v1/projects | list
 [**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update
 
 
@@ -260,11 +260,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListWithDetail
+## List
 
-> List&lt;Project&gt; ListWithDetail (string expand)
+> List&lt;Project&gt; List ()
 
-listWithDetail
+list
 
 ### Example
 
@@ -277,7 +277,7 @@ using Com.Gridly.Model;
 
 namespace Example
 {
-    public class ListWithDetailExample
+    public class ListExample
     {
         public static void Main()
         {
@@ -288,17 +288,16 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProjectApi(Configuration.Default);
-            var expand = expand_example;  // string | expand
 
             try
             {
-                // listWithDetail
-                List<Project> result = apiInstance.ListWithDetail(expand);
+                // list
+                List<Project> result = apiInstance.List();
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling ProjectApi.ListWithDetail: " + e.Message );
+                Debug.Print("Exception when calling ProjectApi.List: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -309,10 +308,7 @@ namespace Example
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expand** | **string**| expand | 
+This endpoint does not need any parameter.
 
 ### Return type
 

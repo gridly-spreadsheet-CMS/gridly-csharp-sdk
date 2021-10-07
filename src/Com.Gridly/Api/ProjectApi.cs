@@ -91,26 +91,24 @@ namespace Com.Gridly.Api
         /// <returns>ApiResponse of Project</returns>
         ApiResponse<Project> FindOneDetailWithHttpInfo (string expand, long projectId);
         /// <summary>
-        /// listWithDetail
+        /// list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <returns>List&lt;Project&gt;</returns>
-        List<Project> ListWithDetail (string expand);
+        List<Project> List ();
 
         /// <summary>
-        /// listWithDetail
+        /// list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <returns>ApiResponse of List&lt;Project&gt;</returns>
-        ApiResponse<List<Project>> ListWithDetailWithHttpInfo (string expand);
+        ApiResponse<List<Project>> ListWithHttpInfo ();
         /// <summary>
         /// update
         /// </summary>
@@ -208,28 +206,26 @@ namespace Com.Gridly.Api
         /// <returns>Task of ApiResponse (Project)</returns>
         System.Threading.Tasks.Task<ApiResponse<Project>> FindOneDetailWithHttpInfoAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// listWithDetail
+        /// list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Project&gt;</returns>
-        System.Threading.Tasks.Task<List<Project>> ListWithDetailAsync (string expand, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List<Project>> ListAsync (CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// listWithDetail
+        /// list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Project&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Project>>> ListWithDetailWithHttpInfoAsync (string expand, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Project>>> ListWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// update
         /// </summary>
@@ -830,28 +826,23 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listWithDetail 
+        /// list 
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <returns>List&lt;Project&gt;</returns>
-        public List<Project> ListWithDetail (string expand)
+        public List<Project> List ()
         {
-             ApiResponse<List<Project>> localVarResponse = ListWithDetailWithHttpInfo(expand);
+             ApiResponse<List<Project>> localVarResponse = ListWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// listWithDetail 
+        /// list 
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <returns>ApiResponse of List&lt;Project&gt;</returns>
-        public ApiResponse<List<Project>> ListWithDetailWithHttpInfo (string expand)
+        public ApiResponse<List<Project>> ListWithHttpInfo ()
         {
-            // verify the required parameter 'expand' is set
-            if (expand == null)
-                throw new ApiException(400, "Missing required parameter 'expand' when calling ProjectApi->ListWithDetail");
 
             var localVarPath = "/v1/projects";
             var localVarPathParams = new Dictionary<String, String>();
@@ -875,7 +866,6 @@ namespace Com.Gridly.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (expand != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "expand", expand)); // query parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -892,7 +882,7 @@ namespace Com.Gridly.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListWithDetail", localVarResponse);
+                Exception exception = ExceptionFactory("List", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -902,31 +892,26 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listWithDetail 
+        /// list 
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Project&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Project>> ListWithDetailAsync (string expand, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<List<Project>> ListAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<Project>> localVarResponse = await ListWithDetailWithHttpInfoAsync(expand, cancellationToken);
+             ApiResponse<List<Project>> localVarResponse = await ListWithHttpInfoAsync(cancellationToken);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// listWithDetail 
+        /// list 
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="expand">expand</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Project&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Project>>> ListWithDetailWithHttpInfoAsync (string expand, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<List<Project>>> ListWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken))
         {
-            // verify the required parameter 'expand' is set
-            if (expand == null)
-                throw new ApiException(400, "Missing required parameter 'expand' when calling ProjectApi->ListWithDetail");
 
             var localVarPath = "/v1/projects";
             var localVarPathParams = new Dictionary<String, String>();
@@ -950,7 +935,6 @@ namespace Com.Gridly.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (expand != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "expand", expand)); // query parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -967,7 +951,7 @@ namespace Com.Gridly.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListWithDetail", localVarResponse);
+                Exception exception = ExceptionFactory("List", localVarResponse);
                 if (exception != null) throw exception;
             }
 
