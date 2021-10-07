@@ -38,14 +38,22 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+        
+    # Add Nuget
+    - name: Install Nuget
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '5.x'
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
   
-    # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+    - run: nuget restore $env:Solution_Name
+    
+    # Build the application
+    - name: Build the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration;TargetFrameworkVersion=net45
       env:
         Configuration: ${{ matrix.configuration }}
     
