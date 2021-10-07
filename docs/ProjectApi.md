@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Create**](ProjectApi.md#create) | **POST** /v1/projects | create
 [**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
 [**FindOneDetail**](ProjectApi.md#findonedetail) | **GET** /v1/projects/{projectId} | findOneDetail
-[**List**](ProjectApi.md#list) | **GET** /v1/projects | list
+[**ListWithDetail**](ProjectApi.md#listwithdetail) | **GET** /v1/projects | listWithDetail
 [**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update
 
 
@@ -260,11 +260,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## List
+## ListWithDetail
 
-> List&lt;Project&gt; List ()
+> List&lt;Project&gt; ListWithDetail (string expand)
 
-list
+listWithDetail
 
 ### Example
 
@@ -277,7 +277,7 @@ using Com.Gridly.Model;
 
 namespace Example
 {
-    public class ListExample
+    public class ListWithDetailExample
     {
         public static void Main()
         {
@@ -288,16 +288,17 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProjectApi(Configuration.Default);
+            var expand = expand_example;  // string | expand
 
             try
             {
-                // list
-                List<Project> result = apiInstance.List();
+                // listWithDetail
+                List<Project> result = apiInstance.ListWithDetail(expand);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
-                Debug.Print("Exception when calling ProjectApi.List: " + e.Message );
+                Debug.Print("Exception when calling ProjectApi.ListWithDetail: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -308,7 +309,10 @@ namespace Example
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expand** | **string**| expand | 
 
 ### Return type
 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 Com.Gridly.sln
 README.md
@@ -50,16 +49,6 @@ docs/ViewColumnApi.md
 docs/ViewFileApi.md
 git_push.sh
 mono_nunit_test.sh
-src/Com.Gridly.Test/Api/DatabaseApiTests.cs
-src/Com.Gridly.Test/Api/GridApiTests.cs
-src/Com.Gridly.Test/Api/GridMetadataApiTests.cs
-src/Com.Gridly.Test/Api/ProjectApiTests.cs
-src/Com.Gridly.Test/Api/RecordApiTests.cs
-src/Com.Gridly.Test/Api/TaskApiTests.cs
-src/Com.Gridly.Test/Api/VersionControlApiTests.cs
-src/Com.Gridly.Test/Api/ViewApiTests.cs
-src/Com.Gridly.Test/Api/ViewColumnApiTests.cs
-src/Com.Gridly.Test/Api/ViewFileApiTests.cs
 src/Com.Gridly.Test/Com.Gridly.Test.csproj
 src/Com.Gridly.Test/packages.config
 src/Com.Gridly/Api/DatabaseApi.cs

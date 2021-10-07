@@ -4,7 +4,7 @@ Gridly API
 
 Gridly API documentation
 
-The version of the OpenAPI document: 3.13.0-SNAPSHOT
+The version of the OpenAPI document: 3.13.0
 
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -12,7 +12,7 @@ The version of the OpenAPI document: 3.13.0-SNAPSHOT
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E7506BA-E4FF-4955-9ACD-61BC51478BAF}</ProjectGuid>
+    <ProjectGuid>{C51B56E6-3684-4F13-B166-00C09B14F9A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Com.Gridly</RootNamespace>
