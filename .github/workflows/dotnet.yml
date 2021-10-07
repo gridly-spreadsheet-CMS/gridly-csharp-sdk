@@ -24,7 +24,7 @@ jobs:
     env:
       Solution_Name: Com.Gridly.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: src/Com.Gridly.Test/Com.Gridly.Test.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      
+      Version: 1.0.0
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -67,10 +67,9 @@ jobs:
       uses: actions/create-release@v1
       id: create_release
       with:
-        draft: false
+        draft: true
         prerelease: true
-        release_name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ github.ref }}
-        body_path: README.md
+        release_name: ${{ env:Version }}
+        tag_name: ${{ env:Version }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
