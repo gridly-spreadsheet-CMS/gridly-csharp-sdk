@@ -178,6 +178,7 @@ Class | Method | HTTP request | Description
  - [Model.OptionalOfstring](docs/OptionalOfstring.md)
  - [Model.Privilege](docs/Privilege.md)
  - [Model.Project](docs/Project.md)
+ - [Model.ProjectDetail](docs/ProjectDetail.md)
  - [Model.Record](docs/Record.md)
  - [Model.Reference](docs/Reference.md)
  - [Model.ReferencedColumn](docs/ReferencedColumn.md)

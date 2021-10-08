@@ -25,31 +25,47 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// Project
+    /// ProjectDetail
     /// </summary>
     [DataContract]
-    public partial class Project :  IEquatable<Project>, IValidatableObject
+    public partial class ProjectDetail :  IEquatable<ProjectDetail>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Project" /> class.
+        /// Initializes a new instance of the <see cref="ProjectDetail" /> class.
         /// </summary>
+        /// <param name="databases">databases.</param>
         /// <param name="description">description.</param>
+        /// <param name="groups">groups.</param>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
         /// <param name="role">role.</param>
-        public Project(string description = default(string), long id = default(long), string name = default(string), Role role = default(Role))
+        public ProjectDetail(List<Database> databases = default(List<Database>), string description = default(string), List<Object> groups = default(List<Object>), long id = default(long), string name = default(string), Role role = default(Role))
         {
+            this.Databases = databases;
             this.Description = description;
+            this.Groups = groups;
             this.Id = id;
             this.Name = name;
             this.Role = role;
         }
 
         /// <summary>
+        /// Gets or Sets Databases
+        /// </summary>
+        [DataMember(Name="databases", EmitDefaultValue=false)]
+        public List<Database> Databases { get; set; }
+
+        /// <summary>
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name="description", EmitDefaultValue=false)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Groups
+        /// </summary>
+        [DataMember(Name="groups", EmitDefaultValue=false)]
+        public List<Object> Groups { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -76,8 +92,10 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Project {\n");
+            sb.Append("class ProjectDetail {\n");
+            sb.Append("  Databases: ").Append(Databases).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Groups: ").Append(Groups).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Role: ").Append(Role).Append("\n");
@@ -101,24 +119,36 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Project);
+            return this.Equals(input as ProjectDetail);
         }
 
         /// <summary>
-        /// Returns true if Project instances are equal
+        /// Returns true if ProjectDetail instances are equal
         /// </summary>
-        /// <param name="input">Instance of Project to be compared</param>
+        /// <param name="input">Instance of ProjectDetail to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Project input)
+        public bool Equals(ProjectDetail input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
+                    this.Databases == input.Databases ||
+                    this.Databases != null &&
+                    input.Databases != null &&
+                    this.Databases.SequenceEqual(input.Databases)
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Groups == input.Groups ||
+                    this.Groups != null &&
+                    input.Groups != null &&
+                    this.Groups.SequenceEqual(input.Groups)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -146,8 +176,12 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Databases != null)
+                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Groups != null)
+                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)

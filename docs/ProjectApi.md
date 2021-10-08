@@ -178,7 +178,7 @@ void (empty response body)
 
 ## FindOneDetail
 
-> Project FindOneDetail (string expand, long projectId)
+> ProjectDetail FindOneDetail (string expand, long projectId)
 
 findOneDetail
 
@@ -210,7 +210,7 @@ namespace Example
             try
             {
                 // findOneDetail
-                Project result = apiInstance.FindOneDetail(expand, projectId);
+                ProjectDetail result = apiInstance.FindOneDetail(expand, projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](Project.md)
+[**ProjectDetail**](ProjectDetail.md)
 
 ### Authorization
 

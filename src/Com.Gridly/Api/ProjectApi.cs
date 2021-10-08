@@ -76,8 +76,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
-        /// <returns>Project</returns>
-        Project FindOneDetail (string expand, long projectId);
+        /// <returns>ProjectDetail</returns>
+        ProjectDetail FindOneDetail (string expand, long projectId);
 
         /// <summary>
         /// findOneDetail
@@ -88,8 +88,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
-        /// <returns>ApiResponse of Project</returns>
-        ApiResponse<Project> FindOneDetailWithHttpInfo (string expand, long projectId);
+        /// <returns>ApiResponse of ProjectDetail</returns>
+        ApiResponse<ProjectDetail> FindOneDetailWithHttpInfo (string expand, long projectId);
         /// <summary>
         /// list
         /// </summary>
@@ -190,8 +190,8 @@ namespace Com.Gridly.Api
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Project</returns>
-        System.Threading.Tasks.Task<Project> FindOneDetailAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ProjectDetail</returns>
+        System.Threading.Tasks.Task<ProjectDetail> FindOneDetailAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// findOneDetail
@@ -203,8 +203,8 @@ namespace Com.Gridly.Api
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Project)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Project>> FindOneDetailWithHttpInfoAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (ProjectDetail)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProjectDetail>> FindOneDetailWithHttpInfoAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// list
         /// </summary>
@@ -672,10 +672,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
-        /// <returns>Project</returns>
-        public Project FindOneDetail (string expand, long projectId)
+        /// <returns>ProjectDetail</returns>
+        public ProjectDetail FindOneDetail (string expand, long projectId)
         {
-             ApiResponse<Project> localVarResponse = FindOneDetailWithHttpInfo(expand, projectId);
+             ApiResponse<ProjectDetail> localVarResponse = FindOneDetailWithHttpInfo(expand, projectId);
              return localVarResponse.Data;
         }
 
@@ -685,8 +685,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
-        /// <returns>ApiResponse of Project</returns>
-        public ApiResponse<Project> FindOneDetailWithHttpInfo (string expand, long projectId)
+        /// <returns>ApiResponse of ProjectDetail</returns>
+        public ApiResponse<ProjectDetail> FindOneDetailWithHttpInfo (string expand, long projectId)
         {
             // verify the required parameter 'expand' is set
             if (expand == null)
@@ -739,9 +739,9 @@ namespace Com.Gridly.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Project>(localVarStatusCode,
+            return new ApiResponse<ProjectDetail>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Project) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Project)));
+                (ProjectDetail) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProjectDetail)));
         }
 
         /// <summary>
@@ -751,10 +751,10 @@ namespace Com.Gridly.Api
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Project</returns>
-        public async System.Threading.Tasks.Task<Project> FindOneDetailAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ProjectDetail</returns>
+        public async System.Threading.Tasks.Task<ProjectDetail> FindOneDetailAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Project> localVarResponse = await FindOneDetailWithHttpInfoAsync(expand, projectId, cancellationToken);
+             ApiResponse<ProjectDetail> localVarResponse = await FindOneDetailWithHttpInfoAsync(expand, projectId, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -766,8 +766,8 @@ namespace Com.Gridly.Api
         /// <param name="expand">expand</param>
         /// <param name="projectId">projectId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Project)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Project>> FindOneDetailWithHttpInfoAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (ProjectDetail)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ProjectDetail>> FindOneDetailWithHttpInfoAsync (string expand, long projectId, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'expand' is set
             if (expand == null)
@@ -820,9 +820,9 @@ namespace Com.Gridly.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Project>(localVarStatusCode,
+            return new ApiResponse<ProjectDetail>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Project) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Project)));
+                (ProjectDetail) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProjectDetail)));
         }
 
         /// <summary>
