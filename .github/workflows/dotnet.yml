@@ -37,10 +37,11 @@ jobs:
       run: dotnet restore
     
     # Build the application
-    - name: Build Solution
-      run: dotnet build -c $env:Configuration
+    - name: Publish Solution
+      run: dotnet publish -c $env:Configuration -o bin src/Com.Gridly/Com.Gridly.csproj
       env:
         Configuration: ${{ matrix.configuration }}
+        
     - name: Get Version
       id: get_version
       uses: greenygh0st/net-proj-release-version@v1
@@ -48,22 +49,23 @@ jobs:
           # Filepath of the *.csproj file, relative to root of repository
           PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
           
-    - name: Upload Artifact
+    - name: Archive Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
         # Artifact name
         name: com.gridly.csharp-sdk
         # A file, directory or wildcard pattern that describes what to upload
-        path: src/Com.Gridly/bin/Release
+        path: bin
         retention-days: 1
         
     - name: Github Release
-      uses: actions/create-release@v1
+      uses: softprops/action-gh-release@v1
       id: create_release
       with:
         draft: false
         prerelease: true
         release_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
         tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
+        files: bin/com.gridly.csharp-sdk.zip
       env:
         GITHUB_TOKEN: ${{ github.token }}
