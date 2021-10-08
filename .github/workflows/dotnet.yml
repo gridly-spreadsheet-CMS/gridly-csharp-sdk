@@ -1,15 +1,11 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
+# This workflow to build and release Gridly CSharp SDK
 
 name: Gridly C# .NET
 
 on:
   push:
     branches: [ master ]
-
+    tags: ""
 jobs:
 
   build:
@@ -22,9 +18,9 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: Com.Gridly.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: src/Com.Gridly.Test/Com.Gridly.Test.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Version: 1.0.0
+      Solution_Name: Com.Gridly.sln
+      Test_Project_Path: src/Com.Gridly.Test/Com.Gridly.Test.csproj
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -37,15 +33,22 @@ jobs:
       with:
         dotnet-version: 5.0.x
         
-    - run: dotnet restore
+    - name: Restore Solution
+      run: dotnet restore
     
     # Build the application
-    - name: Build the application
+    - name: Build Solution
       run: dotnet build -c $env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
-        
-    - name: Upload a Build Artifact
+    - name: Get Version
+      id: get_version
+      uses: greenygh0st/net-proj-release-version@v1
+      with:
+          # Filepath of the *.csproj file, relative to root of repository
+          PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
+          
+    - name: Upload Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
         # Artifact name
@@ -54,13 +57,13 @@ jobs:
         path: src/Com.Gridly/bin/Release
         retention-days: 1
         
-    - name: Release
+    - name: Github Release
       uses: actions/create-release@v1
       id: create_release
       with:
-        draft: true
+        draft: false
         prerelease: true
-        release_name: 1.0.0
-        tag_name: 1.0.0
+        release_name: ${{ steps.get_version.RELEASE_VERSION }}
+        tag_name: ${{ steps.get_version.RELEASE_VERSION }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
