@@ -5,7 +5,8 @@ name: Gridly C# .NET
 on:
   push:
     branches: [ master ]
-    tags: ""
+    tags: 
+      - '*'
 jobs:
 
   build:
@@ -61,6 +62,7 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: bin/*.zip
         retention-days: 1
+        if-no-files-found: error
         
     - name: Github Release
       uses: softprops/action-gh-release@v1
