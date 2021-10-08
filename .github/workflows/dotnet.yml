@@ -55,7 +55,10 @@ jobs:
         # Artifact name
         name: com.gridly.csharp-sdk.zip
         # A file, directory or wildcard pattern that describes what to upload
-        path: bin/**
+        path: |
+          bin/*.dll
+          bin/*.json
+          bin/*.config
         retention-days: 1
         
     - name: Github Release
@@ -65,6 +68,6 @@ jobs:
         draft: false
         prerelease: true
         tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
-        files: bin/com.gridly.csharp-sdk.zip
+        files: com.gridly.csharp-sdk.zip
       env:
         GITHUB_TOKEN: ${{ github.token }}
