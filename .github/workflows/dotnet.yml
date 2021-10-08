@@ -63,7 +63,7 @@ jobs:
       with:
         draft: false
         prerelease: true
-        release_name: ${{ steps.get_version.RELEASE_VERSION }}
-        tag_name: ${{ steps.get_version.RELEASE_VERSION }}
+        release_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
+        tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
