@@ -38,7 +38,7 @@ jobs:
     
     # Build the application
     - name: Publish Solution
-      run: dotnet publish -c $env:Configuration -o bin src/Com.Gridly/Com.Gridly.csproj
+      run: dotnet publish -c $env:Configuration -o bin/ src/Com.Gridly/Com.Gridly.csproj
       env:
         Configuration: ${{ matrix.configuration }}
         
@@ -53,9 +53,9 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         # Artifact name
-        name: com.gridly.csharp-sdk
+        name: com.gridly.csharp-sdk.zip
         # A file, directory or wildcard pattern that describes what to upload
-        path: bin
+        path: bin/**
         retention-days: 1
         
     - name: Github Release
@@ -64,7 +64,6 @@ jobs:
       with:
         draft: false
         prerelease: true
-        release_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
         tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
         files: bin/com.gridly.csharp-sdk.zip
       env:
