@@ -114,7 +114,7 @@ namespace Com.Gridly.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Gridly CSharp SDK 1.1.0";
+            UserAgent = "Gridly CSharp SDK 1.2.0";
             BasePath = "https://api.gridly.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -187,7 +187,7 @@ namespace Com.Gridly.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Gridly CSharp SDK 1.1.0"
+            string userAgent = "Gridly CSharp SDK 1.2.0"
             // ReSharper restore UnusedParameter.Local
             )
         {
