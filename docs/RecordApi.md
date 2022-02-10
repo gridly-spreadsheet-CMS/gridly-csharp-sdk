@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -162,7 +162,7 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRecord
 
-> Record UpdateRecord (string id, string viewId, SetRecord updateRecordDTO)
+> Record UpdateRecord (string id, string viewId, SetRecord updateRecordDTO, string path = null)
 
 updateRecord
 
@@ -384,11 +384,12 @@ namespace Example
             var id = id_example;  // string | id
             var viewId = viewId_example;  // string | viewId
             var updateRecordDTO = new SetRecord(); // SetRecord | updateRecordDTO
+            var path = path_example;  // string | path (optional) 
 
             try
             {
                 // updateRecord
-                Record result = apiInstance.UpdateRecord(id, viewId, updateRecordDTO);
+                Record result = apiInstance.UpdateRecord(id, viewId, updateRecordDTO, path);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -410,6 +411,7 @@ Name | Type | Description  | Notes
  **id** | **string**| id | 
  **viewId** | **string**| viewId | 
  **updateRecordDTO** | [**SetRecord**](SetRecord.md)| updateRecordDTO | 
+ **path** | **string**| path | [optional] 
 
 ### Return type
 
@@ -422,7 +424,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details

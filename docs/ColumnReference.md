@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Column** | [**ReferencedColumn**](ReferencedColumn.md) |  | [optional] 
 **Grid** | [**ReferencedGrid**](ReferencedGrid.md) |  | [optional] 
+**SelectionType** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

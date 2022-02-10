@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **LanguageCode** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 

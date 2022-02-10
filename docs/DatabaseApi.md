@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -375,7 +375,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var expand = expand_example;  // List<string> | expand (optional) 
+            var expand = new List<string>(); // List<string> | expand (optional) 
             var page = page_example;  // string | page (optional) 
             var projectId = 789;  // long? | projectId (optional) 
             var search = search_example;  // string | search (optional) 
@@ -403,7 +403,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expand** | **List&lt;string&gt;**| expand | [optional] 
+ **expand** | [**List&lt;string&gt;**](string.md)| expand | [optional] 
  **page** | **string**| page | [optional] 
  **projectId** | **long?**| projectId | [optional] 
  **search** | **string**| search | [optional] 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: */*, application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
