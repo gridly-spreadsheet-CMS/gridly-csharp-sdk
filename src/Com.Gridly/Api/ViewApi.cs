@@ -832,7 +832,7 @@ namespace Com.Gridly.Api
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
             if (importRequest != null) localVarFormParams.Add("importRequest", this.Configuration.ApiClient.Serialize(importRequest)); // form parameter
-            if (type != null) localVarFormParams.Add("type", this.Configuration.ApiClient.Serialize(type)); // form parameter
+            if (type != null) localVarFormParams.Add("type", this.Configuration.ApiClient.ParameterToString(type)); // form parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -917,7 +917,7 @@ namespace Com.Gridly.Api
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
             if (importRequest != null) localVarFormParams.Add("importRequest", this.Configuration.ApiClient.Serialize(importRequest)); // form parameter
-            if (type != null) localVarFormParams.Add("type", this.Configuration.ApiClient.Serialize(type)); // form parameter
+            if (type != null) localVarFormParams.Add("type", this.Configuration.ApiClient.ParameterToString(type)); // form parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

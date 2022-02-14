@@ -517,9 +517,9 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.Serialize(columnId)); // form parameter
+            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.ParameterToString(columnId)); // form parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
-            if (recordId != null) localVarFormParams.Add("recordId", this.Configuration.ApiClient.Serialize(recordId)); // form parameter
+            if (recordId != null) localVarFormParams.Add("recordId", this.Configuration.ApiClient.ParameterToString(recordId)); // form parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -610,9 +610,9 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.Serialize(columnId)); // form parameter
+            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.ParameterToString(columnId)); // form parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
-            if (recordId != null) localVarFormParams.Add("recordId", this.Configuration.ApiClient.Serialize(recordId)); // form parameter
+            if (recordId != null) localVarFormParams.Add("recordId", this.Configuration.ApiClient.ParameterToString(recordId)); // form parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -700,7 +700,7 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.Serialize(columnId)); // form parameter
+            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.ParameterToString(columnId)); // form parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
             if (fileMappings != null) localVarFormParams.Add("fileMappings", this.Configuration.ApiClient.Serialize(fileMappings)); // form parameter
 
@@ -793,7 +793,7 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.Serialize(columnId)); // form parameter
+            if (columnId != null) localVarFormParams.Add("columnId", this.Configuration.ApiClient.ParameterToString(columnId)); // form parameter
             if (file != null) localVarFileParams.Add("file", this.Configuration.ApiClient.ParameterToFile("file", file));
             if (fileMappings != null) localVarFormParams.Add("fileMappings", this.Configuration.ApiClient.Serialize(fileMappings)); // form parameter
 
