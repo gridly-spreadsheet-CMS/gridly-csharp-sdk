@@ -17,10 +17,8 @@ docs/DatabaseApi.md
 docs/DeleteDependency.md
 docs/DeleteRecord.md
 docs/Dependency.md
-docs/File.md
 docs/Grid.md
 docs/GridApi.md
-docs/GridMetadataApi.md
 docs/Metadata.md
 docs/NumberFormat.md
 docs/Privilege.md
@@ -33,14 +31,11 @@ docs/RecordIdentifierWrapper.md
 docs/Reference.md
 docs/ReferencedColumn.md
 docs/ReferencedGrid.md
-docs/Resource.md
 docs/Role.md
 docs/SetCell.md
 docs/SetRecord.md
 docs/Task.md
 docs/TaskApi.md
-docs/URI.md
-docs/URL.md
 docs/UpdateColumn.md
 docs/UpdateDatabase.md
 docs/UpdateDependency.md
@@ -60,7 +55,6 @@ src/Com.Gridly.Test/Com.Gridly.Test.csproj
 src/Com.Gridly/Api/BranchApi.cs
 src/Com.Gridly/Api/DatabaseApi.cs
 src/Com.Gridly/Api/GridApi.cs
-src/Com.Gridly/Api/GridMetadataApi.cs
 src/Com.Gridly/Api/ProjectApi.cs
 src/Com.Gridly/Api/RecordApi.cs
 src/Com.Gridly/Api/TaskApi.cs
@@ -92,7 +86,6 @@ src/Com.Gridly/Model/Database.cs
 src/Com.Gridly/Model/DeleteDependency.cs
 src/Com.Gridly/Model/DeleteRecord.cs
 src/Com.Gridly/Model/Dependency.cs
-src/Com.Gridly/Model/File.cs
 src/Com.Gridly/Model/Grid.cs
 src/Com.Gridly/Model/Metadata.cs
 src/Com.Gridly/Model/NumberFormat.cs
@@ -104,13 +97,10 @@ src/Com.Gridly/Model/RecordIdentifierWrapper.cs
 src/Com.Gridly/Model/Reference.cs
 src/Com.Gridly/Model/ReferencedColumn.cs
 src/Com.Gridly/Model/ReferencedGrid.cs
-src/Com.Gridly/Model/Resource.cs
 src/Com.Gridly/Model/Role.cs
 src/Com.Gridly/Model/SetCell.cs
 src/Com.Gridly/Model/SetRecord.cs
 src/Com.Gridly/Model/Task.cs
-src/Com.Gridly/Model/URI.cs
-src/Com.Gridly/Model/URL.cs
 src/Com.Gridly/Model/UpdateColumn.cs
 src/Com.Gridly/Model/UpdateDatabase.cs
 src/Com.Gridly/Model/UpdateDependency.cs

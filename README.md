@@ -129,11 +129,6 @@ Class | Method | HTTP request | Description
 *GridApi* | [**List**](docs/GridApi.md#list) | **GET** /v1/grids | list
 *GridApi* | [**ListTemplateGrids**](docs/GridApi.md#listtemplategrids) | **GET** /v1/template-grids | listTemplateGrids
 *GridApi* | [**Update**](docs/GridApi.md#update) | **PATCH** /v1/grids/{gridId} | update
-*GridMetadataApi* | [**Create**](docs/GridMetadataApi.md#create) | **POST** /v1/grids/{gridId}/metadata | create
-*GridMetadataApi* | [**Delete**](docs/GridMetadataApi.md#delete) | **DELETE** /v1/grids/{gridId}/metadata/{metadataId} | delete
-*GridMetadataApi* | [**Get**](docs/GridMetadataApi.md#get) | **GET** /v1/grids/{gridId}/metadata/{metadataId} | get
-*GridMetadataApi* | [**List**](docs/GridMetadataApi.md#list) | **GET** /v1/grids/{gridId}/metadata | list
-*GridMetadataApi* | [**Update**](docs/GridMetadataApi.md#update) | **PATCH** /v1/grids/{gridId}/metadata/{metadataId} | update
 *ProjectApi* | [**Create**](docs/ProjectApi.md#create) | **POST** /v1/projects | create
 *ProjectApi* | [**Delete**](docs/ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
 *ProjectApi* | [**FindOne**](docs/ProjectApi.md#findone) | **GET** /v1/projects/{projectId} | findOne
@@ -183,7 +178,6 @@ Class | Method | HTTP request | Description
  - [Model.DeleteDependency](docs/DeleteDependency.md)
  - [Model.DeleteRecord](docs/DeleteRecord.md)
  - [Model.Dependency](docs/Dependency.md)
- - [Model.File](docs/File.md)
  - [Model.Grid](docs/Grid.md)
  - [Model.Metadata](docs/Metadata.md)
  - [Model.NumberFormat](docs/NumberFormat.md)
@@ -195,13 +189,10 @@ Class | Method | HTTP request | Description
  - [Model.Reference](docs/Reference.md)
  - [Model.ReferencedColumn](docs/ReferencedColumn.md)
  - [Model.ReferencedGrid](docs/ReferencedGrid.md)
- - [Model.Resource](docs/Resource.md)
  - [Model.Role](docs/Role.md)
  - [Model.SetCell](docs/SetCell.md)
  - [Model.SetRecord](docs/SetRecord.md)
  - [Model.Task](docs/Task.md)
- - [Model.URI](docs/URI.md)
- - [Model.URL](docs/URL.md)
  - [Model.UpdateColumn](docs/UpdateColumn.md)
  - [Model.UpdateDatabase](docs/UpdateDatabase.md)
  - [Model.UpdateDependency](docs/UpdateDependency.md)
