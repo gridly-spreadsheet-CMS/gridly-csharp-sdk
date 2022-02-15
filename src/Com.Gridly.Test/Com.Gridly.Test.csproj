@@ -8,7 +8,7 @@
     <Authors>LocalizeDirect AB</Authors>
     <Company>LocalizeDirect AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly CSharp SDK 1.2.1</Description>
+    <Description>Gridly CSharp SDK 1.2.2</Description>
     <Copyright>Copyright @ 2022 LocalizeDirect AB</Copyright>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
