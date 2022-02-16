@@ -33,9 +33,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <returns>Grid</returns>
-        Grid Create (string dbId, CreateGrid createCompositeGrid);
+        Grid Create (string dbId, CreateGrid createGrid);
 
         /// <summary>
         /// create
@@ -45,9 +45,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <returns>ApiResponse of Grid</returns>
-        ApiResponse<Grid> CreateWithHttpInfo (string dbId, CreateGrid createCompositeGrid);
+        ApiResponse<Grid> CreateWithHttpInfo (string dbId, CreateGrid createGrid);
         /// <summary>
         /// delete
         /// </summary>
@@ -138,9 +138,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <returns>Grid</returns>
-        Grid Update (string gridId, UpdateGrid updateCompositeGrid);
+        Grid Update (string gridId, UpdateGrid updateGrid);
 
         /// <summary>
         /// update
@@ -150,9 +150,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <returns>ApiResponse of Grid</returns>
-        ApiResponse<Grid> UpdateWithHttpInfo (string gridId, UpdateGrid updateCompositeGrid);
+        ApiResponse<Grid> UpdateWithHttpInfo (string gridId, UpdateGrid updateGrid);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -163,10 +163,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Grid</returns>
-        System.Threading.Tasks.Task<Grid> CreateAsync (string dbId, CreateGrid createCompositeGrid, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Grid> CreateAsync (string dbId, CreateGrid createGrid, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// create
@@ -176,10 +176,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Grid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Grid>> CreateWithHttpInfoAsync (string dbId, CreateGrid createCompositeGrid, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Grid>> CreateWithHttpInfoAsync (string dbId, CreateGrid createGrid, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// delete
         /// </summary>
@@ -278,10 +278,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Grid</returns>
-        System.Threading.Tasks.Task<Grid> UpdateAsync (string gridId, UpdateGrid updateCompositeGrid, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Grid> UpdateAsync (string gridId, UpdateGrid updateGrid, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// update
@@ -291,10 +291,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Grid)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Grid>> UpdateWithHttpInfoAsync (string gridId, UpdateGrid updateCompositeGrid, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Grid>> UpdateWithHttpInfoAsync (string gridId, UpdateGrid updateGrid, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -411,11 +411,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <returns>Grid</returns>
-        public Grid Create (string dbId, CreateGrid createCompositeGrid)
+        public Grid Create (string dbId, CreateGrid createGrid)
         {
-             ApiResponse<Grid> localVarResponse = CreateWithHttpInfo(dbId, createCompositeGrid);
+             ApiResponse<Grid> localVarResponse = CreateWithHttpInfo(dbId, createGrid);
              return localVarResponse.Data;
         }
 
@@ -424,16 +424,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <returns>ApiResponse of Grid</returns>
-        public ApiResponse<Grid> CreateWithHttpInfo (string dbId, CreateGrid createCompositeGrid)
+        public ApiResponse<Grid> CreateWithHttpInfo (string dbId, CreateGrid createGrid)
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
                 throw new ApiException(400, "Missing required parameter 'dbId' when calling GridApi->Create");
-            // verify the required parameter 'createCompositeGrid' is set
-            if (createCompositeGrid == null)
-                throw new ApiException(400, "Missing required parameter 'createCompositeGrid' when calling GridApi->Create");
+            // verify the required parameter 'createGrid' is set
+            if (createGrid == null)
+                throw new ApiException(400, "Missing required parameter 'createGrid' when calling GridApi->Create");
 
             var localVarPath = "/v1/grids";
             var localVarPathParams = new Dictionary<String, String>();
@@ -458,13 +458,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (dbId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dbId", dbId)); // query parameter
-            if (createCompositeGrid != null && createCompositeGrid.GetType() != typeof(byte[]))
+            if (createGrid != null && createGrid.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createCompositeGrid); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createGrid); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createCompositeGrid; // byte array
+                localVarPostBody = createGrid; // byte array
             }
 
             // authentication (ApiKey) required
@@ -496,12 +496,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Grid</returns>
-        public async System.Threading.Tasks.Task<Grid> CreateAsync (string dbId, CreateGrid createCompositeGrid, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Grid> CreateAsync (string dbId, CreateGrid createGrid, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Grid> localVarResponse = await CreateWithHttpInfoAsync(dbId, createCompositeGrid, cancellationToken);
+             ApiResponse<Grid> localVarResponse = await CreateWithHttpInfoAsync(dbId, createGrid, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -511,17 +511,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="createCompositeGrid">createCompositeGrid</param>
+        /// <param name="createGrid">createGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Grid)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Grid>> CreateWithHttpInfoAsync (string dbId, CreateGrid createCompositeGrid, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Grid>> CreateWithHttpInfoAsync (string dbId, CreateGrid createGrid, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
                 throw new ApiException(400, "Missing required parameter 'dbId' when calling GridApi->Create");
-            // verify the required parameter 'createCompositeGrid' is set
-            if (createCompositeGrid == null)
-                throw new ApiException(400, "Missing required parameter 'createCompositeGrid' when calling GridApi->Create");
+            // verify the required parameter 'createGrid' is set
+            if (createGrid == null)
+                throw new ApiException(400, "Missing required parameter 'createGrid' when calling GridApi->Create");
 
             var localVarPath = "/v1/grids";
             var localVarPathParams = new Dictionary<String, String>();
@@ -546,13 +546,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (dbId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "dbId", dbId)); // query parameter
-            if (createCompositeGrid != null && createCompositeGrid.GetType() != typeof(byte[]))
+            if (createGrid != null && createGrid.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createCompositeGrid); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createGrid); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createCompositeGrid; // byte array
+                localVarPostBody = createGrid; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1148,11 +1148,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <returns>Grid</returns>
-        public Grid Update (string gridId, UpdateGrid updateCompositeGrid)
+        public Grid Update (string gridId, UpdateGrid updateGrid)
         {
-             ApiResponse<Grid> localVarResponse = UpdateWithHttpInfo(gridId, updateCompositeGrid);
+             ApiResponse<Grid> localVarResponse = UpdateWithHttpInfo(gridId, updateGrid);
              return localVarResponse.Data;
         }
 
@@ -1161,16 +1161,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <returns>ApiResponse of Grid</returns>
-        public ApiResponse<Grid> UpdateWithHttpInfo (string gridId, UpdateGrid updateCompositeGrid)
+        public ApiResponse<Grid> UpdateWithHttpInfo (string gridId, UpdateGrid updateGrid)
         {
             // verify the required parameter 'gridId' is set
             if (gridId == null)
                 throw new ApiException(400, "Missing required parameter 'gridId' when calling GridApi->Update");
-            // verify the required parameter 'updateCompositeGrid' is set
-            if (updateCompositeGrid == null)
-                throw new ApiException(400, "Missing required parameter 'updateCompositeGrid' when calling GridApi->Update");
+            // verify the required parameter 'updateGrid' is set
+            if (updateGrid == null)
+                throw new ApiException(400, "Missing required parameter 'updateGrid' when calling GridApi->Update");
 
             var localVarPath = "/v1/grids/{gridId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1195,13 +1195,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (gridId != null) localVarPathParams.Add("gridId", this.Configuration.ApiClient.ParameterToString(gridId)); // path parameter
-            if (updateCompositeGrid != null && updateCompositeGrid.GetType() != typeof(byte[]))
+            if (updateGrid != null && updateGrid.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateCompositeGrid); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateGrid); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateCompositeGrid; // byte array
+                localVarPostBody = updateGrid; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1233,12 +1233,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Grid</returns>
-        public async System.Threading.Tasks.Task<Grid> UpdateAsync (string gridId, UpdateGrid updateCompositeGrid, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Grid> UpdateAsync (string gridId, UpdateGrid updateGrid, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Grid> localVarResponse = await UpdateWithHttpInfoAsync(gridId, updateCompositeGrid, cancellationToken);
+             ApiResponse<Grid> localVarResponse = await UpdateWithHttpInfoAsync(gridId, updateGrid, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1248,17 +1248,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
-        /// <param name="updateCompositeGrid">updateCompositeGrid</param>
+        /// <param name="updateGrid">updateGrid</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Grid)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Grid>> UpdateWithHttpInfoAsync (string gridId, UpdateGrid updateCompositeGrid, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Grid>> UpdateWithHttpInfoAsync (string gridId, UpdateGrid updateGrid, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'gridId' is set
             if (gridId == null)
                 throw new ApiException(400, "Missing required parameter 'gridId' when calling GridApi->Update");
-            // verify the required parameter 'updateCompositeGrid' is set
-            if (updateCompositeGrid == null)
-                throw new ApiException(400, "Missing required parameter 'updateCompositeGrid' when calling GridApi->Update");
+            // verify the required parameter 'updateGrid' is set
+            if (updateGrid == null)
+                throw new ApiException(400, "Missing required parameter 'updateGrid' when calling GridApi->Update");
 
             var localVarPath = "/v1/grids/{gridId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1283,13 +1283,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (gridId != null) localVarPathParams.Add("gridId", this.Configuration.ApiClient.ParameterToString(gridId)); // path parameter
-            if (updateCompositeGrid != null && updateCompositeGrid.GetType() != typeof(byte[]))
+            if (updateGrid != null && updateGrid.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateCompositeGrid); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateGrid); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateCompositeGrid; // byte array
+                localVarPostBody = updateGrid; // byte array
             }
 
             // authentication (ApiKey) required

@@ -33,9 +33,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <returns>List&lt;Record&gt;</returns>
-        List<Record> Create (string viewId, List<SetRecord> createRecordDTOs);
+        List<Record> Create (string viewId, List<SetRecord> createRecords);
 
         /// <summary>
         /// create
@@ -45,9 +45,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        ApiResponse<List<Record>> CreateWithHttpInfo (string viewId, List<SetRecord> createRecordDTOs);
+        ApiResponse<List<Record>> CreateWithHttpInfo (string viewId, List<SetRecord> createRecords);
         /// <summary>
         /// delete
         /// </summary>
@@ -56,9 +56,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <returns></returns>
-        void Delete (string viewId, DeleteRecord deleteRecordDTO);
+        void Delete (string viewId, DeleteRecord deleteRecord);
 
         /// <summary>
         /// delete
@@ -68,9 +68,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo (string viewId, DeleteRecord deleteRecordDTO);
+        ApiResponse<Object> DeleteWithHttpInfo (string viewId, DeleteRecord deleteRecord);
         /// <summary>
         /// fetch
         /// </summary>
@@ -108,9 +108,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <returns>List&lt;Record&gt;</returns>
-        List<Record> Update (string viewId, List<SetRecord> updateRecordDTOs);
+        List<Record> Update (string viewId, List<SetRecord> updateRecords);
 
         /// <summary>
         /// update
@@ -120,9 +120,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        ApiResponse<List<Record>> UpdateWithHttpInfo (string viewId, List<SetRecord> updateRecordDTOs);
+        ApiResponse<List<Record>> UpdateWithHttpInfo (string viewId, List<SetRecord> updateRecords);
         /// <summary>
         /// updateRecord
         /// </summary>
@@ -132,10 +132,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <returns>Record</returns>
-        Record UpdateRecord (string id, string viewId, SetRecord updateRecordDTO, string path = default(string));
+        Record UpdateRecord (string id, string viewId, SetRecord updateRecord, string path = default(string));
 
         /// <summary>
         /// updateRecord
@@ -146,10 +146,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <returns>ApiResponse of Record</returns>
-        ApiResponse<Record> UpdateRecordWithHttpInfo (string id, string viewId, SetRecord updateRecordDTO, string path = default(string));
+        ApiResponse<Record> UpdateRecordWithHttpInfo (string id, string viewId, SetRecord updateRecord, string path = default(string));
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -160,10 +160,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        System.Threading.Tasks.Task<List<Record>> CreateAsync (string viewId, List<SetRecord> createRecordDTOs, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List<Record>> CreateAsync (string viewId, List<SetRecord> createRecords, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// create
@@ -173,10 +173,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync (string viewId, List<SetRecord> createRecordDTOs, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync (string viewId, List<SetRecord> createRecords, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// delete
         /// </summary>
@@ -185,10 +185,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync (string viewId, DeleteRecord deleteRecordDTO, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync (string viewId, DeleteRecord deleteRecord, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// delete
@@ -198,10 +198,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, DeleteRecord deleteRecordDTO, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, DeleteRecord deleteRecord, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// fetch
         /// </summary>
@@ -241,10 +241,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        System.Threading.Tasks.Task<List<Record>> UpdateAsync (string viewId, List<SetRecord> updateRecordDTOs, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List<Record>> UpdateAsync (string viewId, List<SetRecord> updateRecords, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// update
@@ -254,10 +254,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Record>>> UpdateWithHttpInfoAsync (string viewId, List<SetRecord> updateRecordDTOs, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Record>>> UpdateWithHttpInfoAsync (string viewId, List<SetRecord> updateRecords, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// updateRecord
         /// </summary>
@@ -267,11 +267,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Record</returns>
-        System.Threading.Tasks.Task<Record> UpdateRecordAsync (string id, string viewId, SetRecord updateRecordDTO, string path = default(string), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Record> UpdateRecordAsync (string id, string viewId, SetRecord updateRecord, string path = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// updateRecord
@@ -282,11 +282,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Record)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Record>> UpdateRecordWithHttpInfoAsync (string id, string viewId, SetRecord updateRecordDTO, string path = default(string), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Record>> UpdateRecordWithHttpInfoAsync (string id, string viewId, SetRecord updateRecord, string path = default(string), CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -403,11 +403,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <returns>List&lt;Record&gt;</returns>
-        public List<Record> Create (string viewId, List<SetRecord> createRecordDTOs)
+        public List<Record> Create (string viewId, List<SetRecord> createRecords)
         {
-             ApiResponse<List<Record>> localVarResponse = CreateWithHttpInfo(viewId, createRecordDTOs);
+             ApiResponse<List<Record>> localVarResponse = CreateWithHttpInfo(viewId, createRecords);
              return localVarResponse.Data;
         }
 
@@ -416,16 +416,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        public ApiResponse<List<Record>> CreateWithHttpInfo (string viewId, List<SetRecord> createRecordDTOs)
+        public ApiResponse<List<Record>> CreateWithHttpInfo (string viewId, List<SetRecord> createRecords)
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Create");
-            // verify the required parameter 'createRecordDTOs' is set
-            if (createRecordDTOs == null)
-                throw new ApiException(400, "Missing required parameter 'createRecordDTOs' when calling RecordApi->Create");
+            // verify the required parameter 'createRecords' is set
+            if (createRecords == null)
+                throw new ApiException(400, "Missing required parameter 'createRecords' when calling RecordApi->Create");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -450,13 +450,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (createRecordDTOs != null && createRecordDTOs.GetType() != typeof(byte[]))
+            if (createRecords != null && createRecords.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createRecordDTOs); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createRecords); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createRecordDTOs; // byte array
+                localVarPostBody = createRecords; // byte array
             }
 
             // authentication (ApiKey) required
@@ -488,12 +488,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Record>> CreateAsync (string viewId, List<SetRecord> createRecordDTOs, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<List<Record>> CreateAsync (string viewId, List<SetRecord> createRecords, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<Record>> localVarResponse = await CreateWithHttpInfoAsync(viewId, createRecordDTOs, cancellationToken);
+             ApiResponse<List<Record>> localVarResponse = await CreateWithHttpInfoAsync(viewId, createRecords, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -503,17 +503,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="createRecordDTOs">createRecordDTOs</param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync (string viewId, List<SetRecord> createRecordDTOs, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync (string viewId, List<SetRecord> createRecords, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Create");
-            // verify the required parameter 'createRecordDTOs' is set
-            if (createRecordDTOs == null)
-                throw new ApiException(400, "Missing required parameter 'createRecordDTOs' when calling RecordApi->Create");
+            // verify the required parameter 'createRecords' is set
+            if (createRecords == null)
+                throw new ApiException(400, "Missing required parameter 'createRecords' when calling RecordApi->Create");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -538,13 +538,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (createRecordDTOs != null && createRecordDTOs.GetType() != typeof(byte[]))
+            if (createRecords != null && createRecords.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createRecordDTOs); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(createRecords); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createRecordDTOs; // byte array
+                localVarPostBody = createRecords; // byte array
             }
 
             // authentication (ApiKey) required
@@ -576,11 +576,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <returns></returns>
-        public void Delete (string viewId, DeleteRecord deleteRecordDTO)
+        public void Delete (string viewId, DeleteRecord deleteRecord)
         {
-             DeleteWithHttpInfo(viewId, deleteRecordDTO);
+             DeleteWithHttpInfo(viewId, deleteRecord);
         }
 
         /// <summary>
@@ -588,16 +588,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteWithHttpInfo (string viewId, DeleteRecord deleteRecordDTO)
+        public ApiResponse<Object> DeleteWithHttpInfo (string viewId, DeleteRecord deleteRecord)
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Delete");
-            // verify the required parameter 'deleteRecordDTO' is set
-            if (deleteRecordDTO == null)
-                throw new ApiException(400, "Missing required parameter 'deleteRecordDTO' when calling RecordApi->Delete");
+            // verify the required parameter 'deleteRecord' is set
+            if (deleteRecord == null)
+                throw new ApiException(400, "Missing required parameter 'deleteRecord' when calling RecordApi->Delete");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -621,13 +621,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (deleteRecordDTO != null && deleteRecordDTO.GetType() != typeof(byte[]))
+            if (deleteRecord != null && deleteRecord.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteRecordDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteRecord); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = deleteRecordDTO; // byte array
+                localVarPostBody = deleteRecord; // byte array
             }
 
             // authentication (ApiKey) required
@@ -659,12 +659,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync (string viewId, DeleteRecord deleteRecordDTO, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync (string viewId, DeleteRecord deleteRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await DeleteWithHttpInfoAsync(viewId, deleteRecordDTO, cancellationToken);
+             await DeleteWithHttpInfoAsync(viewId, deleteRecord, cancellationToken);
 
         }
 
@@ -673,17 +673,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteRecordDTO">deleteRecordDTO</param>
+        /// <param name="deleteRecord">deleteRecord</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, DeleteRecord deleteRecordDTO, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, DeleteRecord deleteRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Delete");
-            // verify the required parameter 'deleteRecordDTO' is set
-            if (deleteRecordDTO == null)
-                throw new ApiException(400, "Missing required parameter 'deleteRecordDTO' when calling RecordApi->Delete");
+            // verify the required parameter 'deleteRecord' is set
+            if (deleteRecord == null)
+                throw new ApiException(400, "Missing required parameter 'deleteRecord' when calling RecordApi->Delete");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -707,13 +707,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (deleteRecordDTO != null && deleteRecordDTO.GetType() != typeof(byte[]))
+            if (deleteRecord != null && deleteRecord.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteRecordDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteRecord); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = deleteRecordDTO; // byte array
+                localVarPostBody = deleteRecord; // byte array
             }
 
             // authentication (ApiKey) required
@@ -914,11 +914,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <returns>List&lt;Record&gt;</returns>
-        public List<Record> Update (string viewId, List<SetRecord> updateRecordDTOs)
+        public List<Record> Update (string viewId, List<SetRecord> updateRecords)
         {
-             ApiResponse<List<Record>> localVarResponse = UpdateWithHttpInfo(viewId, updateRecordDTOs);
+             ApiResponse<List<Record>> localVarResponse = UpdateWithHttpInfo(viewId, updateRecords);
              return localVarResponse.Data;
         }
 
@@ -927,16 +927,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        public ApiResponse<List<Record>> UpdateWithHttpInfo (string viewId, List<SetRecord> updateRecordDTOs)
+        public ApiResponse<List<Record>> UpdateWithHttpInfo (string viewId, List<SetRecord> updateRecords)
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Update");
-            // verify the required parameter 'updateRecordDTOs' is set
-            if (updateRecordDTOs == null)
-                throw new ApiException(400, "Missing required parameter 'updateRecordDTOs' when calling RecordApi->Update");
+            // verify the required parameter 'updateRecords' is set
+            if (updateRecords == null)
+                throw new ApiException(400, "Missing required parameter 'updateRecords' when calling RecordApi->Update");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -961,13 +961,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (updateRecordDTOs != null && updateRecordDTOs.GetType() != typeof(byte[]))
+            if (updateRecords != null && updateRecords.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecordDTOs); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecords); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateRecordDTOs; // byte array
+                localVarPostBody = updateRecords; // byte array
             }
 
             // authentication (ApiKey) required
@@ -999,12 +999,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Record>> UpdateAsync (string viewId, List<SetRecord> updateRecordDTOs, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<List<Record>> UpdateAsync (string viewId, List<SetRecord> updateRecords, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<Record>> localVarResponse = await UpdateWithHttpInfoAsync(viewId, updateRecordDTOs, cancellationToken);
+             ApiResponse<List<Record>> localVarResponse = await UpdateWithHttpInfoAsync(viewId, updateRecords, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1014,17 +1014,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTOs">updateRecordDTOs</param>
+        /// <param name="updateRecords">updateRecords</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Record>>> UpdateWithHttpInfoAsync (string viewId, List<SetRecord> updateRecordDTOs, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<List<Record>>> UpdateWithHttpInfoAsync (string viewId, List<SetRecord> updateRecords, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Update");
-            // verify the required parameter 'updateRecordDTOs' is set
-            if (updateRecordDTOs == null)
-                throw new ApiException(400, "Missing required parameter 'updateRecordDTOs' when calling RecordApi->Update");
+            // verify the required parameter 'updateRecords' is set
+            if (updateRecords == null)
+                throw new ApiException(400, "Missing required parameter 'updateRecords' when calling RecordApi->Update");
 
             var localVarPath = "/v1/views/{viewId}/records";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1049,13 +1049,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (updateRecordDTOs != null && updateRecordDTOs.GetType() != typeof(byte[]))
+            if (updateRecords != null && updateRecords.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecordDTOs); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecords); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateRecordDTOs; // byte array
+                localVarPostBody = updateRecords; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1088,12 +1088,12 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <returns>Record</returns>
-        public Record UpdateRecord (string id, string viewId, SetRecord updateRecordDTO, string path = default(string))
+        public Record UpdateRecord (string id, string viewId, SetRecord updateRecord, string path = default(string))
         {
-             ApiResponse<Record> localVarResponse = UpdateRecordWithHttpInfo(id, viewId, updateRecordDTO, path);
+             ApiResponse<Record> localVarResponse = UpdateRecordWithHttpInfo(id, viewId, updateRecord, path);
              return localVarResponse.Data;
         }
 
@@ -1103,10 +1103,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <returns>ApiResponse of Record</returns>
-        public ApiResponse<Record> UpdateRecordWithHttpInfo (string id, string viewId, SetRecord updateRecordDTO, string path = default(string))
+        public ApiResponse<Record> UpdateRecordWithHttpInfo (string id, string viewId, SetRecord updateRecord, string path = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1114,9 +1114,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->UpdateRecord");
-            // verify the required parameter 'updateRecordDTO' is set
-            if (updateRecordDTO == null)
-                throw new ApiException(400, "Missing required parameter 'updateRecordDTO' when calling RecordApi->UpdateRecord");
+            // verify the required parameter 'updateRecord' is set
+            if (updateRecord == null)
+                throw new ApiException(400, "Missing required parameter 'updateRecord' when calling RecordApi->UpdateRecord");
 
             var localVarPath = "/v1/views/{viewId}/records/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1143,13 +1143,13 @@ namespace Com.Gridly.Api
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (path != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "path", path)); // query parameter
-            if (updateRecordDTO != null && updateRecordDTO.GetType() != typeof(byte[]))
+            if (updateRecord != null && updateRecord.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecordDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecord); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateRecordDTO; // byte array
+                localVarPostBody = updateRecord; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1182,13 +1182,13 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Record</returns>
-        public async System.Threading.Tasks.Task<Record> UpdateRecordAsync (string id, string viewId, SetRecord updateRecordDTO, string path = default(string), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Record> UpdateRecordAsync (string id, string viewId, SetRecord updateRecord, string path = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Record> localVarResponse = await UpdateRecordWithHttpInfoAsync(id, viewId, updateRecordDTO, path, cancellationToken);
+             ApiResponse<Record> localVarResponse = await UpdateRecordWithHttpInfoAsync(id, viewId, updateRecord, path, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1199,11 +1199,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="updateRecordDTO">updateRecordDTO</param>
+        /// <param name="updateRecord">updateRecord</param>
         /// <param name="path">path (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Record)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Record>> UpdateRecordWithHttpInfoAsync (string id, string viewId, SetRecord updateRecordDTO, string path = default(string), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Record>> UpdateRecordWithHttpInfoAsync (string id, string viewId, SetRecord updateRecord, string path = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1211,9 +1211,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->UpdateRecord");
-            // verify the required parameter 'updateRecordDTO' is set
-            if (updateRecordDTO == null)
-                throw new ApiException(400, "Missing required parameter 'updateRecordDTO' when calling RecordApi->UpdateRecord");
+            // verify the required parameter 'updateRecord' is set
+            if (updateRecord == null)
+                throw new ApiException(400, "Missing required parameter 'updateRecord' when calling RecordApi->UpdateRecord");
 
             var localVarPath = "/v1/views/{viewId}/records/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1240,13 +1240,13 @@ namespace Com.Gridly.Api
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (path != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "path", path)); // query parameter
-            if (updateRecordDTO != null && updateRecordDTO.GetType() != typeof(byte[]))
+            if (updateRecord != null && updateRecord.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecordDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(updateRecord); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateRecordDTO; // byte array
+                localVarPostBody = updateRecord; // byte array
             }
 
             // authentication (ApiKey) required
