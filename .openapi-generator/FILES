@@ -1,6 +1,7 @@
 .gitignore
 Com.Gridly.sln
 README.md
+docs/AddViewColumn.md
 docs/Branch.md
 docs/BranchApi.md
 docs/Cell.md
@@ -11,6 +12,7 @@ docs/CreateDatabase.md
 docs/CreateDependency.md
 docs/CreateGrid.md
 docs/CreateProject.md
+docs/CreateView.md
 docs/Database.md
 docs/DatabaseApi.md
 docs/DeleteDependency.md
@@ -79,6 +81,7 @@ src/Com.Gridly/Client/IApiAccessor.cs
 src/Com.Gridly/Client/IReadableConfiguration.cs
 src/Com.Gridly/Client/OpenAPIDateConverter.cs
 src/Com.Gridly/Com.Gridly.csproj
+src/Com.Gridly/Model/AddViewColumn.cs
 src/Com.Gridly/Model/Branch.cs
 src/Com.Gridly/Model/Cell.cs
 src/Com.Gridly/Model/ColumnReference.cs
@@ -88,6 +91,7 @@ src/Com.Gridly/Model/CreateDatabase.cs
 src/Com.Gridly/Model/CreateDependency.cs
 src/Com.Gridly/Model/CreateGrid.cs
 src/Com.Gridly/Model/CreateProject.cs
+src/Com.Gridly/Model/CreateView.cs
 src/Com.Gridly/Model/Database.cs
 src/Com.Gridly/Model/DeleteDependency.cs
 src/Com.Gridly/Model/DeleteRecord.cs

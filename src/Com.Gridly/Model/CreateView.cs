@@ -25,27 +25,35 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// ReferencedGrid
+    /// CreateView
     /// </summary>
     [DataContract]
-    public partial class ReferencedGrid :  IEquatable<ReferencedGrid>, IValidatableObject
+    public partial class CreateView :  IEquatable<CreateView>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReferencedGrid" /> class.
+        /// Initializes a new instance of the <see cref="CreateView" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="columns">columns.</param>
+        /// <param name="gridId">gridId.</param>
         /// <param name="name">name.</param>
-        public ReferencedGrid(string id = default(string), string name = default(string))
+        public CreateView(List<AddViewColumn> columns = default(List<AddViewColumn>), string gridId = default(string), string name = default(string))
         {
-            this.Id = id;
+            this.Columns = columns;
+            this.GridId = gridId;
             this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
+        [DataMember(Name="columns", EmitDefaultValue=false)]
+        public List<AddViewColumn> Columns { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GridId
+        /// </summary>
+        [DataMember(Name="gridId", EmitDefaultValue=false)]
+        public string GridId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -60,8 +68,9 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ReferencedGrid {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class CreateView {\n");
+            sb.Append("  Columns: ").Append(Columns).Append("\n");
+            sb.Append("  GridId: ").Append(GridId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -83,24 +92,30 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ReferencedGrid);
+            return this.Equals(input as CreateView);
         }
 
         /// <summary>
-        /// Returns true if ReferencedGrid instances are equal
+        /// Returns true if CreateView instances are equal
         /// </summary>
-        /// <param name="input">Instance of ReferencedGrid to be compared</param>
+        /// <param name="input">Instance of CreateView to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ReferencedGrid input)
+        public bool Equals(CreateView input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Columns == input.Columns ||
+                    this.Columns != null &&
+                    input.Columns != null &&
+                    this.Columns.SequenceEqual(input.Columns)
+                ) && 
+                (
+                    this.GridId == input.GridId ||
+                    (this.GridId != null &&
+                    this.GridId.Equals(input.GridId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -118,8 +133,10 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Columns != null)
+                    hashCode = hashCode * 59 + this.Columns.GetHashCode();
+                if (this.GridId != null)
+                    hashCode = hashCode * 59 + this.GridId.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;

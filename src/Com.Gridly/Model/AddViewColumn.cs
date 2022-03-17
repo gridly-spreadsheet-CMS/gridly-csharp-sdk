@@ -25,21 +25,27 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// ReferencedGrid
+    /// AddViewColumn
     /// </summary>
     [DataContract]
-    public partial class ReferencedGrid :  IEquatable<ReferencedGrid>, IValidatableObject
+    public partial class AddViewColumn :  IEquatable<AddViewColumn>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReferencedGrid" /> class.
+        /// Initializes a new instance of the <see cref="AddViewColumn" /> class.
         /// </summary>
+        /// <param name="editable">editable.</param>
         /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        public ReferencedGrid(string id = default(string), string name = default(string))
+        public AddViewColumn(bool editable = default(bool), string id = default(string))
         {
+            this.Editable = editable;
             this.Id = id;
-            this.Name = name;
         }
+
+        /// <summary>
+        /// Gets or Sets Editable
+        /// </summary>
+        [DataMember(Name="editable", EmitDefaultValue=false)]
+        public bool Editable { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -48,21 +54,15 @@ namespace Com.Gridly.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ReferencedGrid {\n");
+            sb.Append("class AddViewColumn {\n");
+            sb.Append("  Editable: ").Append(Editable).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +83,29 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ReferencedGrid);
+            return this.Equals(input as AddViewColumn);
         }
 
         /// <summary>
-        /// Returns true if ReferencedGrid instances are equal
+        /// Returns true if AddViewColumn instances are equal
         /// </summary>
-        /// <param name="input">Instance of ReferencedGrid to be compared</param>
+        /// <param name="input">Instance of AddViewColumn to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ReferencedGrid input)
+        public bool Equals(AddViewColumn input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
+                    this.Editable == input.Editable ||
+                    (this.Editable != null &&
+                    this.Editable.Equals(input.Editable))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -118,10 +118,10 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Editable != null)
+                    hashCode = hashCode * 59 + this.Editable.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }
