@@ -73,8 +73,8 @@ namespace Com.Gridly.Test
             //string columnId = null;
             //string recordId = null;
             //string viewId = null;
-            //DeleteFile deleteFileDTO = null;
-            //instance.Delete(columnId, recordId, viewId, deleteFileDTO);
+            //DeleteFile deleteFile = null;
+            //instance.Delete(columnId, recordId, viewId, deleteFile);
             
         }
         

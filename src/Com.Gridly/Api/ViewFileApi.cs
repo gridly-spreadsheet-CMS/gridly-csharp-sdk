@@ -35,9 +35,9 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <returns></returns>
-        void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO);
+        void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFile);
 
         /// <summary>
         /// delete
@@ -49,9 +49,9 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO);
+        ApiResponse<Object> DeleteWithHttpInfo (string columnId, string recordId, string viewId, DeleteFile deleteFile);
         /// <summary>
         /// download
         /// </summary>
@@ -141,10 +141,10 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync (string columnId, string recordId, string viewId, DeleteFile deleteFile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// delete
@@ -156,10 +156,10 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string columnId, string recordId, string viewId, DeleteFile deleteFile, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// download
         /// </summary>
@@ -361,11 +361,11 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <returns></returns>
-        public void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO)
+        public void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFile)
         {
-             DeleteWithHttpInfo(columnId, recordId, viewId, deleteFileDTO);
+             DeleteWithHttpInfo(columnId, recordId, viewId, deleteFile);
         }
 
         /// <summary>
@@ -375,9 +375,9 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteWithHttpInfo (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO)
+        public ApiResponse<Object> DeleteWithHttpInfo (string columnId, string recordId, string viewId, DeleteFile deleteFile)
         {
             // verify the required parameter 'columnId' is set
             if (columnId == null)
@@ -388,9 +388,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling ViewFileApi->Delete");
-            // verify the required parameter 'deleteFileDTO' is set
-            if (deleteFileDTO == null)
-                throw new ApiException(400, "Missing required parameter 'deleteFileDTO' when calling ViewFileApi->Delete");
+            // verify the required parameter 'deleteFile' is set
+            if (deleteFile == null)
+                throw new ApiException(400, "Missing required parameter 'deleteFile' when calling ViewFileApi->Delete");
 
             var localVarPath = "/v1/views/{viewId}/files";
             var localVarPathParams = new Dictionary<String, String>();
@@ -416,13 +416,13 @@ namespace Com.Gridly.Api
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (columnId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "columnId", columnId)); // query parameter
             if (recordId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "recordId", recordId)); // query parameter
-            if (deleteFileDTO != null && deleteFileDTO.GetType() != typeof(byte[]))
+            if (deleteFile != null && deleteFile.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteFileDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteFile); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = deleteFileDTO; // byte array
+                localVarPostBody = deleteFile; // byte array
             }
 
             // authentication (ApiKey) required
@@ -456,12 +456,12 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync (string columnId, string recordId, string viewId, DeleteFile deleteFile, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await DeleteWithHttpInfoAsync(columnId, recordId, viewId, deleteFileDTO, cancellationToken);
+             await DeleteWithHttpInfoAsync(columnId, recordId, viewId, deleteFile, cancellationToken);
 
         }
 
@@ -472,10 +472,10 @@ namespace Com.Gridly.Api
         /// <param name="columnId">columnId</param>
         /// <param name="recordId">recordId</param>
         /// <param name="viewId">viewId</param>
-        /// <param name="deleteFileDTO">deleteFileDTO</param>
+        /// <param name="deleteFile">deleteFile</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string columnId, string recordId, string viewId, DeleteFile deleteFile, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'columnId' is set
             if (columnId == null)
@@ -486,9 +486,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'viewId' is set
             if (viewId == null)
                 throw new ApiException(400, "Missing required parameter 'viewId' when calling ViewFileApi->Delete");
-            // verify the required parameter 'deleteFileDTO' is set
-            if (deleteFileDTO == null)
-                throw new ApiException(400, "Missing required parameter 'deleteFileDTO' when calling ViewFileApi->Delete");
+            // verify the required parameter 'deleteFile' is set
+            if (deleteFile == null)
+                throw new ApiException(400, "Missing required parameter 'deleteFile' when calling ViewFileApi->Delete");
 
             var localVarPath = "/v1/views/{viewId}/files";
             var localVarPathParams = new Dictionary<String, String>();
@@ -514,13 +514,13 @@ namespace Com.Gridly.Api
             if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
             if (columnId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "columnId", columnId)); // query parameter
             if (recordId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "recordId", recordId)); // query parameter
-            if (deleteFileDTO != null && deleteFileDTO.GetType() != typeof(byte[]))
+            if (deleteFile != null && deleteFile.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteFileDTO); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(deleteFile); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = deleteFileDTO; // byte array
+                localVarPostBody = deleteFile; // byte array
             }
 
             // authentication (ApiKey) required
