@@ -25,27 +25,19 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// DeleteRecord
+    /// DeleteFile
     /// </summary>
     [DataContract]
-    public partial class DeleteRecord :  IEquatable<DeleteRecord>, IValidatableObject
+    public partial class DeleteFile :  IEquatable<DeleteFile>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteRecord" /> class.
+        /// Initializes a new instance of the <see cref="DeleteFile" /> class.
         /// </summary>
-        /// <param name="identifiers">identifiers.</param>
         /// <param name="ids">ids.</param>
-        public DeleteRecord(List<RecordIdentifierWrapper> identifiers = default(List<RecordIdentifierWrapper>), List<string> ids = default(List<string>))
+        public DeleteFile(List<string> ids = default(List<string>))
         {
-            this.Identifiers = identifiers;
             this.Ids = ids;
         }
-
-        /// <summary>
-        /// Gets or Sets Identifiers
-        /// </summary>
-        [DataMember(Name="identifiers", EmitDefaultValue=false)]
-        public List<RecordIdentifierWrapper> Identifiers { get; set; }
 
         /// <summary>
         /// Gets or Sets Ids
@@ -60,8 +52,7 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteRecord {\n");
-            sb.Append("  Identifiers: ").Append(Identifiers).Append("\n");
+            sb.Append("class DeleteFile {\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -83,26 +74,20 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteRecord);
+            return this.Equals(input as DeleteFile);
         }
 
         /// <summary>
-        /// Returns true if DeleteRecord instances are equal
+        /// Returns true if DeleteFile instances are equal
         /// </summary>
-        /// <param name="input">Instance of DeleteRecord to be compared</param>
+        /// <param name="input">Instance of DeleteFile to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DeleteRecord input)
+        public bool Equals(DeleteFile input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.Identifiers == input.Identifiers ||
-                    this.Identifiers != null &&
-                    input.Identifiers != null &&
-                    this.Identifiers.SequenceEqual(input.Identifiers)
-                ) && 
                 (
                     this.Ids == input.Ids ||
                     this.Ids != null &&
@@ -120,8 +105,6 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Identifiers != null)
-                    hashCode = hashCode * 59 + this.Identifiers.GetHashCode();
                 if (this.Ids != null)
                     hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 return hashCode;
