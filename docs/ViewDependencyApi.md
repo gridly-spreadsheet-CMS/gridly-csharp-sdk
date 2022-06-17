@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 create
 
+create
+
 ### Example
 
 ```csharp
@@ -97,6 +99,8 @@ Name | Type | Description  | Notes
 ## Delete
 
 > void Delete (string viewId, DeleteDependency deleteDependency)
+
+delete
 
 delete
 
@@ -180,6 +184,8 @@ void (empty response body)
 
 deleteById
 
+deleteById
+
 ### Example
 
 ```csharp
@@ -257,6 +263,8 @@ void (empty response body)
 ## Get
 
 > Dependency Get (string dependencyId, string viewId)
+
+get
 
 get
 
@@ -341,6 +349,8 @@ Name | Type | Description  | Notes
 
 list
 
+list
+
 ### Example
 
 ```csharp
@@ -417,6 +427,8 @@ Name | Type | Description  | Notes
 ## Update
 
 > Dependency Update (string dependencyId, string viewId, UpdateDependency updateDependency)
+
+update
 
 update
 

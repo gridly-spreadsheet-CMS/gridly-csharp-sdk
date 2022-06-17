@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 create
 
+create
+
 ### Example
 
 ```csharp
@@ -95,6 +97,8 @@ Name | Type | Description  | Notes
 ## Export
 
 > System.IO.Stream Export (string viewId, List<string> columnIds = null, ExportFileHeader? fileHeader = null, string query = null, string sort = null, FileType? type = null)
+
+export
 
 export
 
@@ -187,6 +191,8 @@ Name | Type | Description  | Notes
 
 get
 
+get
+
 ### Example
 
 ```csharp
@@ -276,6 +282,8 @@ Name | Type | Description  | Notes
 
 importView
 
+importView
+
 ### Example
 
 ```csharp
@@ -360,6 +368,8 @@ void (empty response body)
 
 list
 
+list
+
 ### Example
 
 ```csharp
@@ -440,6 +450,8 @@ Name | Type | Description  | Notes
 ## Merge
 
 > Task Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+
+merge
 
 merge
 

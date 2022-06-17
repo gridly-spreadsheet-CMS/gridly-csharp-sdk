@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 add
 
+add
+
 ### Example
 
 ```csharp
@@ -99,6 +101,8 @@ Name | Type | Description  | Notes
 > ViewColumn Create (string viewId, CreateColumn createColumn)
 
 create
+
+Create a Column
 
 ### Example
 
@@ -181,6 +185,8 @@ Name | Type | Description  | Notes
 
 delete
 
+delete
+
 ### Example
 
 ```csharp
@@ -258,6 +264,8 @@ void (empty response body)
 ## Get
 
 > ViewColumn Get (string columnId, string viewId)
+
+get
 
 get
 
@@ -342,6 +350,8 @@ Name | Type | Description  | Notes
 
 remove
 
+remove
+
 ### Example
 
 ```csharp
@@ -419,6 +429,8 @@ void (empty response body)
 ## Update
 
 > ViewColumn Update (string columnId, string viewId, UpdateColumn updateColumn)
+
+update
 
 update
 

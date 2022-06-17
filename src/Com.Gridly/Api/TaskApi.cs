@@ -29,7 +29,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -40,7 +40,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -52,7 +52,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -64,7 +64,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -183,7 +183,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -195,7 +195,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -254,7 +254,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>
@@ -268,7 +268,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskId">taskId</param>

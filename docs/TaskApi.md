@@ -14,6 +14,8 @@ Method | HTTP request | Description
 
 get
 
+get
+
 ### Example
 
 ```csharp

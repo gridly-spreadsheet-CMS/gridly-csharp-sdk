@@ -18,6 +18,8 @@ Method | HTTP request | Description
 
 create
 
+create
+
 ### Example
 
 ```csharp
@@ -101,6 +103,8 @@ Name | Type | Description  | Notes
 
 delete
 
+delete
+
 ### Example
 
 ```csharp
@@ -176,6 +180,8 @@ void (empty response body)
 ## Get
 
 > Branch Get (string branchId)
+
+get
 
 get
 
@@ -258,6 +264,8 @@ Name | Type | Description  | Notes
 
 list
 
+list
+
 ### Example
 
 ```csharp
@@ -334,6 +342,8 @@ Name | Type | Description  | Notes
 ## Merge
 
 > Task Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
+
+merge
 
 merge
 

@@ -17,6 +17,8 @@ Method | HTTP request | Description
 
 delete
 
+delete
+
 ### Example
 
 ```csharp
@@ -101,6 +103,8 @@ void (empty response body)
 
 download
 
+download
+
 ### Example
 
 ```csharp
@@ -179,6 +183,8 @@ Name | Type | Description  | Notes
 ## Upload
 
 > UploadedFile Upload (string viewId, string columnId, string recordId, System.IO.Stream file)
+
+upload
 
 upload
 
@@ -264,6 +270,8 @@ Name | Type | Description  | Notes
 ## UploadZip
 
 > List&lt;Record&gt; UploadZip (string viewId, string columnId, string fileMappings, System.IO.Stream file)
+
+uploadZip
 
 uploadZip
 

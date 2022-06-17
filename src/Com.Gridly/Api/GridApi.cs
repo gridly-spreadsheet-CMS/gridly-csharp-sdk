@@ -29,7 +29,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -41,7 +41,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -52,7 +52,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -63,7 +63,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -73,7 +73,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -84,7 +84,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -94,7 +94,7 @@ namespace Com.Gridly.Api
         /// list
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -105,7 +105,7 @@ namespace Com.Gridly.Api
         /// list
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -115,7 +115,7 @@ namespace Com.Gridly.Api
         /// listTemplateGrids
         /// </summary>
         /// <remarks>
-        /// 
+        /// listTemplateGrids
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List<Grid></returns>
@@ -125,7 +125,7 @@ namespace Com.Gridly.Api
         /// listTemplateGrids
         /// </summary>
         /// <remarks>
-        /// 
+        /// listTemplateGrids
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List<Grid></returns>
@@ -134,7 +134,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// Update a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -146,7 +146,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// Update a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -159,7 +159,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -172,7 +172,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -184,7 +184,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -196,7 +196,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// Delete a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -207,7 +207,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -219,7 +219,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -230,7 +230,7 @@ namespace Com.Gridly.Api
         /// list
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -242,7 +242,7 @@ namespace Com.Gridly.Api
         /// list
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -253,7 +253,7 @@ namespace Com.Gridly.Api
         /// listTemplateGrids
         /// </summary>
         /// <remarks>
-        /// 
+        /// listTemplateGrids
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -264,7 +264,7 @@ namespace Com.Gridly.Api
         /// listTemplateGrids
         /// </summary>
         /// <remarks>
-        /// 
+        /// listTemplateGrids
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -274,7 +274,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// Update a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -287,7 +287,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// Update a Grid
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -407,7 +407,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -420,7 +420,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -492,7 +492,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -507,7 +507,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -580,7 +580,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete Delete a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -591,7 +591,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete Delete a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -649,7 +649,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete Delete a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -662,7 +662,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete Delete a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -721,7 +721,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -733,7 +733,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -792,7 +792,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -806,7 +806,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -866,7 +866,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// list 
+        /// list Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -878,7 +878,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// list 
+        /// list Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -937,7 +937,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// list 
+        /// list Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -951,7 +951,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// list 
+        /// list Get a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
@@ -1011,7 +1011,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listTemplateGrids 
+        /// listTemplateGrids listTemplateGrids
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List<Grid></returns>
@@ -1022,7 +1022,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listTemplateGrids 
+        /// listTemplateGrids listTemplateGrids
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List<Grid></returns>
@@ -1076,7 +1076,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listTemplateGrids 
+        /// listTemplateGrids listTemplateGrids
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -1089,7 +1089,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// listTemplateGrids 
+        /// listTemplateGrids listTemplateGrids
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
@@ -1144,7 +1144,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update Update a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -1157,7 +1157,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update Update a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -1229,7 +1229,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update Update a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>
@@ -1244,7 +1244,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update Update a Grid
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gridId">gridId</param>

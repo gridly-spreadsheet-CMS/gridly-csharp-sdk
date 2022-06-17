@@ -29,7 +29,7 @@ namespace Com.Gridly.Api
         /// add
         /// </summary>
         /// <remarks>
-        /// 
+        /// add
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -41,7 +41,7 @@ namespace Com.Gridly.Api
         /// add
         /// </summary>
         /// <remarks>
-        /// 
+        /// add
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -52,7 +52,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Column
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -64,7 +64,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Column
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -75,7 +75,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// delete
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -87,7 +87,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// delete
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -98,7 +98,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -110,7 +110,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -121,7 +121,7 @@ namespace Com.Gridly.Api
         /// remove
         /// </summary>
         /// <remarks>
-        /// 
+        /// remove
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -133,7 +133,7 @@ namespace Com.Gridly.Api
         /// remove
         /// </summary>
         /// <remarks>
-        /// 
+        /// remove
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -144,7 +144,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// update
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -157,7 +157,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// update
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -171,7 +171,7 @@ namespace Com.Gridly.Api
         /// add
         /// </summary>
         /// <remarks>
-        /// 
+        /// add
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -184,7 +184,7 @@ namespace Com.Gridly.Api
         /// add
         /// </summary>
         /// <remarks>
-        /// 
+        /// add
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -196,7 +196,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Column
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -209,7 +209,7 @@ namespace Com.Gridly.Api
         /// create
         /// </summary>
         /// <remarks>
-        /// 
+        /// Create a Column
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -221,7 +221,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// delete
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -234,7 +234,7 @@ namespace Com.Gridly.Api
         /// delete
         /// </summary>
         /// <remarks>
-        /// 
+        /// delete
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -246,7 +246,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -259,7 +259,7 @@ namespace Com.Gridly.Api
         /// get
         /// </summary>
         /// <remarks>
-        /// 
+        /// get
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -271,7 +271,7 @@ namespace Com.Gridly.Api
         /// remove
         /// </summary>
         /// <remarks>
-        /// 
+        /// remove
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -284,7 +284,7 @@ namespace Com.Gridly.Api
         /// remove
         /// </summary>
         /// <remarks>
-        /// 
+        /// remove
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -296,7 +296,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// update
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -310,7 +310,7 @@ namespace Com.Gridly.Api
         /// update
         /// </summary>
         /// <remarks>
-        /// 
+        /// update
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -431,7 +431,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// add 
+        /// add add
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -444,7 +444,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// add 
+        /// add add
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -508,7 +508,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// add 
+        /// add add
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -523,7 +523,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// add 
+        /// add add
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -588,7 +588,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Column
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -601,7 +601,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Column
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -673,7 +673,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Column
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -688,7 +688,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create 
+        /// create Create a Column
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
@@ -761,7 +761,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete delete
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -773,7 +773,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete delete
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -836,7 +836,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete delete
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -850,7 +850,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// delete 
+        /// delete delete
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -914,7 +914,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -927,7 +927,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -991,7 +991,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1006,7 +1006,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// get 
+        /// get get
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1071,7 +1071,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// remove 
+        /// remove remove
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1083,7 +1083,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// remove 
+        /// remove remove
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1146,7 +1146,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// remove 
+        /// remove remove
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1160,7 +1160,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// remove 
+        /// remove remove
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1224,7 +1224,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update update
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1238,7 +1238,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update update
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1315,7 +1315,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update update
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>
@@ -1331,7 +1331,7 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// update 
+        /// update update
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="columnId">columnId</param>

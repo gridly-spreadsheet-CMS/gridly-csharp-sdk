@@ -18,6 +18,8 @@ Method | HTTP request | Description
 
 create
 
+create
+
 ### Example
 
 ```csharp
@@ -99,6 +101,8 @@ Name | Type | Description  | Notes
 
 delete
 
+delete
+
 ### Example
 
 ```csharp
@@ -176,6 +180,8 @@ void (empty response body)
 ## Fetch
 
 > List&lt;Record&gt; Fetch (string viewId, List<string> columnIds = null, string page = null, string query = null, string sort = null, FetchFileOption? fetchFileOption = null)
+
+fetch
 
 fetch
 
@@ -268,6 +274,8 @@ Name | Type | Description  | Notes
 
 update
 
+update
+
 ### Example
 
 ```csharp
@@ -346,6 +354,8 @@ Name | Type | Description  | Notes
 ## UpdateRecord
 
 > Record UpdateRecord (string id, string viewId, SetRecord setRecord, string path = null)
+
+updateRecord
 
 updateRecord
 

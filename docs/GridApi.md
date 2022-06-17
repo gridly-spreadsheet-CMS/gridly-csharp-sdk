@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 create
 
+Create a Grid
+
 ### Example
 
 ```csharp
@@ -100,6 +102,8 @@ Name | Type | Description  | Notes
 
 delete
 
+Delete a Grid
+
 ### Example
 
 ```csharp
@@ -177,6 +181,8 @@ void (empty response body)
 > Grid Get (string gridId)
 
 get
+
+Get a Grid
 
 ### Example
 
@@ -257,6 +263,8 @@ Name | Type | Description  | Notes
 
 list
 
+Get a Grid
+
 ### Example
 
 ```csharp
@@ -336,6 +344,8 @@ Name | Type | Description  | Notes
 
 listTemplateGrids
 
+listTemplateGrids
+
 ### Example
 
 ```csharp
@@ -410,6 +420,8 @@ This endpoint does not need any parameter.
 > Grid Update (string gridId, UpdateGrid updateGrid)
 
 update
+
+Update a Grid
 
 ### Example
 
