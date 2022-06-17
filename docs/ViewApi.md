@@ -41,7 +41,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var createView = new CreateView(); // CreateView | createView
+            var createView = new CreateView(); // CreateView | 
 
             try
             {
@@ -65,7 +65,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createView** | [**CreateView**](CreateView.md)| createView | 
+ **createView** | [**CreateView**](CreateView.md)|  | 
 
 ### Return type
 
@@ -85,10 +85,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -98,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## Export
 
-> System.IO.Stream Export (string viewId, List<string> columnIds = null, string fileHeader = null, string query = null, string sort = null, string type = null)
+> System.IO.Stream Export (string viewId, List<string> columnIds = null, ExportFileHeader? fileHeader = null, string query = null, string sort = null, FileType? type = null)
 
 export
 
@@ -124,12 +120,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var viewId = viewId_example;  // string | viewId
+            var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
-            var fileHeader = fileHeader_example;  // string | fileHeader (optional)  (default to columnName)
-            var query = query_example;  // string | query (optional)  (default to "{}")
-            var sort = sort_example;  // string | sort (optional)  (default to "{}")
-            var type = type_example;  // string | type (optional)  (default to csv)
+            var fileHeader = (ExportFileHeader) "none";  // ExportFileHeader? | fileHeader (optional) 
+            var query = "\"{}\"";  // string | query (optional)  (default to "{}")
+            var sort = "\"{}\"";  // string | sort (optional)  (default to "{}")
+            var type = (FileType) "csv";  // FileType? | type (optional) 
 
             try
             {
@@ -155,10 +151,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **fileHeader** | **string**| fileHeader | [optional] [default to columnName]
+ **fileHeader** | **ExportFileHeader?**| fileHeader | [optional] 
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
- **type** | **string**| type | [optional] [default to csv]
+ **type** | **FileType?**| type | [optional] 
 
 ### Return type
 
@@ -177,10 +173,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **0** | default response |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -216,12 +209,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var viewId = viewId_example;  // string | viewId
+            var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
             var include = new List<string>(); // List<string> | include (optional) 
-            var page = page_example;  // string | page (optional)  (default to "{}")
-            var query = query_example;  // string | query (optional)  (default to "{}")
-            var sort = sort_example;  // string | sort (optional)  (default to "{}")
+            var page = "\"{}\"";  // string | page (optional)  (default to "{}")
+            var query = "\"{}\"";  // string | query (optional)  (default to "{}")
+            var sort = "\"{}\"";  // string | sort (optional)  (default to "{}")
 
             try
             {
@@ -270,9 +263,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -308,10 +298,10 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var viewId = viewId_example;  // string | viewId
-            var file = BINARY_DATA_HERE;  // System.IO.Stream | The following file types are supported: csv, tsv, xls, xlsx and JSON
-            var importRequest = importRequest_example;  // string | importRequest (optional) 
-            var type = type_example;  // string | type (optional) 
+            var viewId = "viewId_example";  // string | viewId
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var importRequest = "\"{}\"";  // string | importRequest (optional)  (default to "{}")
+            var type = "csv";  // string | type (optional)  (default to csv)
 
             try
             {
@@ -335,9 +325,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **file** | **System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and JSON | 
- **importRequest** | **string**| importRequest | [optional] 
- **type** | **string**| type | [optional] 
+ **file** | **System.IO.Stream**|  | 
+ **importRequest** | **string**| importRequest | [optional] [default to &quot;{}&quot;]
+ **type** | **string**| type | [optional] [default to csv]
 
 ### Return type
 
@@ -356,11 +346,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
 | **202** | Accepted |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -370,7 +356,7 @@ void (empty response body)
 
 ## List
 
-> List&lt;View&gt; List (string branchId = null, string gridId = null, string type = null)
+> List&lt;View&gt; List (string branchId = null, string gridId = null, ViewType? type = null)
 
 list
 
@@ -396,9 +382,9 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var branchId = branchId_example;  // string | branchId (optional) 
-            var gridId = gridId_example;  // string | gridId (optional) 
-            var type = type_example;  // string | type (optional) 
+            var branchId = "branchId_example";  // string | branchId (optional) 
+            var gridId = "gridId_example";  // string | gridId (optional) 
+            var type = (ViewType) "defaultView";  // ViewType? | type (optional) 
 
             try
             {
@@ -424,7 +410,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **branchId** | **string**| branchId | [optional] 
  **gridId** | **string**| gridId | [optional] 
- **type** | **string**| type | [optional] 
+ **type** | **ViewType?**| type | [optional] 
 
 ### Return type
 
@@ -444,9 +430,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -456,7 +439,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> void Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -482,14 +465,15 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewApi(Configuration.Default);
-            var destinationViewId = destinationViewId_example;  // string | destinationViewId
-            var viewId = viewId_example;  // string | viewId
+            var destinationViewId = "destinationViewId_example";  // string | destinationViewId
+            var viewId = "viewId_example";  // string | viewId
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+                Task result = apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+                Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
@@ -513,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -528,11 +512,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
 | **202** | Accepted |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

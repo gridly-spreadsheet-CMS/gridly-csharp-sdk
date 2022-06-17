@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> Database Create (long projectId, CreateDatabase body)
+> Database Create (long projectId, CreateDatabase createDatabase)
 
 create
 
@@ -41,13 +41,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var projectId = 789;  // long | projectId
-            var body = new CreateDatabase(); // CreateDatabase | body
+            var projectId = 789L;  // long | projectId
+            var createDatabase = new CreateDatabase(); // CreateDatabase | 
 
             try
             {
                 // create
-                Database result = apiInstance.Create(projectId, body);
+                Database result = apiInstance.Create(projectId, createDatabase);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -67,7 +67,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+ **createDatabase** | [**CreateDatabase**](CreateDatabase.md)|  | 
 
 ### Return type
 
@@ -87,10 +87,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -126,7 +122,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
+            var dbId = "dbId_example";  // string | dbId
 
             try
             {
@@ -169,8 +165,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -180,7 +174,7 @@ void (empty response body)
 
 ## Duplicate
 
-> Database Duplicate (string dbId, long projectId, CreateDatabase body)
+> Database Duplicate (string dbId, long projectId, CreateDatabase createDatabase)
 
 duplicate
 
@@ -206,14 +200,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
-            var projectId = 789;  // long | projectId
-            var body = new CreateDatabase(); // CreateDatabase | body
+            var dbId = "dbId_example";  // string | dbId
+            var projectId = 789L;  // long | projectId
+            var createDatabase = new CreateDatabase(); // CreateDatabase | 
 
             try
             {
                 // duplicate
-                Database result = apiInstance.Duplicate(dbId, projectId, body);
+                Database result = apiInstance.Duplicate(dbId, projectId, createDatabase);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -234,7 +228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
  **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+ **createDatabase** | [**CreateDatabase**](CreateDatabase.md)|  | 
 
 ### Return type
 
@@ -254,10 +248,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -293,7 +283,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
+            var dbId = "dbId_example";  // string | dbId
 
             try
             {
@@ -337,9 +327,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -376,10 +363,10 @@ namespace Example
 
             var apiInstance = new DatabaseApi(Configuration.Default);
             var expand = new List<string>(); // List<string> | expand (optional) 
-            var page = page_example;  // string | page (optional) 
-            var projectId = 789;  // long? | projectId (optional) 
-            var search = search_example;  // string | search (optional) 
-            var sort = sort_example;  // string | sort (optional) 
+            var page = "\"\"";  // string | page (optional)  (default to "")
+            var projectId = 789L;  // long? | projectId (optional) 
+            var search = "search_example";  // string | search (optional) 
+            var sort = "\"\"";  // string | sort (optional)  (default to "")
 
             try
             {
@@ -404,10 +391,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **expand** | [**List&lt;string&gt;**](string.md)| expand | [optional] 
- **page** | **string**| page | [optional] 
+ **page** | **string**| page | [optional] [default to &quot;&quot;]
  **projectId** | **long?**| projectId | [optional] 
  **search** | **string**| search | [optional] 
- **sort** | **string**| sort | [optional] 
+ **sort** | **string**| sort | [optional] [default to &quot;&quot;]
 
 ### Return type
 
@@ -427,9 +414,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -439,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> Database Update (string dbId, UpdateDatabase body)
+> Database Update (string dbId, UpdateDatabase updateDatabase)
 
 update
 
@@ -465,13 +449,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DatabaseApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
-            var body = new UpdateDatabase(); // UpdateDatabase | body
+            var dbId = "dbId_example";  // string | dbId
+            var updateDatabase = new UpdateDatabase(); // UpdateDatabase | 
 
             try
             {
                 // update
-                Database result = apiInstance.Update(dbId, body);
+                Database result = apiInstance.Update(dbId, updateDatabase);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -491,7 +475,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
- **body** | [**UpdateDatabase**](UpdateDatabase.md)| body | 
+ **updateDatabase** | [**UpdateDatabase**](UpdateDatabase.md)|  | 
 
 ### Return type
 
@@ -511,10 +495,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

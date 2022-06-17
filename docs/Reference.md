@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ColumnId** | **string** |  | [optional] 
-**GridId** | **string** |  | [optional] 
-**SelectionType** | **string** |  | [optional] 
+**GridId** | **string** |  | 
+**ColumnId** | **string** |  | 
 **Type** | **string** |  | [optional] 
+**SelectionType** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

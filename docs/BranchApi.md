@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> Branch Create (CreateBranch createBranch, string branchId = null, string gridId = null)
+> Branch Create (CreateBranch createBranch, string gridId = null, string branchId = null)
 
 create
 
@@ -40,14 +40,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BranchApi(Configuration.Default);
-            var createBranch = new CreateBranch(); // CreateBranch | createBranch
-            var branchId = branchId_example;  // string | branchId (optional) 
-            var gridId = gridId_example;  // string | gridId (optional) 
+            var createBranch = new CreateBranch(); // CreateBranch | 
+            var gridId = "gridId_example";  // string | gridId (optional) 
+            var branchId = "branchId_example";  // string | branchId (optional) 
 
             try
             {
                 // create
-                Branch result = apiInstance.Create(createBranch, branchId, gridId);
+                Branch result = apiInstance.Create(createBranch, gridId, branchId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -66,9 +66,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createBranch** | [**CreateBranch**](CreateBranch.md)| createBranch | 
- **branchId** | **string**| branchId | [optional] 
+ **createBranch** | [**CreateBranch**](CreateBranch.md)|  | 
  **gridId** | **string**| gridId | [optional] 
+ **branchId** | **string**| branchId | [optional] 
 
 ### Return type
 
@@ -88,9 +88,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -126,7 +123,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BranchApi(Configuration.Default);
-            var branchId = branchId_example;  // string | branchId
+            var branchId = "branchId_example";  // string | branchId
 
             try
             {
@@ -169,8 +166,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -206,7 +201,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BranchApi(Configuration.Default);
-            var branchId = branchId_example;  // string | branchId
+            var branchId = "branchId_example";  // string | branchId
 
             try
             {
@@ -250,9 +245,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -288,7 +280,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BranchApi(Configuration.Default);
-            var gridId = gridId_example;  // string | gridId
+            var gridId = "gridId_example";  // string | gridId
 
             try
             {
@@ -332,9 +324,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -344,7 +333,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> void Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
+> Task Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -370,14 +359,15 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BranchApi(Configuration.Default);
-            var branchId = branchId_example;  // string | branchId
-            var destinationBranchId = destinationBranchId_example;  // string | destinationBranchId
+            var branchId = "branchId_example";  // string | branchId
+            var destinationBranchId = "destinationBranchId_example";  // string | destinationBranchId
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                apiInstance.Merge(branchId, destinationBranchId, mergeRecordOptions);
+                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeRecordOptions);
+                Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
@@ -401,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
@@ -416,11 +406,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
 | **202** | Accepted |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

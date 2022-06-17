@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
 **Columns** | [**List&lt;ViewColumn&gt;**](ViewColumn.md) |  | [optional] 
 **GridId** | **string** |  | [optional] 
 **GridStatus** | **string** |  | [optional] 
-**Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Records** | [**List&lt;Record&gt;**](Record.md) |  | [optional] 
 

@@ -41,8 +41,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
-            var createGrid = new CreateGrid(); // CreateGrid | createGrid
+            var dbId = "dbId_example";  // string | dbId
+            var createGrid = new CreateGrid(); // CreateGrid | 
 
             try
             {
@@ -67,7 +67,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
- **createGrid** | [**CreateGrid**](CreateGrid.md)| createGrid | 
+ **createGrid** | [**CreateGrid**](CreateGrid.md)|  | 
 
 ### Return type
 
@@ -87,9 +87,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -125,7 +122,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(Configuration.Default);
-            var gridId = gridId_example;  // string | gridId
+            var gridId = "gridId_example";  // string | gridId
 
             try
             {
@@ -168,8 +165,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -205,7 +200,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(Configuration.Default);
-            var gridId = gridId_example;  // string | gridId
+            var gridId = "gridId_example";  // string | gridId
 
             try
             {
@@ -249,9 +244,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -287,7 +279,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(Configuration.Default);
-            var dbId = dbId_example;  // string | dbId
+            var dbId = "dbId_example";  // string | dbId
 
             try
             {
@@ -331,9 +323,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -409,9 +398,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -447,8 +433,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(Configuration.Default);
-            var gridId = gridId_example;  // string | gridId
-            var updateGrid = new UpdateGrid(); // UpdateGrid | updateGrid
+            var gridId = "gridId_example";  // string | gridId
+            var updateGrid = new UpdateGrid(); // UpdateGrid | 
 
             try
             {
@@ -473,7 +459,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gridId** | **string**| gridId | 
- **updateGrid** | [**UpdateGrid**](UpdateGrid.md)| updateGrid | 
+ **updateGrid** | [**UpdateGrid**](UpdateGrid.md)|  | 
 
 ### Return type
 
@@ -493,9 +479,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
