@@ -119,7 +119,7 @@ namespace Com.Gridly.Test
             //string viewId = null;
             //System.IO.Stream file = null;
             //string importRequest = null;
-            //string type = null;
+            //FileType? type = null;
             //instance.ImportView(viewId, file, importRequest, type);
             
         }
@@ -133,7 +133,7 @@ namespace Com.Gridly.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string branchId = null;
             //string gridId = null;
-            //ViewType? type = null;
+            //string type = null;
             //var response = instance.List(branchId, gridId, type);
             //Assert.IsInstanceOf(typeof(List<View>), response, "response is List<View>");
         }

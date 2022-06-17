@@ -53,7 +53,6 @@ docs/ViewColumn.md
 docs/ViewColumnApi.md
 docs/ViewDependencyApi.md
 docs/ViewFileApi.md
-docs/ViewType.md
 git_push.sh
 mono_nunit_test.sh
 src/Com.Gridly.Test/Api/BranchApiTests.cs
@@ -129,4 +128,3 @@ src/Com.Gridly/Model/UpdateProject.cs
 src/Com.Gridly/Model/UploadedFile.cs
 src/Com.Gridly/Model/View.cs
 src/Com.Gridly/Model/ViewColumn.cs
-src/Com.Gridly/Model/ViewType.cs
