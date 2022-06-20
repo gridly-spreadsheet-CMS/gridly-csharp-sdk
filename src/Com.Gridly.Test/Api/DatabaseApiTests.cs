@@ -71,8 +71,8 @@ namespace Com.Gridly.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long projectId = null;
-            //CreateDatabase createDatabase = null;
-            //var response = instance.Create(projectId, createDatabase);
+            //CreateDatabase body = null;
+            //var response = instance.Create(projectId, body);
             //Assert.IsInstanceOf(typeof(Database), response, "response is Database");
         }
         
@@ -97,8 +97,8 @@ namespace Com.Gridly.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string dbId = null;
             //long projectId = null;
-            //CreateDatabase createDatabase = null;
-            //var response = instance.Duplicate(dbId, projectId, createDatabase);
+            //CreateDatabase body = null;
+            //var response = instance.Duplicate(dbId, projectId, body);
             //Assert.IsInstanceOf(typeof(Database), response, "response is Database");
         }
         
@@ -138,8 +138,8 @@ namespace Com.Gridly.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string dbId = null;
-            //UpdateDatabase updateDatabase = null;
-            //var response = instance.Update(dbId, updateDatabase);
+            //UpdateDatabase body = null;
+            //var response = instance.Update(dbId, body);
             //Assert.IsInstanceOf(typeof(Database), response, "response is Database");
         }
         

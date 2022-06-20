@@ -21,7 +21,6 @@ docs/DeleteRecord.md
 docs/Dependency.md
 docs/ExportFileHeader.md
 docs/FetchFileOption.md
-docs/FileType.md
 docs/Grid.md
 docs/GridApi.md
 docs/Group.md
@@ -86,6 +85,7 @@ src/Com.Gridly/Client/IApiAccessor.cs
 src/Com.Gridly/Client/IReadableConfiguration.cs
 src/Com.Gridly/Client/OpenAPIDateConverter.cs
 src/Com.Gridly/Com.Gridly.csproj
+src/Com.Gridly/Com.Gridly.csproj
 src/Com.Gridly/Model/AddViewColumn.cs
 src/Com.Gridly/Model/Branch.cs
 src/Com.Gridly/Model/Cell.cs
@@ -104,7 +104,6 @@ src/Com.Gridly/Model/DeleteRecord.cs
 src/Com.Gridly/Model/Dependency.cs
 src/Com.Gridly/Model/ExportFileHeader.cs
 src/Com.Gridly/Model/FetchFileOption.cs
-src/Com.Gridly/Model/FileType.cs
 src/Com.Gridly/Model/Grid.cs
 src/Com.Gridly/Model/Group.cs
 src/Com.Gridly/Model/NumberFormat.cs

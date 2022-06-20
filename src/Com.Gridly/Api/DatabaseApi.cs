@@ -33,9 +33,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        Database Create (long projectId, CreateDatabase createDatabase);
+        Database Create (long projectId, CreateDatabase body);
 
         /// <summary>
         /// create
@@ -45,9 +45,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        ApiResponse<Database> CreateWithHttpInfo (long projectId, CreateDatabase createDatabase);
+        ApiResponse<Database> CreateWithHttpInfo (long projectId, CreateDatabase body);
         /// <summary>
         /// delete
         /// </summary>
@@ -78,9 +78,9 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        Database Duplicate (string dbId, long projectId, CreateDatabase createDatabase);
+        Database Duplicate (string dbId, long projectId, CreateDatabase body);
 
         /// <summary>
         /// duplicate
@@ -91,9 +91,9 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        ApiResponse<Database> DuplicateWithHttpInfo (string dbId, long projectId, CreateDatabase createDatabase);
+        ApiResponse<Database> DuplicateWithHttpInfo (string dbId, long projectId, CreateDatabase body);
         /// <summary>
         /// get
         /// </summary>
@@ -152,9 +152,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        Database Update (string dbId, UpdateDatabase updateDatabase);
+        Database Update (string dbId, UpdateDatabase body);
 
         /// <summary>
         /// update
@@ -164,9 +164,9 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        ApiResponse<Database> UpdateWithHttpInfo (string dbId, UpdateDatabase updateDatabase);
+        ApiResponse<Database> UpdateWithHttpInfo (string dbId, UpdateDatabase body);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -177,10 +177,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        System.Threading.Tasks.Task<Database> CreateAsync (long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Database> CreateAsync (long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// create
@@ -190,10 +190,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Database>> CreateWithHttpInfoAsync (long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Database>> CreateWithHttpInfoAsync (long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// delete
         /// </summary>
@@ -226,10 +226,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        System.Threading.Tasks.Task<Database> DuplicateAsync (string dbId, long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Database> DuplicateAsync (string dbId, long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// duplicate
@@ -240,10 +240,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Database>> DuplicateWithHttpInfoAsync (string dbId, long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Database>> DuplicateWithHttpInfoAsync (string dbId, long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// get
         /// </summary>
@@ -306,10 +306,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        System.Threading.Tasks.Task<Database> UpdateAsync (string dbId, UpdateDatabase updateDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Database> UpdateAsync (string dbId, UpdateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// update
@@ -319,10 +319,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Database>> UpdateWithHttpInfoAsync (string dbId, UpdateDatabase updateDatabase, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Database>> UpdateWithHttpInfoAsync (string dbId, UpdateDatabase body, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -439,11 +439,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        public Database Create (long projectId, CreateDatabase createDatabase)
+        public Database Create (long projectId, CreateDatabase body)
         {
-             ApiResponse<Database> localVarResponse = CreateWithHttpInfo(projectId, createDatabase);
+             ApiResponse<Database> localVarResponse = CreateWithHttpInfo(projectId, body);
              return localVarResponse.Data;
         }
 
@@ -452,16 +452,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        public ApiResponse<Database> CreateWithHttpInfo (long projectId, CreateDatabase createDatabase)
+        public ApiResponse<Database> CreateWithHttpInfo (long projectId, CreateDatabase body)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
                 throw new ApiException(400, "Missing required parameter 'projectId' when calling DatabaseApi->Create");
-            // verify the required parameter 'createDatabase' is set
-            if (createDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'createDatabase' when calling DatabaseApi->Create");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Create");
 
             var localVarPath = "/v1/databases";
             var localVarPathParams = new Dictionary<String, String>();
@@ -486,13 +486,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (projectId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "projectId", projectId)); // query parameter
-            if (createDatabase != null && createDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required
@@ -524,12 +524,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        public async System.Threading.Tasks.Task<Database> CreateAsync (long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Database> CreateAsync (long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Database> localVarResponse = await CreateWithHttpInfoAsync(projectId, createDatabase, cancellationToken);
+             ApiResponse<Database> localVarResponse = await CreateWithHttpInfoAsync(projectId, body, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -539,17 +539,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Database>> CreateWithHttpInfoAsync (long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Database>> CreateWithHttpInfoAsync (long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
                 throw new ApiException(400, "Missing required parameter 'projectId' when calling DatabaseApi->Create");
-            // verify the required parameter 'createDatabase' is set
-            if (createDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'createDatabase' when calling DatabaseApi->Create");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Create");
 
             var localVarPath = "/v1/databases";
             var localVarPathParams = new Dictionary<String, String>();
@@ -574,13 +574,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (projectId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "projectId", projectId)); // query parameter
-            if (createDatabase != null && createDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required
@@ -754,11 +754,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        public Database Duplicate (string dbId, long projectId, CreateDatabase createDatabase)
+        public Database Duplicate (string dbId, long projectId, CreateDatabase body)
         {
-             ApiResponse<Database> localVarResponse = DuplicateWithHttpInfo(dbId, projectId, createDatabase);
+             ApiResponse<Database> localVarResponse = DuplicateWithHttpInfo(dbId, projectId, body);
              return localVarResponse.Data;
         }
 
@@ -768,9 +768,9 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        public ApiResponse<Database> DuplicateWithHttpInfo (string dbId, long projectId, CreateDatabase createDatabase)
+        public ApiResponse<Database> DuplicateWithHttpInfo (string dbId, long projectId, CreateDatabase body)
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
@@ -778,9 +778,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'projectId' is set
             if (projectId == null)
                 throw new ApiException(400, "Missing required parameter 'projectId' when calling DatabaseApi->Duplicate");
-            // verify the required parameter 'createDatabase' is set
-            if (createDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'createDatabase' when calling DatabaseApi->Duplicate");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Duplicate");
 
             var localVarPath = "/v1/databases/{dbId}/duplicate";
             var localVarPathParams = new Dictionary<String, String>();
@@ -806,13 +806,13 @@ namespace Com.Gridly.Api
 
             if (dbId != null) localVarPathParams.Add("dbId", this.Configuration.ApiClient.ParameterToString(dbId)); // path parameter
             if (projectId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "projectId", projectId)); // query parameter
-            if (createDatabase != null && createDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required
@@ -845,12 +845,12 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        public async System.Threading.Tasks.Task<Database> DuplicateAsync (string dbId, long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Database> DuplicateAsync (string dbId, long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Database> localVarResponse = await DuplicateWithHttpInfoAsync(dbId, projectId, createDatabase, cancellationToken);
+             ApiResponse<Database> localVarResponse = await DuplicateWithHttpInfoAsync(dbId, projectId, body, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -861,10 +861,10 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
         /// <param name="projectId">projectId</param>
-        /// <param name="createDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Database>> DuplicateWithHttpInfoAsync (string dbId, long projectId, CreateDatabase createDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Database>> DuplicateWithHttpInfoAsync (string dbId, long projectId, CreateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
@@ -872,9 +872,9 @@ namespace Com.Gridly.Api
             // verify the required parameter 'projectId' is set
             if (projectId == null)
                 throw new ApiException(400, "Missing required parameter 'projectId' when calling DatabaseApi->Duplicate");
-            // verify the required parameter 'createDatabase' is set
-            if (createDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'createDatabase' when calling DatabaseApi->Duplicate");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Duplicate");
 
             var localVarPath = "/v1/databases/{dbId}/duplicate";
             var localVarPathParams = new Dictionary<String, String>();
@@ -900,13 +900,13 @@ namespace Com.Gridly.Api
 
             if (dbId != null) localVarPathParams.Add("dbId", this.Configuration.ApiClient.ParameterToString(dbId)); // path parameter
             if (projectId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "projectId", projectId)); // query parameter
-            if (createDatabase != null && createDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = createDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1246,11 +1246,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>Database</returns>
-        public Database Update (string dbId, UpdateDatabase updateDatabase)
+        public Database Update (string dbId, UpdateDatabase body)
         {
-             ApiResponse<Database> localVarResponse = UpdateWithHttpInfo(dbId, updateDatabase);
+             ApiResponse<Database> localVarResponse = UpdateWithHttpInfo(dbId, body);
              return localVarResponse.Data;
         }
 
@@ -1259,16 +1259,16 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <returns>ApiResponse of Database</returns>
-        public ApiResponse<Database> UpdateWithHttpInfo (string dbId, UpdateDatabase updateDatabase)
+        public ApiResponse<Database> UpdateWithHttpInfo (string dbId, UpdateDatabase body)
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
                 throw new ApiException(400, "Missing required parameter 'dbId' when calling DatabaseApi->Update");
-            // verify the required parameter 'updateDatabase' is set
-            if (updateDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'updateDatabase' when calling DatabaseApi->Update");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Update");
 
             var localVarPath = "/v1/databases/{dbId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1293,13 +1293,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (dbId != null) localVarPathParams.Add("dbId", this.Configuration.ApiClient.ParameterToString(dbId)); // path parameter
-            if (updateDatabase != null && updateDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required
@@ -1331,12 +1331,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Database</returns>
-        public async System.Threading.Tasks.Task<Database> UpdateAsync (string dbId, UpdateDatabase updateDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Database> UpdateAsync (string dbId, UpdateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Database> localVarResponse = await UpdateWithHttpInfoAsync(dbId, updateDatabase, cancellationToken);
+             ApiResponse<Database> localVarResponse = await UpdateWithHttpInfoAsync(dbId, body, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1346,17 +1346,17 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dbId">dbId</param>
-        /// <param name="updateDatabase"></param>
+        /// <param name="body">body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Database)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Database>> UpdateWithHttpInfoAsync (string dbId, UpdateDatabase updateDatabase, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Database>> UpdateWithHttpInfoAsync (string dbId, UpdateDatabase body, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'dbId' is set
             if (dbId == null)
                 throw new ApiException(400, "Missing required parameter 'dbId' when calling DatabaseApi->Update");
-            // verify the required parameter 'updateDatabase' is set
-            if (updateDatabase == null)
-                throw new ApiException(400, "Missing required parameter 'updateDatabase' when calling DatabaseApi->Update");
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling DatabaseApi->Update");
 
             var localVarPath = "/v1/databases/{dbId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1381,13 +1381,13 @@ namespace Com.Gridly.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (dbId != null) localVarPathParams.Add("dbId", this.Configuration.ApiClient.ParameterToString(dbId)); // path parameter
-            if (updateDatabase != null && updateDatabase.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(updateDatabase); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = updateDatabase; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (ApiKey) required

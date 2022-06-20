@@ -71,8 +71,8 @@ namespace Com.Gridly.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string viewId = null;
-            //List<SetRecord> setRecord = null;
-            //var response = instance.Create(viewId, setRecord);
+            //List<SetRecord> createRecords = null;
+            //var response = instance.Create(viewId, createRecords);
             //Assert.IsInstanceOf(typeof(List<Record>), response, "response is List<Record>");
         }
         

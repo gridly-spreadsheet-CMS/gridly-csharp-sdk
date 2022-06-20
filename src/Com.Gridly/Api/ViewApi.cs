@@ -58,9 +58,9 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream Export (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?));
+        System.IO.Stream Export (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string));
 
         /// <summary>
         /// export
@@ -74,9 +74,9 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> ExportWithHttpInfo (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?));
+        ApiResponse<System.IO.Stream> ExportWithHttpInfo (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string));
         /// <summary>
         /// get
         /// </summary>
@@ -118,9 +118,9 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns></returns>
-        void ImportView (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?));
+        void ImportView (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string));
 
         /// <summary>
         /// importView
@@ -132,9 +132,9 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ImportViewWithHttpInfo (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?));
+        ApiResponse<Object> ImportViewWithHttpInfo (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string));
         /// <summary>
         /// list
         /// </summary>
@@ -222,10 +222,10 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> ExportAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> ExportAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// export
@@ -239,10 +239,10 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportWithHttpInfoAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportWithHttpInfoAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// get
         /// </summary>
@@ -286,10 +286,10 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ImportViewAsync (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task ImportViewAsync (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// importView
@@ -301,10 +301,10 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ImportViewWithHttpInfoAsync (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ImportViewWithHttpInfoAsync (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// list
         /// </summary>
@@ -640,9 +640,9 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream Export (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?))
+        public System.IO.Stream Export (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string))
         {
              ApiResponse<System.IO.Stream> localVarResponse = ExportWithHttpInfo(viewId, columnIds, fileHeader, query, sort, type);
              return localVarResponse.Data;
@@ -657,9 +657,9 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse<System.IO.Stream> ExportWithHttpInfo (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?))
+        public ApiResponse<System.IO.Stream> ExportWithHttpInfo (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
@@ -726,10 +726,10 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> ExportAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> ExportAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
              ApiResponse<System.IO.Stream> localVarResponse = await ExportWithHttpInfoAsync(viewId, columnIds, fileHeader, query, sort, type, cancellationToken);
              return localVarResponse.Data;
@@ -745,10 +745,10 @@ namespace Com.Gridly.Api
         /// <param name="fileHeader">fileHeader (optional)</param>
         /// <param name="query">query (optional, default to &quot;{}&quot;)</param>
         /// <param name="sort">sort (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportWithHttpInfoAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportWithHttpInfoAsync (string viewId, List<string> columnIds = default(List<string>), ExportFileHeader? fileHeader = default(ExportFileHeader?), string query = default(string), string sort = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
@@ -988,9 +988,9 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns></returns>
-        public void ImportView (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?))
+        public void ImportView (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string))
         {
              ImportViewWithHttpInfo(viewId, file, importRequest, type);
         }
@@ -1002,9 +1002,9 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ImportViewWithHttpInfo (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?))
+        public ApiResponse<Object> ImportViewWithHttpInfo (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
@@ -1070,10 +1070,10 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ImportViewAsync (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task ImportViewAsync (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
              await ImportViewWithHttpInfoAsync(viewId, file, importRequest, type, cancellationToken);
 
@@ -1086,10 +1086,10 @@ namespace Com.Gridly.Api
         /// <param name="viewId">viewId</param>
         /// <param name="file">The following file types are supported: csv, tsv, xls, xlsx and json</param>
         /// <param name="importRequest">importRequest (optional, default to &quot;{}&quot;)</param>
-        /// <param name="type">type (optional)</param>
+        /// <param name="type">type (optional, default to csv)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ImportViewWithHttpInfoAsync (string viewId, System.IO.Stream file, string importRequest = default(string), FileType? type = default(FileType?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ImportViewWithHttpInfoAsync (string viewId, System.IO.Stream file, string importRequest = default(string), string type = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)

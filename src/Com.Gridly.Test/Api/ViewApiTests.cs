@@ -87,7 +87,7 @@ namespace Com.Gridly.Test
             //ExportFileHeader? fileHeader = null;
             //string query = null;
             //string sort = null;
-            //FileType? type = null;
+            //string type = null;
             //var response = instance.Export(viewId, columnIds, fileHeader, query, sort, type);
             //Assert.IsInstanceOf(typeof(System.IO.Stream), response, "response is System.IO.Stream");
         }
@@ -119,7 +119,7 @@ namespace Com.Gridly.Test
             //string viewId = null;
             //System.IO.Stream file = null;
             //string importRequest = null;
-            //FileType? type = null;
+            //string type = null;
             //instance.ImportView(viewId, file, importRequest, type);
             
         }
