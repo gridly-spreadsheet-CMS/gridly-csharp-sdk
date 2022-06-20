@@ -65,6 +65,7 @@ src/Com.Gridly.Test/Api/ViewColumnApiTests.cs
 src/Com.Gridly.Test/Api/ViewDependencyApiTests.cs
 src/Com.Gridly.Test/Api/ViewFileApiTests.cs
 src/Com.Gridly.Test/Com.Gridly.Test.csproj
+src/Com.Gridly.Test/Com.Gridly.Test.csproj
 src/Com.Gridly/Api/BranchApi.cs
 src/Com.Gridly/Api/DatabaseApi.cs
 src/Com.Gridly/Api/GridApi.cs
