@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **TemplateGridId** | **string** |  | [optional] 
+**RecordIdentifierType** | **string** |  | [optional] 
 **Metadata** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

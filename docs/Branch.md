@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Description** | **string** |  | [optional] 
 **Metadata** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
+**RecordIdentifierType** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **IsMaster** | **bool** |  | [optional] 
 
