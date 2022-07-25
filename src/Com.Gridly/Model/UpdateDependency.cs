@@ -69,7 +69,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets NewId
         /// </summary>
-        [DataMember(Name="newId", EmitDefaultValue=false)]
+        [DataMember(Name="newId", EmitDefaultValue=true)]
         public string NewId { get; set; }
 
         /// <summary>

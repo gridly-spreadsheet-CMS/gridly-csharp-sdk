@@ -143,7 +143,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name="type", EmitDefaultValue=true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewColumn" /> class.
@@ -177,61 +177,61 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DependsOn
         /// </summary>
-        [DataMember(Name="dependsOn", EmitDefaultValue=false)]
+        [DataMember(Name="dependsOn", EmitDefaultValue=true)]
         public string DependsOn { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name="description", EmitDefaultValue=true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets IsSource
         /// </summary>
-        [DataMember(Name="isSource", EmitDefaultValue=false)]
+        [DataMember(Name="isSource", EmitDefaultValue=true)]
         public bool IsSource { get; set; }
 
         /// <summary>
         /// Gets or Sets IsTarget
         /// </summary>
-        [DataMember(Name="isTarget", EmitDefaultValue=false)]
+        [DataMember(Name="isTarget", EmitDefaultValue=true)]
         public bool IsTarget { get; set; }
 
         /// <summary>
         /// Gets or Sets LanguageCode
         /// </summary>
-        [DataMember(Name="languageCode", EmitDefaultValue=false)]
+        [DataMember(Name="languageCode", EmitDefaultValue=true)]
         public string LanguageCode { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name="name", EmitDefaultValue=true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets NumberFormat
         /// </summary>
-        [DataMember(Name="numberFormat", EmitDefaultValue=false)]
+        [DataMember(Name="numberFormat", EmitDefaultValue=true)]
         public NumberFormat NumberFormat { get; set; }
 
         /// <summary>
         /// Gets or Sets Reference
         /// </summary>
-        [DataMember(Name="reference", EmitDefaultValue=false)]
+        [DataMember(Name="reference", EmitDefaultValue=true)]
         public ColumnReference Reference { get; set; }
 
         /// <summary>
         /// Gets or Sets SelectionOptions
         /// </summary>
-        [DataMember(Name="selectionOptions", EmitDefaultValue=false)]
+        [DataMember(Name="selectionOptions", EmitDefaultValue=true)]
         public List<string> SelectionOptions { get; set; }
 
 

@@ -59,7 +59,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets DependencyStatus
         /// </summary>
-        [DataMember(Name="dependencyStatus", EmitDefaultValue=false)]
+        [DataMember(Name="dependencyStatus", EmitDefaultValue=true)]
         public DependencyStatusEnum? DependencyStatus { get; set; }
         /// <summary>
         /// Defines SourceStatus
@@ -102,7 +102,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets SourceStatus
         /// </summary>
-        [DataMember(Name="sourceStatus", EmitDefaultValue=false)]
+        [DataMember(Name="sourceStatus", EmitDefaultValue=true)]
         public SourceStatusEnum? SourceStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SetCell" /> class.
@@ -124,21 +124,21 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets ColumnId
         /// </summary>
-        [DataMember(Name="columnId", EmitDefaultValue=false)]
+        [DataMember(Name="columnId", EmitDefaultValue=true)]
         public string ColumnId { get; set; }
 
 
         /// <summary>
         /// Gets or Sets ReferencedIds
         /// </summary>
-        [DataMember(Name="referencedIds", EmitDefaultValue=false)]
+        [DataMember(Name="referencedIds", EmitDefaultValue=true)]
         public List<string> ReferencedIds { get; set; }
 
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name="value", EmitDefaultValue=true)]
         public Object Value { get; set; }
 
         /// <summary>

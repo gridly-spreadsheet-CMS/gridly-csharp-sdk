@@ -44,13 +44,13 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Editable
         /// </summary>
-        [DataMember(Name="editable", EmitDefaultValue=false)]
+        [DataMember(Name="editable", EmitDefaultValue=true)]
         public bool Editable { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=true)]
         public string Id { get; set; }
 
         /// <summary>

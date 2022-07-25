@@ -1554,7 +1554,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets LanguageCode
         /// </summary>
-        [DataMember(Name="languageCode", EmitDefaultValue=false)]
+        [DataMember(Name="languageCode", EmitDefaultValue=true)]
         public LanguageCodeEnum? LanguageCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateColumn" /> class.
@@ -1611,7 +1611,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name="description", EmitDefaultValue=true)]
         public string Description { get; set; }
 
 
@@ -1619,25 +1619,25 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets NumberFormat
         /// </summary>
-        [DataMember(Name="numberFormat", EmitDefaultValue=false)]
+        [DataMember(Name="numberFormat", EmitDefaultValue=true)]
         public NumberFormat NumberFormat { get; set; }
 
         /// <summary>
         /// Gets or Sets SelectionOptions
         /// </summary>
-        [DataMember(Name="selectionOptions", EmitDefaultValue=false)]
+        [DataMember(Name="selectionOptions", EmitDefaultValue=true)]
         public List<string> SelectionOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets Reference
         /// </summary>
-        [DataMember(Name="reference", EmitDefaultValue=false)]
+        [DataMember(Name="reference", EmitDefaultValue=true)]
         public Reference Reference { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=true)]
         public string Id { get; set; }
 
         /// <summary>
