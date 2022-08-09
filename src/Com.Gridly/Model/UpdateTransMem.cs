@@ -25,34 +25,26 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// UpdateProject
+    /// UpdateTransMem
     /// </summary>
     [DataContract]
-    public partial class UpdateProject :  IEquatable<UpdateProject>, IValidatableObject
+    public partial class UpdateTransMem :  IEquatable<UpdateTransMem>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateProject" /> class.
+        /// Initializes a new instance of the <see cref="UpdateTransMem" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected UpdateProject() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateProject" /> class.
-        /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         /// <param name="description">description.</param>
-        public UpdateProject(string name = default(string), string description = default(string))
+        /// <param name="projectIds">projectIds.</param>
+        /// <param name="fuzzyRatio">fuzzyRatio.</param>
+        /// <param name="isDisabled">isDisabled.</param>
+        public UpdateTransMem(string name = default(string), string description = default(string), List<long> projectIds = default(List<long>), int fuzzyRatio = default(int), bool isDisabled = default(bool))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new InvalidDataException("name is a required property for UpdateProject and cannot be null");
-            }
-            else
-            {
-                this.Name = name;
-            }
-
+            this.Name = name;
             this.Description = description;
+            this.ProjectIds = projectIds;
+            this.FuzzyRatio = fuzzyRatio;
+            this.IsDisabled = isDisabled;
         }
 
         /// <summary>
@@ -68,15 +60,36 @@ namespace Com.Gridly.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProjectIds
+        /// </summary>
+        [DataMember(Name="projectIds", EmitDefaultValue=true)]
+        public List<long> ProjectIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FuzzyRatio
+        /// </summary>
+        [DataMember(Name="fuzzyRatio", EmitDefaultValue=true)]
+        public int FuzzyRatio { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDisabled
+        /// </summary>
+        [DataMember(Name="isDisabled", EmitDefaultValue=true)]
+        public bool IsDisabled { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateProject {\n");
+            sb.Append("class UpdateTransMem {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
+            sb.Append("  FuzzyRatio: ").Append(FuzzyRatio).Append("\n");
+            sb.Append("  IsDisabled: ").Append(IsDisabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +110,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateProject);
+            return this.Equals(input as UpdateTransMem);
         }
 
         /// <summary>
-        /// Returns true if UpdateProject instances are equal
+        /// Returns true if UpdateTransMem instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateProject to be compared</param>
+        /// <param name="input">Instance of UpdateTransMem to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateProject input)
+        public bool Equals(UpdateTransMem input)
         {
             if (input == null)
                 return false;
@@ -120,6 +133,22 @@ namespace Com.Gridly.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.ProjectIds == input.ProjectIds ||
+                    this.ProjectIds != null &&
+                    input.ProjectIds != null &&
+                    this.ProjectIds.SequenceEqual(input.ProjectIds)
+                ) && 
+                (
+                    this.FuzzyRatio == input.FuzzyRatio ||
+                    (this.FuzzyRatio != null &&
+                    this.FuzzyRatio.Equals(input.FuzzyRatio))
+                ) && 
+                (
+                    this.IsDisabled == input.IsDisabled ||
+                    (this.IsDisabled != null &&
+                    this.IsDisabled.Equals(input.IsDisabled))
                 );
         }
 
@@ -136,6 +165,12 @@ namespace Com.Gridly.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ProjectIds != null)
+                    hashCode = hashCode * 59 + this.ProjectIds.GetHashCode();
+                if (this.FuzzyRatio != null)
+                    hashCode = hashCode * 59 + this.FuzzyRatio.GetHashCode();
+                if (this.IsDisabled != null)
+                    hashCode = hashCode * 59 + this.IsDisabled.GetHashCode();
                 return hashCode;
             }
         }
@@ -147,30 +182,6 @@ namespace Com.Gridly.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if(this.Name != null && this.Name.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 50.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if(this.Name != null && this.Name.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
-            // Description (string) maxLength
-            if(this.Description != null && this.Description.Length > 255)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 255.", new [] { "Description" });
-            }
-
-            // Description (string) minLength
-            if(this.Description != null && this.Description.Length < 0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be greater than 0.", new [] { "Description" });
-            }
-
             yield break;
         }
     }
