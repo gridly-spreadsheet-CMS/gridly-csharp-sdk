@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ## Export
 
-> System.IO.Stream Export (string tmId, string sourceLang = null, List<string> targetLangs = null)
+> System.IO.Stream Export (string tmId, ExportFormat? format = null, string sourceLang = null, List<string> targetLangs = null)
 
 Export translation memory tmx file
 
@@ -360,13 +360,14 @@ namespace Example
 
             var apiInstance = new TransmemApi(Configuration.Default);
             var tmId = "tmId_example";  // string | 
+            var format = new ExportFormat();  // ExportFormat? |  (optional) 
             var sourceLang = "sourceLang_example";  // string |  (optional) 
             var targetLangs = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // Export translation memory tmx file
-                System.IO.Stream result = apiInstance.Export(tmId, sourceLang, targetLangs);
+                System.IO.Stream result = apiInstance.Export(tmId, format, sourceLang, targetLangs);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -386,6 +387,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmId** | **string**|  | 
+ **format** | **ExportFormat?**|  | [optional] 
  **sourceLang** | **string**|  | [optional] 
  **targetLangs** | [**List&lt;string&gt;**](string.md)|  | [optional] 
 

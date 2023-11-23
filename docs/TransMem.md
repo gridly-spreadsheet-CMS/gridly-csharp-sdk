@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **ProjectIds** | **List&lt;long&gt;** |  | [optional] 
-**IsDefault** | **bool** |  | [optional] 
 **IsDisabled** | **bool** |  | [optional] 
+**IsPausedConsuming** | **bool** |  | [optional] 
+**PopulateTranslationStatus** | **TranslationStatus** |  | [optional] 
+**ContextLookup** | **bool** |  | [optional] 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 
-**FuzzyRatio** | **int** |  | [optional] 
-**AlteredBy** | **long** |  | [optional] 
-**AlteredTime** | **DateTime** |  | [optional] 
+**FuzzyMatch** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

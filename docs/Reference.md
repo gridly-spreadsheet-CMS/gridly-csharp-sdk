@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GridId** | **string** |  | 
+**BranchId** | **string** |  | [optional] 
 **ColumnId** | **string** |  | 
 **Type** | **string** |  | [optional] 
 **SelectionType** | **string** |  | [optional] 

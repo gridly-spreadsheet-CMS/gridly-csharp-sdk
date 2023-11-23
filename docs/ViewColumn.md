@@ -6,11 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**DateTimeFormat** | [**DateTimeFormat**](DateTimeFormat.md) |  | [optional] 
 **DependsOn** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
+**Editable** | **bool** |  | [optional] 
+**Formula** | [**Formula**](Formula.md) |  | [optional] 
 **IsSource** | **bool** |  | [optional] 
 **IsTarget** | **bool** |  | [optional] 
 **LanguageCode** | **string** |  | [optional] 
+**LocalizationType** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **NumberFormat** | [**NumberFormat**](NumberFormat.md) |  | [optional] 
 **Reference** | [**ColumnReference**](ColumnReference.md) |  | [optional] 
