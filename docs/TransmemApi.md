@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ## CreateWithFile
 
-> TransMem CreateWithFile (System.IO.Stream file)
+> TransMem CreateWithFile (FileUpload file)
 
 Create a new translation memory by uploading tmx file
 
@@ -201,7 +201,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransmemApi(Configuration.Default);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var file = new FileUpload(); // FileUpload | 
 
             try
             {
@@ -225,7 +225,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **System.IO.Stream**|  | 
+ **file** | [**FileUpload**](FileUpload.md)|  | 
 
 ### Return type
 
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ## ImportTmx
 
-> void ImportTmx (string tmId, System.IO.Stream file)
+> void ImportTmx (string tmId, FileUpload file)
 
 Import a translation memory from tmx file
 
@@ -524,7 +524,7 @@ namespace Example
 
             var apiInstance = new TransmemApi(Configuration.Default);
             var tmId = "tmId_example";  // string | 
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var file = new FileUpload(); // FileUpload | 
 
             try
             {
@@ -548,7 +548,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmId** | **string**|  | 
- **file** | **System.IO.Stream**|  | 
+ **file** | [**FileUpload**](FileUpload.md)|  | 
 
 ### Return type
 

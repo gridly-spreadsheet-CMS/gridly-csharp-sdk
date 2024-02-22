@@ -4,6 +4,8 @@ README.md
 docs/AddViewColumn.md
 docs/Branch.md
 docs/BranchApi.md
+docs/BranchDiffCell.md
+docs/BranchDiffRecord.md
 docs/Cell.md
 docs/CellHistory.md
 docs/ColumnReference.md
@@ -126,6 +128,8 @@ src/Com.Gridly/Client/OpenAPIDateConverter.cs
 src/Com.Gridly/Com.Gridly.csproj
 src/Com.Gridly/Model/AddViewColumn.cs
 src/Com.Gridly/Model/Branch.cs
+src/Com.Gridly/Model/BranchDiffCell.cs
+src/Com.Gridly/Model/BranchDiffRecord.cs
 src/Com.Gridly/Model/Cell.cs
 src/Com.Gridly/Model/CellHistory.cs
 src/Com.Gridly/Model/ColumnReference.cs
