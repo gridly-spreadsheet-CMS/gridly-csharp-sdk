@@ -37,7 +37,7 @@ namespace Com.Gridly.Model
         /// <param name="timeFormat">timeFormat.</param>
         /// <param name="zoneOffset">zoneOffset.</param>
         /// <param name="showTimeZone">showTimeZone.</param>
-        public DateTimeFormat(DateFormat dateFormat = default(DateFormat), string timeFormat = default(string), string zoneOffset = default(string), bool showTimeZone = default(bool))
+        public DateTimeFormat(string dateFormat = default(string), string timeFormat = default(string), string zoneOffset = default(string), bool showTimeZone = default(bool))
         {
             this.DateFormat = dateFormat;
             this.TimeFormat = timeFormat;
@@ -49,7 +49,7 @@ namespace Com.Gridly.Model
         /// Gets or Sets DateFormat
         /// </summary>
         [DataMember(Name="dateFormat", EmitDefaultValue=true)]
-        public DateFormat DateFormat { get; set; }
+        public string DateFormat { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeFormat

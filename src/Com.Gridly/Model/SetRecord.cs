@@ -33,27 +33,27 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SetRecord" /> class.
         /// </summary>
-        /// <param name="cells">cells.</param>
         /// <param name="id">id.</param>
+        /// <param name="cells">cells.</param>
         /// <param name="path">path.</param>
-        public SetRecord(List<SetCell> cells = default(List<SetCell>), string id = default(string), string path = default(string))
+        public SetRecord(string id = default(string), List<SetCell> cells = default(List<SetCell>), string path = default(string))
         {
-            this.Cells = cells;
             this.Id = id;
+            this.Cells = cells;
             this.Path = path;
         }
-
-        /// <summary>
-        /// Gets or Sets Cells
-        /// </summary>
-        [DataMember(Name="cells", EmitDefaultValue=true)]
-        public List<SetCell> Cells { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=true)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cells
+        /// </summary>
+        [DataMember(Name="cells", EmitDefaultValue=true)]
+        public List<SetCell> Cells { get; set; }
 
         /// <summary>
         /// Gets or Sets Path
@@ -69,8 +69,8 @@ namespace Com.Gridly.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SetRecord {\n");
-            sb.Append("  Cells: ").Append(Cells).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Cells: ").Append(Cells).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,15 +107,15 @@ namespace Com.Gridly.Model
 
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.Cells == input.Cells ||
                     this.Cells != null &&
                     input.Cells != null &&
                     this.Cells.SequenceEqual(input.Cells)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
                 ) && 
                 (
                     this.Path == input.Path ||
@@ -133,10 +133,10 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cells != null)
-                    hashCode = hashCode * 59 + this.Cells.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Cells != null)
+                    hashCode = hashCode * 59 + this.Cells.GetHashCode();
                 if (this.Path != null)
                     hashCode = hashCode * 59 + this.Path.GetHashCode();
                 return hashCode;

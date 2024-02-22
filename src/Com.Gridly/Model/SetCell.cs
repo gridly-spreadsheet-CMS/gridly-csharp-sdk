@@ -113,29 +113,21 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SetCell" /> class.
         /// </summary>
-        /// <param name="dependencyStatus">dependencyStatus.</param>
-        /// <param name="sourceStatus">sourceStatus.</param>
-        /// <param name="referencedIds">referencedIds.</param>
         /// <param name="columnId">columnId.</param>
-        /// <param name="value">value.</param>
+        /// <param name="dependencyStatus">dependencyStatus.</param>
         /// <param name="lengthLimit">lengthLimit.</param>
-        public SetCell(DependencyStatusEnum? dependencyStatus = default(DependencyStatusEnum?), SourceStatusEnum? sourceStatus = default(SourceStatusEnum?), List<string> referencedIds = default(List<string>), string columnId = default(string), Object value = default(Object), int lengthLimit = default(int))
+        /// <param name="referencedIds">referencedIds.</param>
+        /// <param name="sourceStatus">sourceStatus.</param>
+        /// <param name="value">value.</param>
+        public SetCell(string columnId = default(string), DependencyStatusEnum? dependencyStatus = default(DependencyStatusEnum?), int lengthLimit = default(int), List<string> referencedIds = default(List<string>), SourceStatusEnum? sourceStatus = default(SourceStatusEnum?), Object value = default(Object))
         {
-            this.DependencyStatus = dependencyStatus;
-            this.SourceStatus = sourceStatus;
-            this.ReferencedIds = referencedIds;
             this.ColumnId = columnId;
-            this.Value = value;
+            this.DependencyStatus = dependencyStatus;
             this.LengthLimit = lengthLimit;
+            this.ReferencedIds = referencedIds;
+            this.SourceStatus = sourceStatus;
+            this.Value = value;
         }
-
-
-
-        /// <summary>
-        /// Gets or Sets ReferencedIds
-        /// </summary>
-        [DataMember(Name="referencedIds", EmitDefaultValue=true)]
-        public List<string> ReferencedIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ColumnId
@@ -143,17 +135,25 @@ namespace Com.Gridly.Model
         [DataMember(Name="columnId", EmitDefaultValue=true)]
         public string ColumnId { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Value
-        /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=true)]
-        public Object Value { get; set; }
 
         /// <summary>
         /// Gets or Sets LengthLimit
         /// </summary>
         [DataMember(Name="lengthLimit", EmitDefaultValue=true)]
         public int LengthLimit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferencedIds
+        /// </summary>
+        [DataMember(Name="referencedIds", EmitDefaultValue=true)]
+        public List<string> ReferencedIds { get; set; }
+
+
+        /// <summary>
+        /// Gets or Sets Value
+        /// </summary>
+        [DataMember(Name="value", EmitDefaultValue=true)]
+        public Object Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -163,12 +163,12 @@ namespace Com.Gridly.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SetCell {\n");
-            sb.Append("  DependencyStatus: ").Append(DependencyStatus).Append("\n");
-            sb.Append("  SourceStatus: ").Append(SourceStatus).Append("\n");
-            sb.Append("  ReferencedIds: ").Append(ReferencedIds).Append("\n");
             sb.Append("  ColumnId: ").Append(ColumnId).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  DependencyStatus: ").Append(DependencyStatus).Append("\n");
             sb.Append("  LengthLimit: ").Append(LengthLimit).Append("\n");
+            sb.Append("  ReferencedIds: ").Append(ReferencedIds).Append("\n");
+            sb.Append("  SourceStatus: ").Append(SourceStatus).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -204,14 +204,19 @@ namespace Com.Gridly.Model
 
             return 
                 (
+                    this.ColumnId == input.ColumnId ||
+                    (this.ColumnId != null &&
+                    this.ColumnId.Equals(input.ColumnId))
+                ) && 
+                (
                     this.DependencyStatus == input.DependencyStatus ||
                     (this.DependencyStatus != null &&
                     this.DependencyStatus.Equals(input.DependencyStatus))
                 ) && 
                 (
-                    this.SourceStatus == input.SourceStatus ||
-                    (this.SourceStatus != null &&
-                    this.SourceStatus.Equals(input.SourceStatus))
+                    this.LengthLimit == input.LengthLimit ||
+                    (this.LengthLimit != null &&
+                    this.LengthLimit.Equals(input.LengthLimit))
                 ) && 
                 (
                     this.ReferencedIds == input.ReferencedIds ||
@@ -220,19 +225,14 @@ namespace Com.Gridly.Model
                     this.ReferencedIds.SequenceEqual(input.ReferencedIds)
                 ) && 
                 (
-                    this.ColumnId == input.ColumnId ||
-                    (this.ColumnId != null &&
-                    this.ColumnId.Equals(input.ColumnId))
+                    this.SourceStatus == input.SourceStatus ||
+                    (this.SourceStatus != null &&
+                    this.SourceStatus.Equals(input.SourceStatus))
                 ) && 
                 (
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.LengthLimit == input.LengthLimit ||
-                    (this.LengthLimit != null &&
-                    this.LengthLimit.Equals(input.LengthLimit))
                 );
         }
 
@@ -245,18 +245,18 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DependencyStatus != null)
-                    hashCode = hashCode * 59 + this.DependencyStatus.GetHashCode();
-                if (this.SourceStatus != null)
-                    hashCode = hashCode * 59 + this.SourceStatus.GetHashCode();
-                if (this.ReferencedIds != null)
-                    hashCode = hashCode * 59 + this.ReferencedIds.GetHashCode();
                 if (this.ColumnId != null)
                     hashCode = hashCode * 59 + this.ColumnId.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.DependencyStatus != null)
+                    hashCode = hashCode * 59 + this.DependencyStatus.GetHashCode();
                 if (this.LengthLimit != null)
                     hashCode = hashCode * 59 + this.LengthLimit.GetHashCode();
+                if (this.ReferencedIds != null)
+                    hashCode = hashCode * 59 + this.ReferencedIds.GetHashCode();
+                if (this.SourceStatus != null)
+                    hashCode = hashCode * 59 + this.SourceStatus.GetHashCode();
+                if (this.Value != null)
+                    hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

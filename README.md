@@ -217,7 +217,6 @@ Class | Method | HTTP request | Description
  - [Model.CreateTransMem](docs/CreateTransMem.md)
  - [Model.CreateView](docs/CreateView.md)
  - [Model.Database](docs/Database.md)
- - [Model.DateFormat](docs/DateFormat.md)
  - [Model.DateTimeFormat](docs/DateTimeFormat.md)
  - [Model.DeleteDependency](docs/DeleteDependency.md)
  - [Model.DeleteFile](docs/DeleteFile.md)

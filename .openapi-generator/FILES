@@ -23,7 +23,6 @@ docs/CreateTransMem.md
 docs/CreateView.md
 docs/Database.md
 docs/DatabaseApi.md
-docs/DateFormat.md
 docs/DateTimeFormat.md
 docs/DeleteDependency.md
 docs/DeleteFile.md
@@ -146,7 +145,6 @@ src/Com.Gridly/Model/CreateShareView.cs
 src/Com.Gridly/Model/CreateTransMem.cs
 src/Com.Gridly/Model/CreateView.cs
 src/Com.Gridly/Model/Database.cs
-src/Com.Gridly/Model/DateFormat.cs
 src/Com.Gridly/Model/DateTimeFormat.cs
 src/Com.Gridly/Model/DeleteDependency.cs
 src/Com.Gridly/Model/DeleteFile.cs
