@@ -1,5 +1,5 @@
 
-# Com.Gridly.Model.Project2
+# Com.Gridly.Model.GlossaryProject
 
 ## Properties
 

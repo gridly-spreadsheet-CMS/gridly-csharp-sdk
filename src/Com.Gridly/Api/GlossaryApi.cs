@@ -79,7 +79,7 @@ namespace Com.Gridly.Api
         /// <param name="format"> (optional)</param>
         /// <param name="langs"> (optional)</param>
         /// <returns></returns>
-        void ExportFile (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>));
+        void ExportFile (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>));
 
         /// <summary>
         /// Export a glossary
@@ -93,7 +93,7 @@ namespace Com.Gridly.Api
         /// <param name="format"> (optional)</param>
         /// <param name="langs"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ExportFileWithHttpInfo (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>));
+        ApiResponse<Object> ExportFileWithHttpInfo (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>));
         /// <summary>
         /// get glossary info
         /// </summary>
@@ -243,7 +243,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ExportFileAsync (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task ExportFileAsync (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Export a glossary
@@ -258,7 +258,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// get glossary info
         /// </summary>
@@ -771,7 +771,7 @@ namespace Com.Gridly.Api
         /// <param name="format"> (optional)</param>
         /// <param name="langs"> (optional)</param>
         /// <returns></returns>
-        public void ExportFile (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>))
+        public void ExportFile (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>))
         {
              ExportFileWithHttpInfo(id, fields, format, langs);
         }
@@ -785,7 +785,7 @@ namespace Com.Gridly.Api
         /// <param name="format"> (optional)</param>
         /// <param name="langs"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ExportFileWithHttpInfo (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>))
+        public ApiResponse<Object> ExportFileWithHttpInfo (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -850,7 +850,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ExportFileAsync (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task ExportFileAsync (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
         {
              await ExportFileWithHttpInfoAsync(id, fields, format, langs, cancellationToken);
 
@@ -866,7 +866,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync (long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync (long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)

@@ -29,7 +29,7 @@ namespace Com.Gridly.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.2.12";
+        public const string Version = "1.2.11";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -114,7 +114,7 @@ namespace Com.Gridly.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Gridly CSharp SDK 1.2.12";
+            UserAgent = "Gridly CSharp SDK 1.2.11";
             BasePath = "https://api.gridly.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -187,7 +187,7 @@ namespace Com.Gridly.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Gridly CSharp SDK 1.2.12"
+            string userAgent = "Gridly CSharp SDK 1.2.11"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -421,7 +421,7 @@ namespace Com.Gridly.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 4.29.1\n";
-            report += "    SDK Package Version: 1.2.12\n";
+            report += "    SDK Package Version: 1.2.11\n";
 
             return report;
         }

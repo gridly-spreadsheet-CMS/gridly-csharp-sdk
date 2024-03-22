@@ -25,12 +25,12 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// Defines ExportFormat1
+    /// Defines GlossaryExportFormat
     /// </summary>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum ExportFormat1
+    public enum GlossaryExportFormat
     {
         /// <summary>
         /// Enum Csv for value: csv

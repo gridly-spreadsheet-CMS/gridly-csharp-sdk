@@ -25,17 +25,17 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// Project2
+    /// GlossaryProject
     /// </summary>
     [DataContract]
-    public partial class Project2 :  IEquatable<Project2>, IValidatableObject
+    public partial class GlossaryProject :  IEquatable<GlossaryProject>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Project2" /> class.
+        /// Initializes a new instance of the <see cref="GlossaryProject" /> class.
         /// </summary>
         /// <param name="projectId">projectId.</param>
         /// <param name="databaseIds">databaseIds.</param>
-        public Project2(long projectId = default(long), List<string> databaseIds = default(List<string>))
+        public GlossaryProject(long projectId = default(long), List<string> databaseIds = default(List<string>))
         {
             this.ProjectId = projectId;
             this.DatabaseIds = databaseIds;
@@ -60,7 +60,7 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Project2 {\n");
+            sb.Append("class GlossaryProject {\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  DatabaseIds: ").Append(DatabaseIds).Append("\n");
             sb.Append("}\n");
@@ -83,15 +83,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Project2);
+            return this.Equals(input as GlossaryProject);
         }
 
         /// <summary>
-        /// Returns true if Project2 instances are equal
+        /// Returns true if GlossaryProject instances are equal
         /// </summary>
-        /// <param name="input">Instance of Project2 to be compared</param>
+        /// <param name="input">Instance of GlossaryProject to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Project2 input)
+        public bool Equals(GlossaryProject input)
         {
             if (input == null)
                 return false;
