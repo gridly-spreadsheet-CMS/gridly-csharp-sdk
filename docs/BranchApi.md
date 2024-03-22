@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> Task Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
+> Task Merge (string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -543,12 +543,13 @@ namespace Example
             var apiInstance = new BranchApi(Configuration.Default);
             var branchId = "branchId_example";  // string | branchId
             var destinationBranchId = "destinationBranchId_example";  // string | destinationBranchId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeRecordOptions);
+                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -569,6 +570,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **branchId** | **string**| branchId | 
  **destinationBranchId** | **string**| destinationBranchId | 
+ **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
  **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
 
 ### Return type
@@ -581,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

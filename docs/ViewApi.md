@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> Task Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -563,12 +563,13 @@ namespace Example
             var apiInstance = new ViewApi(Configuration.Default);
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+                Task result = apiInstance.Merge(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -589,6 +590,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **destinationViewId** | **string**| destinationViewId | 
  **viewId** | **string**| viewId | 
+ **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
  **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
 
 ### Return type
@@ -601,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

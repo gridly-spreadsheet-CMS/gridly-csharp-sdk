@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ## FetchHistories
 
-> List&lt;RecordHistory&gt; FetchHistories (string viewId, string recordId, string page = null)
+> List&lt;RecordHistory&gt; FetchHistories (string viewId, string recordId, FetchRecordHistoryRequest fetchRequest)
 
 fetchHistories
 
@@ -305,12 +305,12 @@ namespace Example
             var apiInstance = new RecordApi(Configuration.Default);
             var viewId = "viewId_example";  // string | viewId
             var recordId = "recordId_example";  // string | recordId
-            var page = "\"{}\"";  // string | page (optional)  (default to "{}")
+            var fetchRequest = new FetchRecordHistoryRequest(); // FetchRecordHistoryRequest | fetchRequest
 
             try
             {
                 // fetchHistories
-                List<RecordHistory> result = apiInstance.FetchHistories(viewId, recordId, page);
+                List<RecordHistory> result = apiInstance.FetchHistories(viewId, recordId, fetchRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **recordId** | **string**| recordId | 
- **page** | **string**| page | [optional] [default to &quot;{}&quot;]
+ **fetchRequest** | [**FetchRecordHistoryRequest**](FetchRecordHistoryRequest.md)| fetchRequest | 
 
 ### Return type
 
