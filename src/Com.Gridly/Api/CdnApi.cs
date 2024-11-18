@@ -22,162 +22,174 @@ namespace Com.Gridly.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IShareViewApi : IApiAccessor
+    public interface ICdnApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// create
+        /// list
         /// </summary>
         /// <remarks>
-        /// create
+        /// list
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <returns>ShareView</returns>
-        ShareView Create (string viewId, CreateShareView createShareView);
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
+        /// <returns>List<CDN></returns>
+        List<CDN> List (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?));
 
         /// <summary>
-        /// create
+        /// list
         /// </summary>
         /// <remarks>
-        /// create
+        /// list
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <returns>ApiResponse of ShareView</returns>
-        ApiResponse<ShareView> CreateWithHttpInfo (string viewId, CreateShareView createShareView);
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
+        /// <returns>ApiResponse of List<CDN></returns>
+        ApiResponse<List<CDN>> ListWithHttpInfo (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?));
         /// <summary>
-        /// delete
+        /// publish
         /// </summary>
         /// <remarks>
-        /// delete
+        /// publish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns></returns>
-        void Delete (string viewId);
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>CDN</returns>
+        CDN Publish (string cdnId);
 
         /// <summary>
-        /// delete
+        /// publish
         /// </summary>
         /// <remarks>
-        /// delete
+        /// publish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo (string viewId);
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>ApiResponse of CDN</returns>
+        ApiResponse<CDN> PublishWithHttpInfo (string cdnId);
         /// <summary>
-        /// get
+        /// unPublish
         /// </summary>
         /// <remarks>
-        /// get
+        /// unPublish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ShareView</returns>
-        ShareView Get (string viewId);
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>CDN</returns>
+        CDN UnPublish (string cdnId);
 
         /// <summary>
-        /// get
+        /// unPublish
         /// </summary>
         /// <remarks>
-        /// get
+        /// unPublish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ApiResponse of ShareView</returns>
-        ApiResponse<ShareView> GetWithHttpInfo (string viewId);
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>ApiResponse of CDN</returns>
+        ApiResponse<CDN> UnPublishWithHttpInfo (string cdnId);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// create
+        /// list
         /// </summary>
         /// <remarks>
-        /// create
+        /// list
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ShareView</returns>
-        System.Threading.Tasks.Task<ShareView> CreateAsync (string viewId, CreateShareView createShareView, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of List<CDN></returns>
+        System.Threading.Tasks.Task<List<CDN>> ListAsync (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// create
+        /// list
         /// </summary>
         /// <remarks>
-        /// create
+        /// list
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (ShareView)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShareView>> CreateWithHttpInfoAsync (string viewId, CreateShareView createShareView, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;CDN&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<CDN>>> ListWithHttpInfoAsync (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// delete
+        /// publish
         /// </summary>
         /// <remarks>
-        /// delete
+        /// publish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="cdnId">cdnId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of CDN</returns>
+        System.Threading.Tasks.Task<CDN> PublishAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// delete
+        /// publish
         /// </summary>
         /// <remarks>
-        /// delete
+        /// publish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="cdnId">cdnId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (CDN)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CDN>> PublishWithHttpInfoAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// get
+        /// unPublish
         /// </summary>
         /// <remarks>
-        /// get
+        /// unPublish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="cdnId">cdnId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ShareView</returns>
-        System.Threading.Tasks.Task<ShareView> GetAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of CDN</returns>
+        System.Threading.Tasks.Task<CDN> UnPublishAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// get
+        /// unPublish
         /// </summary>
         /// <remarks>
-        /// get
+        /// unPublish
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="cdnId">cdnId</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (ShareView)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ShareView>> GetWithHttpInfoAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (CDN)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CDN>> UnPublishWithHttpInfoAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ShareViewApi : IShareViewApi
+    public partial class CdnApi : ICdnApi
     {
         private Com.Gridly.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShareViewApi"/> class.
+        /// Initializes a new instance of the <see cref="CdnApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ShareViewApi(String basePath)
+        public CdnApi(String basePath)
         {
             this.Configuration = new Com.Gridly.Client.Configuration { BasePath = basePath };
 
@@ -185,10 +197,10 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShareViewApi"/> class
+        /// Initializes a new instance of the <see cref="CdnApi"/> class
         /// </summary>
         /// <returns></returns>
-        public ShareViewApi()
+        public CdnApi()
         {
             this.Configuration = Com.Gridly.Client.Configuration.Default;
 
@@ -196,12 +208,12 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShareViewApi"/> class
+        /// Initializes a new instance of the <see cref="CdnApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ShareViewApi(Com.Gridly.Client.Configuration configuration = null)
+        public CdnApi(Com.Gridly.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Com.Gridly.Client.Configuration.Default;
@@ -275,344 +287,38 @@ namespace Com.Gridly.Api
         }
 
         /// <summary>
-        /// create create
+        /// list list
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <returns>ShareView</returns>
-        public ShareView Create (string viewId, CreateShareView createShareView)
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
+        /// <returns>List<CDN></returns>
+        public List<CDN> List (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?))
         {
-             ApiResponse<ShareView> localVarResponse = CreateWithHttpInfo(viewId, createShareView);
+             ApiResponse<List<CDN>> localVarResponse = ListWithHttpInfo(gridId, offset, limit, ids, published);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// create create
+        /// list list
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <returns>ApiResponse of ShareView</returns>
-        public ApiResponse<ShareView> CreateWithHttpInfo (string viewId, CreateShareView createShareView)
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
+        /// <returns>ApiResponse of List<CDN></returns>
+        public ApiResponse<List<CDN>> ListWithHttpInfo (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?))
         {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Create");
-            // verify the required parameter 'createShareView' is set
-            if (createShareView == null)
-                throw new ApiException(400, "Missing required parameter 'createShareView' when calling ShareViewApi->Create");
+            // verify the required parameter 'gridId' is set
+            if (gridId == null)
+                throw new ApiException(400, "Missing required parameter 'gridId' when calling CdnApi->List");
 
-            var localVarPath = "/v1/views/{viewId}/shares";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (createShareView != null && createShareView.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createShareView); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = createShareView; // byte array
-            }
-
-            // authentication (ApiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Create", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ShareView>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (ShareView) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShareView)));
-        }
-
-        /// <summary>
-        /// create create
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ShareView</returns>
-        public async System.Threading.Tasks.Task<ShareView> CreateAsync (string viewId, CreateShareView createShareView, CancellationToken cancellationToken = default(CancellationToken))
-        {
-             ApiResponse<ShareView> localVarResponse = await CreateWithHttpInfoAsync(viewId, createShareView, cancellationToken);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// create create
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="createShareView"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (ShareView)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ShareView>> CreateWithHttpInfoAsync (string viewId, CreateShareView createShareView, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Create");
-            // verify the required parameter 'createShareView' is set
-            if (createShareView == null)
-                throw new ApiException(400, "Missing required parameter 'createShareView' when calling ShareViewApi->Create");
-
-            var localVarPath = "/v1/views/{viewId}/shares";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-            if (createShareView != null && createShareView.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(createShareView); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = createShareView; // byte array
-            }
-
-            // authentication (ApiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType, cancellationToken);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Create", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ShareView>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (ShareView) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShareView)));
-        }
-
-        /// <summary>
-        /// delete delete
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns></returns>
-        public void Delete (string viewId)
-        {
-             DeleteWithHttpInfo(viewId);
-        }
-
-        /// <summary>
-        /// delete delete
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteWithHttpInfo (string viewId)
-        {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Delete");
-
-            var localVarPath = "/v1/views/{viewId}/shares";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-
-            // authentication (ApiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Delete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                null);
-        }
-
-        /// <summary>
-        /// delete delete
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken))
-        {
-             await DeleteWithHttpInfoAsync(viewId, cancellationToken);
-
-        }
-
-        /// <summary>
-        /// delete delete
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Delete");
-
-            var localVarPath = "/v1/views/{viewId}/shares";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
-
-            // authentication (ApiKey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType, cancellationToken);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Delete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                null);
-        }
-
-        /// <summary>
-        /// get get
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ShareView</returns>
-        public ShareView Get (string viewId)
-        {
-             ApiResponse<ShareView> localVarResponse = GetWithHttpInfo(viewId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// get get
-        /// </summary>
-        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
-        /// <returns>ApiResponse of ShareView</returns>
-        public ApiResponse<ShareView> GetWithHttpInfo (string viewId)
-        {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Get");
-
-            var localVarPath = "/v1/views/{viewId}/shares";
+            var localVarPath = "/v1/cdns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -633,7 +339,11 @@ namespace Com.Gridly.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (ids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "ids", ids)); // query parameter
+            if (gridId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "gridId", gridId)); // query parameter
+            if (published != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "published", published)); // query parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -650,43 +360,51 @@ namespace Com.Gridly.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Get", localVarResponse);
+                Exception exception = ExceptionFactory("List", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ShareView>(localVarStatusCode,
+            return new ApiResponse<List<CDN>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (ShareView) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShareView)));
+                (List<CDN>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<CDN>)));
         }
 
         /// <summary>
-        /// get get
+        /// list list
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ShareView</returns>
-        public async System.Threading.Tasks.Task<ShareView> GetAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of List<CDN></returns>
+        public async System.Threading.Tasks.Task<List<CDN>> ListAsync (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<ShareView> localVarResponse = await GetWithHttpInfoAsync(viewId, cancellationToken);
+             ApiResponse<List<CDN>> localVarResponse = await ListWithHttpInfoAsync(gridId, offset, limit, ids, published, cancellationToken);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// get get
+        /// list list
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="viewId">viewId</param>
+        /// <param name="gridId">gridId</param>
+        /// <param name="offset">offset (optional, default to 0)</param>
+        /// <param name="limit">limit (optional, default to 128)</param>
+        /// <param name="ids">ids (optional)</param>
+        /// <param name="published">published (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (ShareView)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ShareView>> GetWithHttpInfoAsync (string viewId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;CDN&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<CDN>>> ListWithHttpInfoAsync (string gridId, int? offset = default(int?), int? limit = default(int?), List<string> ids = default(List<string>), bool? published = default(bool?), CancellationToken cancellationToken = default(CancellationToken))
         {
-            // verify the required parameter 'viewId' is set
-            if (viewId == null)
-                throw new ApiException(400, "Missing required parameter 'viewId' when calling ShareViewApi->Get");
+            // verify the required parameter 'gridId' is set
+            if (gridId == null)
+                throw new ApiException(400, "Missing required parameter 'gridId' when calling CdnApi->List");
 
-            var localVarPath = "/v1/views/{viewId}/shares";
+            var localVarPath = "/v1/cdns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -707,7 +425,11 @@ namespace Com.Gridly.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (viewId != null) localVarPathParams.Add("viewId", this.Configuration.ApiClient.ParameterToString(viewId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (ids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "ids", ids)); // query parameter
+            if (gridId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "gridId", gridId)); // query parameter
+            if (published != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "published", published)); // query parameter
 
             // authentication (ApiKey) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -724,13 +446,303 @@ namespace Com.Gridly.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Get", localVarResponse);
+                Exception exception = ExceptionFactory("List", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ShareView>(localVarStatusCode,
+            return new ApiResponse<List<CDN>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (ShareView) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ShareView)));
+                (List<CDN>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<CDN>)));
+        }
+
+        /// <summary>
+        /// publish publish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>CDN</returns>
+        public CDN Publish (string cdnId)
+        {
+             ApiResponse<CDN> localVarResponse = PublishWithHttpInfo(cdnId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// publish publish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>ApiResponse of CDN</returns>
+        public ApiResponse<CDN> PublishWithHttpInfo (string cdnId)
+        {
+            // verify the required parameter 'cdnId' is set
+            if (cdnId == null)
+                throw new ApiException(400, "Missing required parameter 'cdnId' when calling CdnApi->Publish");
+
+            var localVarPath = "/v1/cdns/{cdnId}/publish";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cdnId != null) localVarPathParams.Add("cdnId", this.Configuration.ApiClient.ParameterToString(cdnId)); // path parameter
+
+            // authentication (ApiKey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Publish", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CDN>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CDN) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CDN)));
+        }
+
+        /// <summary>
+        /// publish publish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of CDN</returns>
+        public async System.Threading.Tasks.Task<CDN> PublishAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<CDN> localVarResponse = await PublishWithHttpInfoAsync(cdnId, cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// publish publish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (CDN)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CDN>> PublishWithHttpInfoAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // verify the required parameter 'cdnId' is set
+            if (cdnId == null)
+                throw new ApiException(400, "Missing required parameter 'cdnId' when calling CdnApi->Publish");
+
+            var localVarPath = "/v1/cdns/{cdnId}/publish";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cdnId != null) localVarPathParams.Add("cdnId", this.Configuration.ApiClient.ParameterToString(cdnId)); // path parameter
+
+            // authentication (ApiKey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Publish", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CDN>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CDN) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CDN)));
+        }
+
+        /// <summary>
+        /// unPublish unPublish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>CDN</returns>
+        public CDN UnPublish (string cdnId)
+        {
+             ApiResponse<CDN> localVarResponse = UnPublishWithHttpInfo(cdnId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// unPublish unPublish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <returns>ApiResponse of CDN</returns>
+        public ApiResponse<CDN> UnPublishWithHttpInfo (string cdnId)
+        {
+            // verify the required parameter 'cdnId' is set
+            if (cdnId == null)
+                throw new ApiException(400, "Missing required parameter 'cdnId' when calling CdnApi->UnPublish");
+
+            var localVarPath = "/v1/cdns/{cdnId}/unpublish";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cdnId != null) localVarPathParams.Add("cdnId", this.Configuration.ApiClient.ParameterToString(cdnId)); // path parameter
+
+            // authentication (ApiKey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnPublish", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CDN>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CDN) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CDN)));
+        }
+
+        /// <summary>
+        /// unPublish unPublish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of CDN</returns>
+        public async System.Threading.Tasks.Task<CDN> UnPublishAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<CDN> localVarResponse = await UnPublishWithHttpInfoAsync(cdnId, cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// unPublish unPublish
+        /// </summary>
+        /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cdnId">cdnId</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (CDN)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CDN>> UnPublishWithHttpInfoAsync (string cdnId, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // verify the required parameter 'cdnId' is set
+            if (cdnId == null)
+                throw new ApiException(400, "Missing required parameter 'cdnId' when calling CdnApi->UnPublish");
+
+            var localVarPath = "/v1/cdns/{cdnId}/unpublish";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cdnId != null) localVarPathParams.Add("cdnId", this.Configuration.ApiClient.ParameterToString(cdnId)); // path parameter
+
+            // authentication (ApiKey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnPublish", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CDN>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CDN) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CDN)));
         }
 
     }

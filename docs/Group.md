@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **ShareType** | **string** |  | [optional] 
 **CreatedDate** | **DateTime** |  | [optional] 
 **LastModifiedDate** | **DateTime** |  | [optional] 
-**IsSystemGroup** | **bool** |  | [optional] 
 **SystemGroup** | **bool** |  | [optional] 
+**IsSystemGroup** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

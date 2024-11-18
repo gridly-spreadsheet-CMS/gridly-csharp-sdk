@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | [optional] 
-**GridId** | **string** |  | [optional] 
+**Name** | **string** |  | 
+**GridId** | **string** |  | 
 **Columns** | [**List&lt;AddViewColumn&gt;**](AddViewColumn.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

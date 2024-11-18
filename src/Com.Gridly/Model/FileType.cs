@@ -25,30 +25,54 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// Defines ImportOption
+    /// Defines FileType
     /// </summary>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum ImportOption
+    public enum FileType
     {
         /// <summary>
-        /// Enum ADD for value: ADD
+        /// Enum csv for value: csv
         /// </summary>
-        [EnumMember(Value = "ADD")]
-        ADD = 1,
+        [EnumMember(Value = "csv")]
+        csv = 1,
 
         /// <summary>
-        /// Enum UPDATE for value: UPDATE
+        /// Enum tsv for value: tsv
         /// </summary>
-        [EnumMember(Value = "UPDATE")]
-        UPDATE = 2,
+        [EnumMember(Value = "tsv")]
+        tsv = 2,
 
         /// <summary>
-        /// Enum UPDATEONLY for value: UPDATE_ONLY
+        /// Enum xls for value: xls
         /// </summary>
-        [EnumMember(Value = "UPDATE_ONLY")]
-        UPDATEONLY = 3
+        [EnumMember(Value = "xls")]
+        xls = 3,
+
+        /// <summary>
+        /// Enum xlsx for value: xlsx
+        /// </summary>
+        [EnumMember(Value = "xlsx")]
+        xlsx = 4,
+
+        /// <summary>
+        /// Enum json for value: json
+        /// </summary>
+        [EnumMember(Value = "json")]
+        json = 5,
+
+        /// <summary>
+        /// Enum po for value: po
+        /// </summary>
+        [EnumMember(Value = "po")]
+        po = 6,
+
+        /// <summary>
+        /// Enum html for value: html
+        /// </summary>
+        [EnumMember(Value = "html")]
+        html = 7
 
     }
 

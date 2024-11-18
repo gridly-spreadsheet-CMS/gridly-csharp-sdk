@@ -1,13 +1,10 @@
 
-# Com.Gridly.Model.UploadZipRequest
+# Com.Gridly.Model.FileType
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ColumnId** | **string** |  | 
-**FileMappings** | **string** |  | 
-**File** | **System.IO.Stream** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -6,6 +6,8 @@ docs/Branch.md
 docs/BranchApi.md
 docs/BranchDiffCell.md
 docs/BranchDiffRecord.md
+docs/CDN.md
+docs/CdnApi.md
 docs/Cell.md
 docs/CellHistory.md
 docs/ColumnReference.md
@@ -35,6 +37,7 @@ docs/ExportFormat.md
 docs/FetchFileOption.md
 docs/FetchRecordHistoryRequest.md
 docs/FileCategory.md
+docs/FileType.md
 docs/FilterField.md
 docs/Formula.md
 docs/Glossary.md
@@ -55,7 +58,6 @@ docs/PathApi.md
 docs/PathList.md
 docs/PathNode.md
 docs/PathSingle.md
-docs/Privilege.md
 docs/Project.md
 docs/ProjectApi.md
 docs/ProjectDetail.md
@@ -66,7 +68,6 @@ docs/RecordIdentifierWrapper.md
 docs/Reference.md
 docs/ReferencedColumn.md
 docs/ReferencedGrid.md
-docs/Role.md
 docs/SetCell.md
 docs/SetRecord.md
 docs/SettingFile.md
@@ -89,7 +90,6 @@ docs/UpdatePath.md
 docs/UpdateProject.md
 docs/UpdateTransMem.md
 docs/UploadSettingFileRequest.md
-docs/UploadZipRequest.md
 docs/UploadedFile.md
 docs/View.md
 docs/ViewApi.md
@@ -101,6 +101,7 @@ docs/ViewStatistic.md
 git_push.sh
 mono_nunit_test.sh
 src/Com.Gridly.Test/Api/BranchApiTests.cs
+src/Com.Gridly.Test/Api/CdnApiTests.cs
 src/Com.Gridly.Test/Api/DatabaseApiTests.cs
 src/Com.Gridly.Test/Api/GlossaryApiTests.cs
 src/Com.Gridly.Test/Api/GridApiTests.cs
@@ -116,6 +117,7 @@ src/Com.Gridly.Test/Api/ViewDependencyApiTests.cs
 src/Com.Gridly.Test/Api/ViewFileApiTests.cs
 src/Com.Gridly.Test/Com.Gridly.Test.csproj
 src/Com.Gridly/Api/BranchApi.cs
+src/Com.Gridly/Api/CdnApi.cs
 src/Com.Gridly/Api/DatabaseApi.cs
 src/Com.Gridly/Api/GlossaryApi.cs
 src/Com.Gridly/Api/GridApi.cs
@@ -143,6 +145,7 @@ src/Com.Gridly/Model/AddViewColumn.cs
 src/Com.Gridly/Model/Branch.cs
 src/Com.Gridly/Model/BranchDiffCell.cs
 src/Com.Gridly/Model/BranchDiffRecord.cs
+src/Com.Gridly/Model/CDN.cs
 src/Com.Gridly/Model/Cell.cs
 src/Com.Gridly/Model/CellHistory.cs
 src/Com.Gridly/Model/ColumnReference.cs
@@ -171,6 +174,7 @@ src/Com.Gridly/Model/ExportFormat.cs
 src/Com.Gridly/Model/FetchFileOption.cs
 src/Com.Gridly/Model/FetchRecordHistoryRequest.cs
 src/Com.Gridly/Model/FileCategory.cs
+src/Com.Gridly/Model/FileType.cs
 src/Com.Gridly/Model/FilterField.cs
 src/Com.Gridly/Model/Formula.cs
 src/Com.Gridly/Model/Glossary.cs
@@ -188,7 +192,6 @@ src/Com.Gridly/Model/NumberFormat.cs
 src/Com.Gridly/Model/PathList.cs
 src/Com.Gridly/Model/PathNode.cs
 src/Com.Gridly/Model/PathSingle.cs
-src/Com.Gridly/Model/Privilege.cs
 src/Com.Gridly/Model/Project.cs
 src/Com.Gridly/Model/ProjectDetail.cs
 src/Com.Gridly/Model/Record.cs
@@ -197,7 +200,6 @@ src/Com.Gridly/Model/RecordIdentifierWrapper.cs
 src/Com.Gridly/Model/Reference.cs
 src/Com.Gridly/Model/ReferencedColumn.cs
 src/Com.Gridly/Model/ReferencedGrid.cs
-src/Com.Gridly/Model/Role.cs
 src/Com.Gridly/Model/SetCell.cs
 src/Com.Gridly/Model/SetRecord.cs
 src/Com.Gridly/Model/SettingFile.cs
@@ -217,7 +219,6 @@ src/Com.Gridly/Model/UpdatePath.cs
 src/Com.Gridly/Model/UpdateProject.cs
 src/Com.Gridly/Model/UpdateTransMem.cs
 src/Com.Gridly/Model/UploadSettingFileRequest.cs
-src/Com.Gridly/Model/UploadZipRequest.cs
 src/Com.Gridly/Model/UploadedFile.cs
 src/Com.Gridly/Model/View.cs
 src/Com.Gridly/Model/ViewColumn.cs

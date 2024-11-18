@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CompanyId** | **long** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Role** | [**Role**](Role.md) |  | [optional] 
+**Type** | **string** |  | [optional] 
 **Databases** | [**List&lt;Database&gt;**](Database.md) |  | [optional] 
 **Groups** | [**List&lt;Group&gt;**](Group.md) |  | [optional] 
 
