@@ -6,7 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create**](RecordApi.md#create) | **POST** /v1/views/{viewId}/records | create
 [**Delete**](RecordApi.md#delete) | **DELETE** /v1/views/{viewId}/records | delete
+[**DownloadRecordHistories**](RecordApi.md#downloadrecordhistories) | **GET** /v1/views/{viewId}/record-histories/export/{taskId} | downloadRecordHistories
+[**ExportRecordHistories**](RecordApi.md#exportrecordhistories) | **POST** /v1/views/{viewId}/record-histories/export | exportRecordHistories
 [**Fetch**](RecordApi.md#fetch) | **GET** /v1/views/{viewId}/records | fetch
+[**FetchHistories**](RecordApi.md#fetchhistories) | **GET** /v1/views/{viewId}/records/{recordId}/histories | fetchHistories
 [**Update**](RecordApi.md#update) | **PATCH** /v1/views/{viewId}/records | update
 [**UpdateRecord**](RecordApi.md#updaterecord) | **PATCH** /v1/views/{viewId}/records/{id} | updateRecord
 
@@ -14,7 +17,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> List&lt;Record&gt; Create (string viewId, List<SetRecord> setRecord)
+> List&lt;Record&gt; Create (string viewId, List<SetRecord> createRecords)
 
 create
 
@@ -43,12 +46,12 @@ namespace Example
 
             var apiInstance = new RecordApi(Configuration.Default);
             var viewId = "viewId_example";  // string | viewId
-            var setRecord = new List<SetRecord>(); // List<SetRecord> | 
+            var createRecords = new List<SetRecord>(); // List<SetRecord> | createRecords
 
             try
             {
                 // create
-                List<Record> result = apiInstance.Create(viewId, setRecord);
+                List<Record> result = apiInstance.Create(viewId, createRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -68,7 +71,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **setRecord** | [**List&lt;SetRecord&gt;**](SetRecord.md)|  | 
+ **createRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| createRecords | 
 
 ### Return type
 
@@ -177,9 +180,175 @@ void (empty response body)
 [[Back to README]](../README.md)
 
 
+## DownloadRecordHistories
+
+> System.IO.Stream DownloadRecordHistories (string viewId, string taskId)
+
+downloadRecordHistories
+
+downloadRecordHistories
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class DownloadRecordHistoriesExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new RecordApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var taskId = "taskId_example";  // string | taskId
+
+            try
+            {
+                // downloadRecordHistories
+                System.IO.Stream result = apiInstance.DownloadRecordHistories(viewId, taskId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling RecordApi.DownloadRecordHistories: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **taskId** | **string**| taskId | 
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportRecordHistories
+
+> Task ExportRecordHistories (string viewId, ExportRecordHistory exportRecordHistory)
+
+exportRecordHistories
+
+exportRecordHistories
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class ExportRecordHistoriesExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new RecordApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var exportRecordHistory = new ExportRecordHistory(); // ExportRecordHistory | 
+
+            try
+            {
+                // exportRecordHistories
+                Task result = apiInstance.ExportRecordHistories(viewId, exportRecordHistory);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling RecordApi.ExportRecordHistories: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **exportRecordHistory** | [**ExportRecordHistory**](ExportRecordHistory.md)|  | 
+
+### Return type
+
+[**Task**](Task.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## Fetch
 
-> List&lt;Record&gt; Fetch (string viewId, List<string> columnIds = null, string page = null, string query = null, string sort = null, FetchFileOption? fetchFileOption = null)
+> List&lt;Record&gt; Fetch (string viewId, List<string> columnIds = null, string page = null, string query = null, string sort = null, FetchFileOption? fetchFileOption = null, string afterRecordId = null, string beforeRecordId = null)
 
 fetch
 
@@ -213,11 +382,13 @@ namespace Example
             var query = "\"{}\"";  // string | query (optional)  (default to "{}")
             var sort = "\"{}\"";  // string | sort (optional)  (default to "{}")
             var fetchFileOption = (FetchFileOption) "all";  // FetchFileOption? | fetchFileOption (optional) 
+            var afterRecordId = "afterRecordId_example";  // string | afterRecordId (optional) 
+            var beforeRecordId = "beforeRecordId_example";  // string | beforeRecordId (optional) 
 
             try
             {
                 // fetch
-                List<Record> result = apiInstance.Fetch(viewId, columnIds, page, query, sort, fetchFileOption);
+                List<Record> result = apiInstance.Fetch(viewId, columnIds, page, query, sort, fetchFileOption, afterRecordId, beforeRecordId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -242,10 +413,97 @@ Name | Type | Description  | Notes
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
  **fetchFileOption** | **FetchFileOption?**| fetchFileOption | [optional] 
+ **afterRecordId** | **string**| afterRecordId | [optional] 
+ **beforeRecordId** | **string**| beforeRecordId | [optional] 
 
 ### Return type
 
 [**List&lt;Record&gt;**](Record.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## FetchHistories
+
+> List&lt;RecordHistory&gt; FetchHistories (string viewId, string recordId, FetchRecordHistoryRequest fetchRequest)
+
+fetchHistories
+
+fetchHistories
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class FetchHistoriesExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new RecordApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var recordId = "recordId_example";  // string | recordId
+            var fetchRequest = new FetchRecordHistoryRequest(); // FetchRecordHistoryRequest | fetchRequest
+
+            try
+            {
+                // fetchHistories
+                List<RecordHistory> result = apiInstance.FetchHistories(viewId, recordId, fetchRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling RecordApi.FetchHistories: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **recordId** | **string**| recordId | 
+ **fetchRequest** | [**FetchRecordHistoryRequest**](FetchRecordHistoryRequest.md)| fetchRequest | 
+
+### Return type
+
+[**List&lt;RecordHistory&gt;**](RecordHistory.md)
 
 ### Authorization
 

@@ -5,8 +5,10 @@ All URIs are relative to *https://api.gridly.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create**](BranchApi.md#create) | **POST** /v1/branches | create
+[**CreateDiffCheck**](BranchApi.md#creatediffcheck) | **POST** /v1/branches/diffcheck | createDiffCheck
 [**Delete**](BranchApi.md#delete) | **DELETE** /v1/branches/{branchId} | delete
 [**Get**](BranchApi.md#get) | **GET** /v1/branches/{branchId} | get
+[**GetDiffCheck**](BranchApi.md#getdiffcheck) | **GET** /v1/branches/diffcheck/{taskId} | getDiffCheck
 [**List**](BranchApi.md#list) | **GET** /v1/branches | list
 [**Merge**](BranchApi.md#merge) | **POST** /v1/branches/{branchId}/merge | merge
 
@@ -90,6 +92,89 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateDiffCheck
+
+> Task CreateDiffCheck (string sourceViewId, string destinationViewId)
+
+createDiffCheck
+
+createDiffCheck
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class CreateDiffCheckExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new BranchApi(Configuration.Default);
+            var sourceViewId = "sourceViewId_example";  // string | sourceViewId
+            var destinationViewId = "destinationViewId_example";  // string | destinationViewId
+
+            try
+            {
+                // createDiffCheck
+                Task result = apiInstance.CreateDiffCheck(sourceViewId, destinationViewId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling BranchApi.CreateDiffCheck: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceViewId** | **string**| sourceViewId | 
+ **destinationViewId** | **string**| destinationViewId | 
+
+### Return type
+
+[**Task**](Task.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | Accepted |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -258,6 +343,93 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetDiffCheck
+
+> List&lt;BranchDiffRecord&gt; GetDiffCheck (string taskId, List<string> mergeRecordOptions = null, string query = null, string page = null)
+
+getDiffCheck
+
+getDiffCheck
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class GetDiffCheckExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new BranchApi(Configuration.Default);
+            var taskId = "taskId_example";  // string | taskId
+            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
+            var query = "\"{}\"";  // string | query (optional)  (default to "{}")
+            var page = "\"{}\"";  // string | page (optional)  (default to "{}")
+
+            try
+            {
+                // getDiffCheck
+                List<BranchDiffRecord> result = apiInstance.GetDiffCheck(taskId, mergeRecordOptions, query, page);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling BranchApi.GetDiffCheck: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **taskId** | **string**| taskId | 
+ **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
+ **query** | **string**| query | [optional] [default to &quot;{}&quot;]
+ **page** | **string**| page | [optional] [default to &quot;{}&quot;]
+
+### Return type
+
+[**List&lt;BranchDiffRecord&gt;**](BranchDiffRecord.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## List
 
 > List&lt;Branch&gt; List (string gridId)
@@ -341,7 +513,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> Task Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
+> Task Merge (string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -371,12 +543,13 @@ namespace Example
             var apiInstance = new BranchApi(Configuration.Default);
             var branchId = "branchId_example";  // string | branchId
             var destinationBranchId = "destinationBranchId_example";  // string | destinationBranchId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeRecordOptions);
+                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -397,6 +570,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **branchId** | **string**| branchId | 
  **destinationBranchId** | **string**| destinationBranchId | 
+ **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
  **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
 
 ### Return type
@@ -409,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

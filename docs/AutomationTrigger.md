@@ -1,18 +1,18 @@
 
-# Com.Gridly.Model.Privilege
+# Com.Gridly.Model.AutomationTrigger
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **long** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**Type** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Label** | **string** |  | [optional] 
-**Level** | **string** |  | [optional] 
-**Order** | **int** |  | [optional] 
-**ServiceId** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Extra** | **string** |  | [optional] 
+**TriggerType** | **string** |  | [optional] 
+**WatchingColumns** | **List&lt;string&gt;** |  | [optional] 
+**WatchingAll** | **bool** |  | [optional] 
+**Enabled** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

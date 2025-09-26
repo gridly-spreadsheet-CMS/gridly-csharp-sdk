@@ -5,8 +5,10 @@ All URIs are relative to *https://api.gridly.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create**](ViewApi.md#create) | **POST** /v1/views | create
+[**Delete**](ViewApi.md#delete) | **DELETE** /v1/views/{viewId} | delete
 [**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export
 [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
+[**GetStatistic**](ViewApi.md#getstatistic) | **GET** /v1/views/{viewId}/statistic | getStatistic
 [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView
 [**List**](ViewApi.md#list) | **GET** /v1/views | list
 [**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
@@ -87,6 +89,86 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Delete
+
+> void Delete (string viewId)
+
+delete
+
+delete
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class DeleteExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ViewApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+
+            try
+            {
+                // delete
+                apiInstance.Delete(viewId);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling ViewApi.Delete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -254,6 +336,89 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**View**](View.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStatistic
+
+> ViewStatistic GetStatistic (string viewId, List<string> columnIds = null)
+
+getStatistic
+
+getStatistic
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class GetStatisticExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ViewApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var columnIds = new List<string>(); // List<string> | columnIds (optional) 
+
+            try
+            {
+                // getStatistic
+                ViewStatistic result = apiInstance.GetStatistic(viewId, columnIds);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling ViewApi.GetStatistic: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
+
+### Return type
+
+[**ViewStatistic**](ViewStatistic.md)
 
 ### Authorization
 
@@ -449,7 +614,7 @@ Name | Type | Description  | Notes
 
 ## Merge
 
-> Task Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -479,12 +644,13 @@ namespace Example
             var apiInstance = new ViewApi(Configuration.Default);
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+                Task result = apiInstance.Merge(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -505,6 +671,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **destinationViewId** | **string**| destinationViewId | 
  **viewId** | **string**| viewId | 
+ **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
  **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
 
 ### Return type
@@ -517,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

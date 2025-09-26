@@ -11,8 +11,11 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **LogoUrl** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
-**IsSystemGroup** | **bool** |  | [optional] 
+**ShareType** | **string** |  | [optional] 
+**CreatedDate** | **DateTime** |  | [optional] 
+**LastModifiedDate** | **DateTime** |  | [optional] 
 **SystemGroup** | **bool** |  | [optional] 
+**IsSystemGroup** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
