@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AccentSensitive** | **bool** |  | [optional] 
 **CaseSensitive** | **bool** |  | [optional] 
 **ColumnId** | **string** |  | [optional] 
 **DynamicColumn** | **string** |  | [optional] [readonly] 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**List**](PathApi.md#list) | **GET** /v1/views/{viewId}/paths/tree | list
 [**Move**](PathApi.md#move) | **POST** /v1/views/{viewId}/paths/move | move
 [**Update**](PathApi.md#update) | **PUT** /v1/views/{viewId}/paths/{path} | update
+[**UpdatePathNode**](PathApi.md#updatepathnode) | **PUT** /v1/views/{viewId}/paths | updatePathNode
 
 
 
@@ -401,6 +402,89 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **path** | **string**| path | 
+ **updatePath** | [**UpdatePath**](UpdatePath.md)|  | 
+
+### Return type
+
+[**PathSingle**](PathSingle.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePathNode
+
+> PathSingle UpdatePathNode (string viewId, UpdatePath updatePath)
+
+updatePathNode
+
+updatePathNode
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class UpdatePathNodeExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PathApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var updatePath = new UpdatePath(); // UpdatePath | 
+
+            try
+            {
+                // updatePathNode
+                PathSingle result = apiInstance.UpdatePathNode(viewId, updatePath);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling PathApi.UpdatePathNode: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
  **updatePath** | [**UpdatePath**](UpdatePath.md)|  | 
 
 ### Return type

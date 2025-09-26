@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Path** | **string** |  | [optional] 
 **NewName** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)

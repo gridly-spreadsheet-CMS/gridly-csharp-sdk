@@ -8,13 +8,13 @@
     <Authors>Gridly AB</Authors>
     <Company>Gridly AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly CSharp SDK 1.4.0</Description>
-    <Copyright>Copyright @ 2024 Gridly AB</Copyright>
+    <Description>Gridly CSharp SDK 1.5.0</Description>
+    <Copyright>Copyright @ 2025 Gridly AB</Copyright>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Com.Gridly</RootNamespace>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

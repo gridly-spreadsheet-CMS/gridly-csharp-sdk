@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **IsPausedConsuming** | **bool** |  | [optional] 
 **PopulateTranslationStatus** | **TranslationStatus** |  | [optional] 
 **ContextLookup** | **bool** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **FuzzyMatch** | **bool** |  | [optional] 
 **AllowAlternative** | **bool** |  | [optional] 

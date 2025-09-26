@@ -96,7 +96,7 @@ void (empty response body)
 
 ## Create
 
-> TransMem Create (CreateTransMem createTransMem = null)
+> TransMem Create (CreateTransMem createTransMem)
 
 Create a new translation memory
 
@@ -122,7 +122,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new TransmemApi(Configuration.Default);
-            var createTransMem = new CreateTransMem(); // CreateTransMem |  (optional) 
+            var createTransMem = new CreateTransMem(); // CreateTransMem | 
 
             try
             {
@@ -146,7 +146,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createTransMem** | [**CreateTransMem**](CreateTransMem.md)|  | [optional] 
+ **createTransMem** | [**CreateTransMem**](CreateTransMem.md)|  | 
 
 ### Return type
 
@@ -166,6 +166,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Create a new translation memory successful ! |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -254,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## Delete
 
-> TransMem Delete (string tmId)
+> void Delete (string tmId)
 
 Delete a translation memory by id
 
@@ -285,8 +286,7 @@ namespace Example
             try
             {
                 // Delete a translation memory by id
-                TransMem result = apiInstance.Delete(tmId);
-                Debug.WriteLine(result);
+                apiInstance.Delete(tmId);
             }
             catch (ApiException e)
             {
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransMem**](TransMem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ## Export
 
-> System.IO.Stream Export (string tmId, ExportFormat? format = null, string sourceLang = null, List<string> targetLangs = null)
+> System.IO.Stream Export (string tmId, ExportTransMemFormat? format = null, string sourceLang = null, List<string> targetLangs = null)
 
 Export translation memory tmx file
 
@@ -360,7 +360,7 @@ namespace Example
 
             var apiInstance = new TransmemApi(Configuration.Default);
             var tmId = "tmId_example";  // string | 
-            var format = new ExportFormat();  // ExportFormat? |  (optional) 
+            var format = new ExportTransMemFormat();  // ExportTransMemFormat? |  (optional) 
             var sourceLang = "sourceLang_example";  // string |  (optional) 
             var targetLangs = new List<string>(); // List<string> |  (optional) 
 
@@ -387,7 +387,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmId** | **string**|  | 
- **format** | **ExportFormat?**|  | [optional] 
+ **format** | **ExportTransMemFormat?**|  | [optional] 
  **sourceLang** | **string**|  | [optional] 
  **targetLangs** | [**List&lt;string&gt;**](string.md)|  | [optional] 
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ## Get
 
-> TransMem Get (string tmId)
+> void Get (string tmId)
 
 Get translation memory info by id
 
@@ -449,8 +449,7 @@ namespace Example
             try
             {
                 // Get translation memory info by id
-                TransMem result = apiInstance.Get(tmId);
-                Debug.WriteLine(result);
+                apiInstance.Get(tmId);
             }
             catch (ApiException e)
             {
@@ -472,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransMem**](TransMem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -577,7 +576,7 @@ void (empty response body)
 
 ## ListTM
 
-> List&lt;TransMem&gt; ListTM (long? projectId = null)
+> void ListTM (long? projectId = null)
 
 List all available translation memories or create default one if there is no translation memory
 
@@ -608,8 +607,7 @@ namespace Example
             try
             {
                 // List all available translation memories or create default one if there is no translation memory
-                List<TransMem> result = apiInstance.ListTM(projectId);
-                Debug.WriteLine(result);
+                apiInstance.ListTM(projectId);
             }
             catch (ApiException e)
             {
@@ -631,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;TransMem&gt;**](TransMem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -656,7 +654,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> TransMem Update (string tmId, UpdateTransMem updateTransMem = null)
+> void Update (string tmId, UpdateTransMem updateTransMem)
 
 Update a translation memory
 
@@ -683,13 +681,12 @@ namespace Example
 
             var apiInstance = new TransmemApi(Configuration.Default);
             var tmId = "tmId_example";  // string | 
-            var updateTransMem = new UpdateTransMem(); // UpdateTransMem |  (optional) 
+            var updateTransMem = new UpdateTransMem(); // UpdateTransMem | 
 
             try
             {
                 // Update a translation memory
-                TransMem result = apiInstance.Update(tmId, updateTransMem);
-                Debug.WriteLine(result);
+                apiInstance.Update(tmId, updateTransMem);
             }
             catch (ApiException e)
             {
@@ -708,11 +705,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmId** | **string**|  | 
- **updateTransMem** | [**UpdateTransMem**](UpdateTransMem.md)|  | [optional] 
+ **updateTransMem** | [**UpdateTransMem**](UpdateTransMem.md)|  | 
 
 ### Return type
 
-[**TransMem**](TransMem.md)
+void (empty response body)
 
 ### Authorization
 
@@ -728,6 +725,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

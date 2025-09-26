@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create**](RecordApi.md#create) | **POST** /v1/views/{viewId}/records | create
 [**Delete**](RecordApi.md#delete) | **DELETE** /v1/views/{viewId}/records | delete
+[**DownloadRecordHistories**](RecordApi.md#downloadrecordhistories) | **GET** /v1/views/{viewId}/record-histories/export/{taskId} | downloadRecordHistories
+[**ExportRecordHistories**](RecordApi.md#exportrecordhistories) | **POST** /v1/views/{viewId}/record-histories/export | exportRecordHistories
 [**Fetch**](RecordApi.md#fetch) | **GET** /v1/views/{viewId}/records | fetch
 [**FetchHistories**](RecordApi.md#fetchhistories) | **GET** /v1/views/{viewId}/records/{recordId}/histories | fetchHistories
 [**Update**](RecordApi.md#update) | **PATCH** /v1/views/{viewId}/records | update
@@ -171,6 +173,172 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DownloadRecordHistories
+
+> System.IO.Stream DownloadRecordHistories (string viewId, string taskId)
+
+downloadRecordHistories
+
+downloadRecordHistories
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class DownloadRecordHistoriesExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new RecordApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var taskId = "taskId_example";  // string | taskId
+
+            try
+            {
+                // downloadRecordHistories
+                System.IO.Stream result = apiInstance.DownloadRecordHistories(viewId, taskId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling RecordApi.DownloadRecordHistories: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **taskId** | **string**| taskId | 
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | default response |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportRecordHistories
+
+> Task ExportRecordHistories (string viewId, ExportRecordHistory exportRecordHistory)
+
+exportRecordHistories
+
+exportRecordHistories
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class ExportRecordHistoriesExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new RecordApi(Configuration.Default);
+            var viewId = "viewId_example";  // string | viewId
+            var exportRecordHistory = new ExportRecordHistory(); // ExportRecordHistory | 
+
+            try
+            {
+                // exportRecordHistories
+                Task result = apiInstance.ExportRecordHistories(viewId, exportRecordHistory);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling RecordApi.ExportRecordHistories: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewId** | **string**| viewId | 
+ **exportRecordHistory** | [**ExportRecordHistory**](ExportRecordHistory.md)|  | 
+
+### Return type
+
+[**Task**](Task.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

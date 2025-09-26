@@ -1,5 +1,5 @@
 
-# Com.Gridly.Model.GlossaryExportFormat
+# Com.Gridly.Model.TicketPriority
 
 ## Properties
 

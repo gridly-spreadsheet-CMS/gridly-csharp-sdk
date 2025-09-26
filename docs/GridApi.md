@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> List&lt;Grid&gt; List (string dbId)
+> List&lt;Grid&gt; List (string dbId, string query = null)
 
 list
 
@@ -626,11 +626,12 @@ namespace Example
 
             var apiInstance = new GridApi(Configuration.Default);
             var dbId = "dbId_example";  // string | dbId
+            var query = "\"{}\"";  // string | query (optional)  (default to "{}")
 
             try
             {
                 // list
-                List<Grid> result = apiInstance.List(dbId);
+                List<Grid> result = apiInstance.List(dbId, query);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -650,6 +651,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
+ **query** | **string**| query | [optional] [default to &quot;{}&quot;]
 
 ### Return type
 

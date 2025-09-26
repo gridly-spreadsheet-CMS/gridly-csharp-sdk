@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Create**](GlossaryApi.md#create) | **POST** /v1/glossaries | Create a new glossary
 [**Delete**](GlossaryApi.md#delete) | **DELETE** /v1/glossaries/{id} | Delete a glossary
 [**ExportFile**](GlossaryApi.md#exportfile) | **GET** /v1/glossaries/{id}/export | Export a glossary
-[**Get**](GlossaryApi.md#get) | **GET** /v1/glossaries/{id} | get glossary info
+[**Get**](GlossaryApi.md#get) | **GET** /v1/glossaries/{id} | Get glossary info
 [**GetAll**](GlossaryApi.md#getall) | **GET** /v1/glossaries | List all glossaries
 [**ImportFile**](GlossaryApi.md#importfile) | **POST** /v1/glossaries/{id}/import | Import a glossary from file
 [**Update**](GlossaryApi.md#update) | **PUT** /v1/glossaries/{id} | Update glossary info
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> Glossary Create (CreateGlossary createGlossary = null)
+> Glossary Create (CreateGlossary createGlossary)
 
 Create a new glossary
 
@@ -42,7 +42,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(Configuration.Default);
-            var createGlossary = new CreateGlossary(); // CreateGlossary |  (optional) 
+            var createGlossary = new CreateGlossary(); // CreateGlossary | 
 
             try
             {
@@ -66,7 +66,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGlossary** | [**CreateGlossary**](CreateGlossary.md)|  | [optional] 
+ **createGlossary** | [**CreateGlossary**](CreateGlossary.md)|  | 
 
 ### Return type
 
@@ -85,7 +85,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Create a new glossary successful ! |  -  |
+| **201** |  |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -173,7 +174,7 @@ void (empty response body)
 
 ## ExportFile
 
-> void ExportFile (long id, List<string> fields = null, GlossaryExportFormat? format = null, List<string> langs = null)
+> System.IO.Stream ExportFile (long id, List<string> fields = null, ExportGlossaryFormat? format = null, List<string> langs = null)
 
 Export a glossary
 
@@ -201,13 +202,14 @@ namespace Example
             var apiInstance = new GlossaryApi(Configuration.Default);
             var id = 789L;  // long | 
             var fields = new List<string>(); // List<string> |  (optional) 
-            var format = new GlossaryExportFormat();  // GlossaryExportFormat? |  (optional) 
+            var format = new ExportGlossaryFormat();  // ExportGlossaryFormat? |  (optional) 
             var langs = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // Export a glossary
-                apiInstance.ExportFile(id, fields, format, langs);
+                System.IO.Stream result = apiInstance.ExportFile(id, fields, format, langs);
+                Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
@@ -227,12 +229,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long**|  | 
  **fields** | [**List&lt;string&gt;**](string.md)|  | [optional] 
- **format** | **GlossaryExportFormat?**|  | [optional] 
+ **format** | **ExportGlossaryFormat?**|  | [optional] 
  **langs** | [**List&lt;string&gt;**](string.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -241,13 +243,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/octet-stream
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -259,7 +261,7 @@ void (empty response body)
 
 > Glossary Get (long id)
 
-get glossary info
+Get glossary info
 
 ### Example
 
@@ -287,7 +289,7 @@ namespace Example
 
             try
             {
-                // get glossary info
+                // Get glossary info
                 Glossary result = apiInstance.Get(id);
                 Debug.WriteLine(result);
             }
@@ -326,7 +328,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## GetAll
 
-> List&lt;Glossary&gt; GetAll ()
+> void GetAll ()
 
 List all glossaries
 
@@ -366,8 +368,7 @@ namespace Example
             try
             {
                 // List all glossaries
-                List<Glossary> result = apiInstance.GetAll();
-                Debug.WriteLine(result);
+                apiInstance.GetAll();
             }
             catch (ApiException e)
             {
@@ -386,7 +387,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;Glossary&gt;**](Glossary.md)
+void (empty response body)
 
 ### Authorization
 
@@ -401,7 +402,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -411,7 +412,7 @@ This endpoint does not need any parameter.
 
 ## ImportFile
 
-> void ImportFile (long id, ImportOption? importOption = null, Object file = null)
+> void ImportFile (long id, ImportGlossaryOption? importOption = null, System.IO.Stream file = null)
 
 Import a glossary from file
 
@@ -438,8 +439,8 @@ namespace Example
 
             var apiInstance = new GlossaryApi(Configuration.Default);
             var id = 789L;  // long | 
-            var importOption = new ImportOption();  // ImportOption? |  (optional) 
-            var file = new Object(); // Object |  (optional) 
+            var importOption = new ImportGlossaryOption();  // ImportGlossaryOption? |  (optional) 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
@@ -463,8 +464,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long**|  | 
- **importOption** | **ImportOption?**|  | [optional] 
- **file** | [**Object**](Object.md)|  | [optional] 
+ **importOption** | **ImportGlossaryOption?**|  | [optional] 
+ **file** | **System.IO.Stream**|  | [optional] 
 
 ### Return type
 
@@ -477,13 +478,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Created |  -  |
+| **204** |  |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -493,7 +494,7 @@ void (empty response body)
 
 ## Update
 
-> void Update (long id, UpdateGlossary updateGlossary = null)
+> Glossary Update (long id, UpdateGlossary updateGlossary)
 
 Update glossary info
 
@@ -520,12 +521,13 @@ namespace Example
 
             var apiInstance = new GlossaryApi(Configuration.Default);
             var id = 789L;  // long | 
-            var updateGlossary = new UpdateGlossary(); // UpdateGlossary |  (optional) 
+            var updateGlossary = new UpdateGlossary(); // UpdateGlossary | 
 
             try
             {
                 // Update glossary info
-                apiInstance.Update(id, updateGlossary);
+                Glossary result = apiInstance.Update(id, updateGlossary);
+                Debug.WriteLine(result);
             }
             catch (ApiException e)
             {
@@ -544,11 +546,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long**|  | 
- **updateGlossary** | [**UpdateGlossary**](UpdateGlossary.md)|  | [optional] 
+ **updateGlossary** | [**UpdateGlossary**](UpdateGlossary.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**Glossary**](Glossary.md)
 
 ### Authorization
 
@@ -557,13 +559,14 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
