@@ -1,0 +1,31 @@
+name: Build Gridly C# SDK
+
+on:
+  push:
+    branches:
+      - ${{ github.ref_name }}
+  pull_request:
+    branches:
+      - ${{ github.ref_name }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore Solution
+        run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj
+
+      - name: Run tests
+        run: dotnet test --configuration Release --no-build --verbosity normal src/Com.Gridly.Test/Com.Gridly.Test.csproj

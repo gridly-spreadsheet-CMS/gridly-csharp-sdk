@@ -1,6 +1,6 @@
 # This workflow to build and release Gridly CSharp SDK
 
-name: Gridly C# .NET
+name: Gridly C# SDK
 
 on:
   push:
@@ -28,11 +28,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
+    - name: Setup .NET 8 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: '8.0.x'
         
     - name: Restore Solution
       run: dotnet restore
