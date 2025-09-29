@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.ExportGridHistory
 
 ## Properties
@@ -13,7 +12,5 @@ Name | Type | Description | Notes
 **Emails** | **List&lt;string&gt;** |  | [optional] 
 **ObjectTypes** | [**List&lt;ExportGridHistoryCategory&gt;**](ExportGridHistoryCategory.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -2,16 +2,14 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ShareViewApi.md#create) | **PUT** /v1/views/{viewId}/shares | create
-[**Delete**](ShareViewApi.md#delete) | **DELETE** /v1/views/{viewId}/shares | delete
-[**Get**](ShareViewApi.md#get) | **GET** /v1/views/{viewId}/shares | get
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ShareViewApi.md#create) | **PUT** /v1/views/{viewId}/shares | create |
+| [**Delete**](ShareViewApi.md#delete) | **DELETE** /v1/views/{viewId}/shares | delete |
+| [**Get**](ShareViewApi.md#get) | **GET** /v1/views/{viewId}/shares | get |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > ShareView Create (string viewId, CreateShareView createShareView)
 
 create
@@ -19,7 +17,6 @@ create
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,13 +30,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ShareViewApi(Configuration.Default);
+            var apiInstance = new ShareViewApi(config);
             var viewId = "viewId_example";  // string | viewId
             var createShareView = new CreateShareView(); // CreateShareView | 
 
@@ -49,10 +47,10 @@ namespace Example
                 ShareView result = apiInstance.Create(viewId, createShareView);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShareViewApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ShareViewApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -60,13 +58,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<ShareView> response = apiInstance.CreateWithHttpInfo(viewId, createShareView);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ShareViewApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **createShareView** | [**CreateShareView**](CreateShareView.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **createShareView** | [**CreateShareView**](CreateShareView.md) |  |  |
 
 ### Return type
 
@@ -78,8 +95,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -87,14 +104,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string viewId)
 
 delete
@@ -102,7 +115,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -116,13 +128,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ShareViewApi(Configuration.Default);
+            var apiInstance = new ShareViewApi(config);
             var viewId = "viewId_example";  // string | viewId
 
             try
@@ -130,10 +143,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(viewId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShareViewApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ShareViewApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -141,12 +154,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(viewId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ShareViewApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -158,8 +187,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -167,14 +196,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Get
-
+<a id="get"></a>
+# **Get**
 > ShareView Get (string viewId)
 
 get
@@ -182,7 +207,6 @@ get
 get
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -196,13 +220,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ShareViewApi(Configuration.Default);
+            var apiInstance = new ShareViewApi(config);
             var viewId = "viewId_example";  // string | viewId
 
             try
@@ -211,10 +236,10 @@ namespace Example
                 ShareView result = apiInstance.Get(viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ShareViewApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ShareViewApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -222,12 +247,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<ShareView> response = apiInstance.GetWithHttpInfo(viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ShareViewApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -239,8 +283,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -248,8 +292,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

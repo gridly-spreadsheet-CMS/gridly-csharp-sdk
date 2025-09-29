@@ -2,19 +2,17 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ViewDependencyApi.md#create) | **POST** /v1/views/{viewId}/dependencies | create
-[**Delete**](ViewDependencyApi.md#delete) | **DELETE** /v1/views/{viewId}/dependencies | delete
-[**DeleteById**](ViewDependencyApi.md#deletebyid) | **DELETE** /v1/views/{viewId}/dependencies/{dependencyId} | deleteById
-[**Get**](ViewDependencyApi.md#get) | **GET** /v1/views/{viewId}/dependencies/{dependencyId} | get
-[**List**](ViewDependencyApi.md#list) | **GET** /v1/views/{viewId}/dependencies | list
-[**Update**](ViewDependencyApi.md#update) | **PUT** /v1/views/{viewId}/dependencies/{dependencyId} | update
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ViewDependencyApi.md#create) | **POST** /v1/views/{viewId}/dependencies | create |
+| [**Delete**](ViewDependencyApi.md#delete) | **DELETE** /v1/views/{viewId}/dependencies | delete |
+| [**DeleteById**](ViewDependencyApi.md#deletebyid) | **DELETE** /v1/views/{viewId}/dependencies/{dependencyId} | deleteById |
+| [**Get**](ViewDependencyApi.md#get) | **GET** /v1/views/{viewId}/dependencies/{dependencyId} | get |
+| [**List**](ViewDependencyApi.md#list) | **GET** /v1/views/{viewId}/dependencies | list |
+| [**Update**](ViewDependencyApi.md#update) | **PUT** /v1/views/{viewId}/dependencies/{dependencyId} | update |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > Dependency Create (string viewId, CreateDependency createDependency)
 
 create
@@ -22,7 +20,6 @@ create
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,13 +33,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var viewId = "viewId_example";  // string | viewId
             var createDependency = new CreateDependency(); // CreateDependency | 
 
@@ -52,10 +50,10 @@ namespace Example
                 Dependency result = apiInstance.Create(viewId, createDependency);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -63,13 +61,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Dependency> response = apiInstance.CreateWithHttpInfo(viewId, createDependency);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **createDependency** | [**CreateDependency**](CreateDependency.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **createDependency** | [**CreateDependency**](CreateDependency.md) |  |  |
 
 ### Return type
 
@@ -81,8 +98,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -90,14 +107,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string viewId, DeleteDependency deleteDependency)
 
 delete
@@ -105,7 +118,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -119,13 +131,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var viewId = "viewId_example";  // string | viewId
             var deleteDependency = new DeleteDependency(); // DeleteDependency | 
 
@@ -134,10 +147,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(viewId, deleteDependency);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -145,13 +158,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(viewId, deleteDependency);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **deleteDependency** | [**DeleteDependency**](DeleteDependency.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **deleteDependency** | [**DeleteDependency**](DeleteDependency.md) |  |  |
 
 ### Return type
 
@@ -163,8 +192,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -172,14 +201,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DeleteById
-
+<a id="deletebyid"></a>
+# **DeleteById**
 > void DeleteById (string viewId, string dependencyId)
 
 deleteById
@@ -187,7 +212,6 @@ deleteById
 deleteById
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -201,13 +225,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var viewId = "viewId_example";  // string | viewId
             var dependencyId = "dependencyId_example";  // string | dependencyId
 
@@ -216,10 +241,10 @@ namespace Example
                 // deleteById
                 apiInstance.DeleteById(viewId, dependencyId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.DeleteById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.DeleteById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -227,13 +252,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // deleteById
+    apiInstance.DeleteByIdWithHttpInfo(viewId, dependencyId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.DeleteByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **dependencyId** | **string**| dependencyId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **dependencyId** | **string** | dependencyId |  |
 
 ### Return type
 
@@ -245,8 +286,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -254,14 +295,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Get
-
+<a id="get"></a>
+# **Get**
 > Dependency Get (string dependencyId, string viewId)
 
 get
@@ -269,7 +306,6 @@ get
 get
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -283,13 +319,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var dependencyId = "dependencyId_example";  // string | dependencyId
             var viewId = "viewId_example";  // string | viewId
 
@@ -299,10 +336,10 @@ namespace Example
                 Dependency result = apiInstance.Get(dependencyId, viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -310,13 +347,32 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Dependency> response = apiInstance.GetWithHttpInfo(dependencyId, viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dependencyId** | **string**| dependencyId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dependencyId** | **string** | dependencyId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -328,8 +384,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -337,14 +393,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## List
-
+<a id="list"></a>
+# **List**
 > List&lt;Dependency&gt; List (string viewId)
 
 list
@@ -352,7 +404,6 @@ list
 list
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -366,13 +417,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var viewId = "viewId_example";  // string | viewId
 
             try
@@ -381,10 +433,10 @@ namespace Example
                 List<Dependency> result = apiInstance.List(viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -392,12 +444,31 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Dependency>> response = apiInstance.ListWithHttpInfo(viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -409,8 +480,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -418,14 +489,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Update
-
+<a id="update"></a>
+# **Update**
 > Dependency Update (string dependencyId, string viewId, UpdateDependency updateDependency)
 
 update
@@ -433,7 +500,6 @@ update
 update
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -447,13 +513,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewDependencyApi(Configuration.Default);
+            var apiInstance = new ViewDependencyApi(config);
             var dependencyId = "dependencyId_example";  // string | dependencyId
             var viewId = "viewId_example";  // string | viewId
             var updateDependency = new UpdateDependency(); // UpdateDependency | 
@@ -464,10 +531,10 @@ namespace Example
                 Dependency result = apiInstance.Update(dependencyId, viewId, updateDependency);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewDependencyApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewDependencyApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -475,14 +542,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Dependency> response = apiInstance.UpdateWithHttpInfo(dependencyId, viewId, updateDependency);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewDependencyApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dependencyId** | **string**| dependencyId | 
- **viewId** | **string**| viewId | 
- **updateDependency** | [**UpdateDependency**](UpdateDependency.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dependencyId** | **string** | dependencyId |  |
+| **viewId** | **string** | viewId |  |
+| **updateDependency** | [**UpdateDependency**](UpdateDependency.md) |  |  |
 
 ### Return type
 
@@ -494,8 +580,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -503,8 +589,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

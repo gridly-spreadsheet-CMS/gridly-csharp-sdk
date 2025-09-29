@@ -2,25 +2,22 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](DatabaseApi.md#create) | **POST** /v1/databases | create
-[**Delete**](DatabaseApi.md#delete) | **DELETE** /v1/databases/{dbId} | delete
-[**Duplicate**](DatabaseApi.md#duplicate) | **POST** /v1/databases/{dbId}/duplicate | duplicate
-[**Get**](DatabaseApi.md#get) | **GET** /v1/databases/{dbId} | get
-[**List**](DatabaseApi.md#list) | **GET** /v1/databases | list
-[**Update**](DatabaseApi.md#update) | **PUT** /v1/databases/{dbId} | update
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](DatabaseApi.md#create) | **POST** /v1/databases | create |
+| [**Delete**](DatabaseApi.md#delete) | **DELETE** /v1/databases/{dbId} | delete |
+| [**Duplicate**](DatabaseApi.md#duplicate) | **POST** /v1/databases/{dbId}/duplicate | duplicate |
+| [**Get**](DatabaseApi.md#get) | **GET** /v1/databases/{dbId} | get |
+| [**List**](DatabaseApi.md#list) | **GET** /v1/databases | list |
+| [**Update**](DatabaseApi.md#update) | **PUT** /v1/databases/{dbId} | update |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > Database Create (long projectId, CreateDatabase body)
 
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,13 +31,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var projectId = 789L;  // long | projectId
             var body = new CreateDatabase(); // CreateDatabase | body
 
@@ -50,10 +48,10 @@ namespace Example
                 Database result = apiInstance.Create(projectId, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,13 +59,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Database> response = apiInstance.CreateWithHttpInfo(projectId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
+| **body** | [**CreateDatabase**](CreateDatabase.md) | body |  |
 
 ### Return type
 
@@ -79,8 +96,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -88,20 +105,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string dbId)
 
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -115,13 +127,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
 
             try
@@ -129,10 +142,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(dbId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -140,12 +153,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(dbId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
 
 ### Return type
 
@@ -157,8 +186,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -166,20 +195,15 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Duplicate
-
+<a id="duplicate"></a>
+# **Duplicate**
 > Database Duplicate (string dbId, long projectId, CreateDatabase body)
 
 duplicate
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -193,13 +217,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
             var projectId = 789L;  // long | projectId
             var body = new CreateDatabase(); // CreateDatabase | body
@@ -210,10 +235,10 @@ namespace Example
                 Database result = apiInstance.Duplicate(dbId, projectId, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Duplicate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Duplicate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -221,14 +246,33 @@ namespace Example
 }
 ```
 
+#### Using the DuplicateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // duplicate
+    ApiResponse<Database> response = apiInstance.DuplicateWithHttpInfo(dbId, projectId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.DuplicateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
- **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
+| **projectId** | **long** | projectId |  |
+| **body** | [**CreateDatabase**](CreateDatabase.md) | body |  |
 
 ### Return type
 
@@ -240,8 +284,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -249,20 +293,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Get
-
+<a id="get"></a>
+# **Get**
 > Database Get (string dbId)
 
 get
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -276,13 +315,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
 
             try
@@ -291,10 +331,10 @@ namespace Example
                 Database result = apiInstance.Get(dbId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -302,12 +342,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Database> response = apiInstance.GetWithHttpInfo(dbId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
 
 ### Return type
 
@@ -319,8 +378,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -328,20 +387,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## List
-
+<a id="list"></a>
+# **List**
 > List&lt;Database&gt; List (List<string> expand = null, string page = null, long? projectId = null, string search = null, string sort = null)
 
 list
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -355,13 +409,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var expand = new List<string>(); // List<string> | expand (optional) 
             var page = "\"\"";  // string | page (optional)  (default to "")
             var projectId = 789L;  // long? | projectId (optional) 
@@ -374,10 +429,10 @@ namespace Example
                 List<Database> result = apiInstance.List(expand, page, projectId, search, sort);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -385,16 +440,35 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Database>> response = apiInstance.ListWithHttpInfo(expand, page, projectId, search, sort);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expand** | [**List&lt;string&gt;**](string.md)| expand | [optional] 
- **page** | **string**| page | [optional] [default to &quot;&quot;]
- **projectId** | **long?**| projectId | [optional] 
- **search** | **string**| search | [optional] 
- **sort** | **string**| sort | [optional] [default to &quot;&quot;]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **expand** | [**List&lt;string&gt;**](string.md) | expand | [optional]  |
+| **page** | **string** | page | [optional] [default to &quot;&quot;] |
+| **projectId** | **long?** | projectId | [optional]  |
+| **search** | **string** | search | [optional]  |
+| **sort** | **string** | sort | [optional] [default to &quot;&quot;] |
 
 ### Return type
 
@@ -406,8 +480,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -415,20 +489,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Update
-
+<a id="update"></a>
+# **Update**
 > Database Update (string dbId, UpdateDatabase body)
 
 update
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -442,13 +511,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new DatabaseApi(Configuration.Default);
+            var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
             var body = new UpdateDatabase(); // UpdateDatabase | body
 
@@ -458,10 +528,10 @@ namespace Example
                 Database result = apiInstance.Update(dbId, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -469,13 +539,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Database> response = apiInstance.UpdateWithHttpInfo(dbId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
- **body** | [**UpdateDatabase**](UpdateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
+| **body** | [**UpdateDatabase**](UpdateDatabase.md) | body |  |
 
 ### Return type
 
@@ -487,8 +576,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -496,8 +585,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
