@@ -179,7 +179,6 @@ Class | Method | HTTP request | Description
 *ShareViewApi* | [**Delete**](docs/ShareViewApi.md#delete) | **DELETE** /v1/views/{viewId}/shares | delete
 *ShareViewApi* | [**Get**](docs/ShareViewApi.md#get) | **GET** /v1/views/{viewId}/shares | get
 *TaskApi* | [**Get**](docs/TaskApi.md#get) | **GET** /v1/tasks/{taskId} | get
-*TicketApi* | [**Create**](docs/TicketApi.md#create) | **POST** /v1/tickets | Create a new ticket
 *TransmemApi* | [**Cleanup**](docs/TransmemApi.md#cleanup) | **PUT** /v1/transmems/{tmId}/cleanup | Erases all the translation data of the provided tmId
 *TransmemApi* | [**Create**](docs/TransmemApi.md#create) | **POST** /v1/transmems | Create a new translation memory
 *TransmemApi* | [**CreateWithFile**](docs/TransmemApi.md#createwithfile) | **POST** /v1/transmems/upload | Create a new translation memory by uploading tmx file
@@ -303,7 +302,6 @@ Class | Method | HTTP request | Description
  - [Model.SubCategorySeverityResponse](docs/SubCategorySeverityResponse.md)
  - [Model.Task](docs/Task.md)
  - [Model.TicketPriority](docs/TicketPriority.md)
- - [Model.TicketResponse](docs/TicketResponse.md)
  - [Model.TicketStatus](docs/TicketStatus.md)
  - [Model.TicketType](docs/TicketType.md)
  - [Model.TransMem](docs/TransMem.md)

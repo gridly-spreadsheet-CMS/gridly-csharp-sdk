@@ -99,9 +99,7 @@ docs/ShareViewApi.md
 docs/SubCategorySeverityResponse.md
 docs/Task.md
 docs/TaskApi.md
-docs/TicketApi.md
 docs/TicketPriority.md
-docs/TicketResponse.md
 docs/TicketStatus.md
 docs/TicketType.md
 docs/TransMem.md
@@ -143,7 +141,6 @@ src/Com.Gridly.Test/Api/ProjectApiTests.cs
 src/Com.Gridly.Test/Api/RecordApiTests.cs
 src/Com.Gridly.Test/Api/ShareViewApiTests.cs
 src/Com.Gridly.Test/Api/TaskApiTests.cs
-src/Com.Gridly.Test/Api/TicketApiTests.cs
 src/Com.Gridly.Test/Api/TransmemApiTests.cs
 src/Com.Gridly.Test/Api/ViewApiTests.cs
 src/Com.Gridly.Test/Api/ViewColumnApiTests.cs
@@ -164,7 +161,6 @@ src/Com.Gridly/Api/ProjectApi.cs
 src/Com.Gridly/Api/RecordApi.cs
 src/Com.Gridly/Api/ShareViewApi.cs
 src/Com.Gridly/Api/TaskApi.cs
-src/Com.Gridly/Api/TicketApi.cs
 src/Com.Gridly/Api/TransmemApi.cs
 src/Com.Gridly/Api/ViewApi.cs
 src/Com.Gridly/Api/ViewColumnApi.cs
@@ -265,7 +261,6 @@ src/Com.Gridly/Model/ShareView.cs
 src/Com.Gridly/Model/SubCategorySeverityResponse.cs
 src/Com.Gridly/Model/Task.cs
 src/Com.Gridly/Model/TicketPriority.cs
-src/Com.Gridly/Model/TicketResponse.cs
 src/Com.Gridly/Model/TicketStatus.cs
 src/Com.Gridly/Model/TicketType.cs
 src/Com.Gridly/Model/TransMem.cs
