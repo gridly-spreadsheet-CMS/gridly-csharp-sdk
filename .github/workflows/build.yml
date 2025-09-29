@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        framework: [net48, net8.0, net9.0]
 
     steps:
       - name: Checkout repository
@@ -32,9 +35,6 @@ jobs:
       - name: Archive artifact
         uses: actions/upload-artifact@v4
         with:
-          # Artifact name
-          name: com.gridly.csharp-sdk
-          # A file, directory or wildcard pattern that describes what to upload
-          path: bin/*.zip
-          retention-days: 1
-          if-no-files-found: error
+          name: build-${{ matrix.framework }}
+          path: ./publish/${{ matrix.framework }}
+          retention-days: 7
