@@ -2772,7 +2772,12 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Glossary"
+                type: array
+          description: OK
       summary: List all glossaries
       tags:
       - glossary
@@ -2981,7 +2986,11 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/TransMem"
+                type: array
           description: OK
       summary: List all available translation memories or create default one if there
         is no translation memory
@@ -3042,7 +3051,9 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransMem"
           description: OK
       summary: Delete a translation memory by id
       tags:
@@ -3060,7 +3071,9 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransMem"
           description: OK
       summary: Get translation memory info by id
       tags:
@@ -3084,7 +3097,9 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransMem"
           description: OK
         "400":
           description: Bad Request

@@ -295,7 +295,7 @@ catch (ApiException e)
 
 <a id="delete"></a>
 # **Delete**
-> void Delete (string tmId)
+> TransMem Delete (string tmId)
 
 Delete a translation memory by id
 
@@ -326,7 +326,8 @@ namespace Example
             try
             {
                 // Delete a translation memory by id
-                apiInstance.Delete(tmId);
+                TransMem result = apiInstance.Delete(tmId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -346,7 +347,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete a translation memory by id
-    apiInstance.DeleteWithHttpInfo(tmId);
+    ApiResponse<TransMem> response = apiInstance.DeleteWithHttpInfo(tmId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -364,7 +368,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**TransMem**](TransMem.md)
 
 ### Authorization
 
@@ -485,7 +489,7 @@ catch (ApiException e)
 
 <a id="get"></a>
 # **Get**
-> void Get (string tmId)
+> TransMem Get (string tmId)
 
 Get translation memory info by id
 
@@ -516,7 +520,8 @@ namespace Example
             try
             {
                 // Get translation memory info by id
-                apiInstance.Get(tmId);
+                TransMem result = apiInstance.Get(tmId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -536,7 +541,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get translation memory info by id
-    apiInstance.GetWithHttpInfo(tmId);
+    ApiResponse<TransMem> response = apiInstance.GetWithHttpInfo(tmId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -554,7 +562,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**TransMem**](TransMem.md)
 
 ### Authorization
 
@@ -667,7 +675,7 @@ void (empty response body)
 
 <a id="listtm"></a>
 # **ListTM**
-> void ListTM (long? projectId = null)
+> List&lt;TransMem&gt; ListTM (long? projectId = null)
 
 List all available translation memories or create default one if there is no translation memory
 
@@ -698,7 +706,8 @@ namespace Example
             try
             {
                 // List all available translation memories or create default one if there is no translation memory
-                apiInstance.ListTM(projectId);
+                List<TransMem> result = apiInstance.ListTM(projectId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -718,7 +727,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List all available translation memories or create default one if there is no translation memory
-    apiInstance.ListTMWithHttpInfo(projectId);
+    ApiResponse<List<TransMem>> response = apiInstance.ListTMWithHttpInfo(projectId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -736,7 +748,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**List&lt;TransMem&gt;**](TransMem.md)
 
 ### Authorization
 
@@ -757,7 +769,7 @@ void (empty response body)
 
 <a id="update"></a>
 # **Update**
-> void Update (string tmId, UpdateTransMem updateTransMem)
+> TransMem Update (string tmId, UpdateTransMem updateTransMem)
 
 Update a translation memory
 
@@ -789,7 +801,8 @@ namespace Example
             try
             {
                 // Update a translation memory
-                apiInstance.Update(tmId, updateTransMem);
+                TransMem result = apiInstance.Update(tmId, updateTransMem);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -809,7 +822,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a translation memory
-    apiInstance.UpdateWithHttpInfo(tmId, updateTransMem);
+    ApiResponse<TransMem> response = apiInstance.UpdateWithHttpInfo(tmId, updateTransMem);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -828,7 +844,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**TransMem**](TransMem.md)
 
 ### Authorization
 

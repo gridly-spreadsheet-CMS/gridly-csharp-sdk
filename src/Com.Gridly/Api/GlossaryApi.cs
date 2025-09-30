@@ -118,8 +118,8 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void GetAll(int operationIndex = 0);
+        /// <returns>List&lt;Glossary&gt;</returns>
+        List<Glossary> GetAll(int operationIndex = 0);
 
         /// <summary>
         /// List all glossaries
@@ -129,8 +129,8 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetAllWithHttpInfo(int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;Glossary&gt;</returns>
+        ApiResponse<List<Glossary>> GetAllWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Import a glossary from file
         /// </summary>
@@ -301,8 +301,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;Glossary&gt;</returns>
+        System.Threading.Tasks.Task<List<Glossary>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List all glossaries
@@ -313,8 +313,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;Glossary&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Glossary>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Import a glossary from file
         /// </summary>
@@ -1114,10 +1114,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void GetAll(int operationIndex = 0)
+        /// <returns>List&lt;Glossary&gt;</returns>
+        public List<Glossary> GetAll(int operationIndex = 0)
         {
-            GetAllWithHttpInfo();
+            Com.Gridly.Client.ApiResponse<List<Glossary>> localVarResponse = GetAllWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1125,8 +1126,8 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> GetAllWithHttpInfo(int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;Glossary&gt;</returns>
+        public Com.Gridly.Client.ApiResponse<List<Glossary>> GetAllWithHttpInfo(int operationIndex = 0)
         {
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -1162,7 +1163,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/glossaries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Glossary>>("/v1/glossaries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAll", localVarResponse);
@@ -1181,10 +1182,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;Glossary&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Glossary>> GetAllAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<List<Glossary>> localVarResponse = await GetAllWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1193,8 +1195,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;Glossary&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<Glossary>>> GetAllWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
@@ -1230,7 +1232,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/glossaries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Glossary>>("/v1/glossaries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

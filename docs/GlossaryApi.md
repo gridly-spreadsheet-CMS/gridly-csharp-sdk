@@ -393,7 +393,7 @@ catch (ApiException e)
 
 <a id="getall"></a>
 # **GetAll**
-> void GetAll ()
+> List&lt;Glossary&gt; GetAll ()
 
 List all glossaries
 
@@ -423,7 +423,8 @@ namespace Example
             try
             {
                 // List all glossaries
-                apiInstance.GetAll();
+                List<Glossary> result = apiInstance.GetAll();
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -443,7 +444,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List all glossaries
-    apiInstance.GetAllWithHttpInfo();
+    ApiResponse<List<Glossary>> response = apiInstance.GetAllWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -457,7 +461,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-void (empty response body)
+[**List&lt;Glossary&gt;**](Glossary.md)
 
 ### Authorization
 
@@ -472,7 +476,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

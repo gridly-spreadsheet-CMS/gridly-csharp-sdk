@@ -112,7 +112,8 @@ namespace Com.Gridly.Test.Api
         public void GetAllTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //instance.GetAll();
+            //var response = instance.GetAll();
+            //Assert.IsType<List<Glossary>>(response);
         }
 
         /// <summary>

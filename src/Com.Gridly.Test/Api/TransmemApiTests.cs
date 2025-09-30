@@ -98,7 +98,8 @@ namespace Com.Gridly.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string tmId = null;
-            //instance.Delete(tmId);
+            //var response = instance.Delete(tmId);
+            //Assert.IsType<TransMem>(response);
         }
 
         /// <summary>
@@ -124,7 +125,8 @@ namespace Com.Gridly.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string tmId = null;
-            //instance.Get(tmId);
+            //var response = instance.Get(tmId);
+            //Assert.IsType<TransMem>(response);
         }
 
         /// <summary>
@@ -147,7 +149,8 @@ namespace Com.Gridly.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? projectId = null;
-            //instance.ListTM(projectId);
+            //var response = instance.ListTM(projectId);
+            //Assert.IsType<List<TransMem>>(response);
         }
 
         /// <summary>
@@ -159,7 +162,8 @@ namespace Com.Gridly.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string tmId = null;
             //UpdateTransMem updateTransMem = null;
-            //instance.Update(tmId, updateTransMem);
+            //var response = instance.Update(tmId, updateTransMem);
+            //Assert.IsType<TransMem>(response);
         }
     }
 }

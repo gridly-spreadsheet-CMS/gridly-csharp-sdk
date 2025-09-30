@@ -93,8 +93,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void Delete(string tmId, int operationIndex = 0);
+        /// <returns>TransMem</returns>
+        TransMem Delete(string tmId, int operationIndex = 0);
 
         /// <summary>
         /// Delete a translation memory by id
@@ -105,8 +105,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo(string tmId, int operationIndex = 0);
+        /// <returns>ApiResponse of TransMem</returns>
+        ApiResponse<TransMem> DeleteWithHttpInfo(string tmId, int operationIndex = 0);
         /// <summary>
         /// Export translation memory tmx file
         /// </summary>
@@ -139,8 +139,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void Get(string tmId, int operationIndex = 0);
+        /// <returns>TransMem</returns>
+        TransMem Get(string tmId, int operationIndex = 0);
 
         /// <summary>
         /// Get translation memory info by id
@@ -151,8 +151,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetWithHttpInfo(string tmId, int operationIndex = 0);
+        /// <returns>ApiResponse of TransMem</returns>
+        ApiResponse<TransMem> GetWithHttpInfo(string tmId, int operationIndex = 0);
         /// <summary>
         /// Import a translation memory from tmx file
         /// </summary>
@@ -181,8 +181,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void ListTM(long? projectId = default, int operationIndex = 0);
+        /// <returns>List&lt;TransMem&gt;</returns>
+        List<TransMem> ListTM(long? projectId = default, int operationIndex = 0);
 
         /// <summary>
         /// List all available translation memories or create default one if there is no translation memory
@@ -193,8 +193,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListTMWithHttpInfo(long? projectId = default, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;TransMem&gt;</returns>
+        ApiResponse<List<TransMem>> ListTMWithHttpInfo(long? projectId = default, int operationIndex = 0);
         /// <summary>
         /// Update a translation memory
         /// </summary>
@@ -202,8 +202,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        void Update(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0);
+        /// <returns>TransMem</returns>
+        TransMem Update(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0);
 
         /// <summary>
         /// Update a translation memory
@@ -215,8 +215,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateWithHttpInfo(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0);
+        /// <returns>ApiResponse of TransMem</returns>
+        ApiResponse<TransMem> UpdateWithHttpInfo(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -311,8 +311,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of TransMem</returns>
+        System.Threading.Tasks.Task<TransMem> DeleteAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a translation memory by id
@@ -324,8 +324,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransMem>> DeleteWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export translation memory tmx file
         /// </summary>
@@ -367,8 +367,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of TransMem</returns>
+        System.Threading.Tasks.Task<TransMem> GetAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get translation memory info by id
@@ -380,8 +380,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransMem>> GetWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Import a translation memory from tmx file
         /// </summary>
@@ -419,8 +419,8 @@ namespace Com.Gridly.Api
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListTMAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;TransMem&gt;</returns>
+        System.Threading.Tasks.Task<List<TransMem>> ListTMAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List all available translation memories or create default one if there is no translation memory
@@ -432,8 +432,8 @@ namespace Com.Gridly.Api
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListTMWithHttpInfoAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;TransMem&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TransMem>>> ListTMWithHttpInfoAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a translation memory
         /// </summary>
@@ -445,8 +445,8 @@ namespace Com.Gridly.Api
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of TransMem</returns>
+        System.Threading.Tasks.Task<TransMem> UpdateAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a translation memory
@@ -459,8 +459,8 @@ namespace Com.Gridly.Api
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateWithHttpInfoAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransMem>> UpdateWithHttpInfoAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1052,10 +1052,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Delete(string tmId, int operationIndex = 0)
+        /// <returns>TransMem</returns>
+        public TransMem Delete(string tmId, int operationIndex = 0)
         {
-            DeleteWithHttpInfo(tmId);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = DeleteWithHttpInfo(tmId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1064,8 +1065,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> DeleteWithHttpInfo(string tmId, int operationIndex = 0)
+        /// <returns>ApiResponse of TransMem</returns>
+        public Com.Gridly.Client.ApiResponse<TransMem> DeleteWithHttpInfo(string tmId, int operationIndex = 0)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -1108,7 +1109,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Delete", localVarResponse);
@@ -1128,10 +1129,11 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of TransMem</returns>
+        public async System.Threading.Tasks.Task<TransMem> DeleteAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            await DeleteWithHttpInfoAsync(tmId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = await DeleteWithHttpInfoAsync(tmId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1141,8 +1143,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> DeleteWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<TransMem>> DeleteWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -1185,7 +1187,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1396,10 +1398,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Get(string tmId, int operationIndex = 0)
+        /// <returns>TransMem</returns>
+        public TransMem Get(string tmId, int operationIndex = 0)
         {
-            GetWithHttpInfo(tmId);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = GetWithHttpInfo(tmId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1408,8 +1411,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> GetWithHttpInfo(string tmId, int operationIndex = 0)
+        /// <returns>ApiResponse of TransMem</returns>
+        public Com.Gridly.Client.ApiResponse<TransMem> GetWithHttpInfo(string tmId, int operationIndex = 0)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -1452,7 +1455,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Get", localVarResponse);
@@ -1472,10 +1475,11 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of TransMem</returns>
+        public async System.Threading.Tasks.Task<TransMem> GetAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetWithHttpInfoAsync(tmId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = await GetWithHttpInfoAsync(tmId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1485,8 +1489,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> GetWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<TransMem>> GetWithHttpInfoAsync(string tmId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -1529,7 +1533,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1720,10 +1724,11 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void ListTM(long? projectId = default, int operationIndex = 0)
+        /// <returns>List&lt;TransMem&gt;</returns>
+        public List<TransMem> ListTM(long? projectId = default, int operationIndex = 0)
         {
-            ListTMWithHttpInfo(projectId);
+            Com.Gridly.Client.ApiResponse<List<TransMem>> localVarResponse = ListTMWithHttpInfo(projectId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1732,8 +1737,8 @@ namespace Com.Gridly.Api
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> ListTMWithHttpInfo(long? projectId = default, int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;TransMem&gt;</returns>
+        public Com.Gridly.Client.ApiResponse<List<TransMem>> ListTMWithHttpInfo(long? projectId = default, int operationIndex = 0)
         {
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -1773,7 +1778,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/transmems", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<TransMem>>("/v1/transmems", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListTM", localVarResponse);
@@ -1793,10 +1798,11 @@ namespace Com.Gridly.Api
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListTMAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;TransMem&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TransMem>> ListTMAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListTMWithHttpInfoAsync(projectId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<List<TransMem>> localVarResponse = await ListTMWithHttpInfoAsync(projectId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1806,8 +1812,8 @@ namespace Com.Gridly.Api
         /// <param name="projectId"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> ListTMWithHttpInfoAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;TransMem&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<TransMem>>> ListTMWithHttpInfoAsync(long? projectId = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
@@ -1847,7 +1853,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/transmems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<TransMem>>("/v1/transmems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1868,10 +1874,11 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void Update(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0)
+        /// <returns>TransMem</returns>
+        public TransMem Update(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0)
         {
-            UpdateWithHttpInfo(tmId, updateTransMem);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = UpdateWithHttpInfo(tmId, updateTransMem);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1881,8 +1888,8 @@ namespace Com.Gridly.Api
         /// <param name="tmId"></param>
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> UpdateWithHttpInfo(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0)
+        /// <returns>ApiResponse of TransMem</returns>
+        public Com.Gridly.Client.ApiResponse<TransMem> UpdateWithHttpInfo(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -1933,7 +1940,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Update", localVarResponse);
@@ -1954,10 +1961,11 @@ namespace Com.Gridly.Api
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of TransMem</returns>
+        public async System.Threading.Tasks.Task<TransMem> UpdateAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateWithHttpInfoAsync(tmId, updateTransMem, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<TransMem> localVarResponse = await UpdateWithHttpInfoAsync(tmId, updateTransMem, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1968,8 +1976,8 @@ namespace Com.Gridly.Api
         /// <param name="updateTransMem"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> UpdateWithHttpInfoAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (TransMem)</returns>
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<TransMem>> UpdateWithHttpInfoAsync(string tmId, UpdateTransMem updateTransMem, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'tmId' is set
             if (tmId == null)
@@ -2020,7 +2028,7 @@ namespace Com.Gridly.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TransMem>("/v1/transmems/{tmId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
