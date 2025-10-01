@@ -72,16 +72,33 @@ jobs:
         zip com.gridly.csharp-sdk-net8.0.zip com.gridly.csharp-sdk-net8.0/**
         zip com.gridly.csharp-sdk-net9.0.zip com.gridly.csharp-sdk-net9.0/**
         
-    - name: Archive Artifact
+    - name: Archive net48 artifact
       uses: actions/upload-artifact@v4
       with:
         # Artifact name
-        name: com.gridly.csharp-sdk
-        # A file, directory or wildcard pattern that describes what to upload
-        path: publish/*.zip
+        name: com.gridly.csharp-sdk-net48
+        path: publish/*net48.zip
         retention-days: 1
         if-no-files-found: error
         
+    - name: Archive net8.0 artifact
+      uses: actions/upload-artifact@v4
+      with:
+        # Artifact name
+        name: com.gridly.csharp-sdk-net8.0
+        path: publish/*net8.0.zip
+        retention-days: 1
+        if-no-files-found: error
+
+    - name: Archive net9.0 artifact
+      uses: actions/upload-artifact@v4
+      with:
+        # Artifact name
+        name: com.gridly.csharp-sdk-net-9.0
+        path: publish/*net9.0.zip
+        retention-days: 1
+        if-no-files-found: error
+
     - name: Github Release
       uses: softprops/action-gh-release@v1
       id: create_release
