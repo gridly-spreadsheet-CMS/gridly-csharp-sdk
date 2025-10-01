@@ -77,7 +77,7 @@ jobs:
       with:
         # Artifact name
         name: com.gridly.csharp-sdk-net48
-        path: publish/*net48.zip
+        path: publish/com.gridly.csharp-sdk-net48.zip
         retention-days: 1
         if-no-files-found: error
         
@@ -86,7 +86,7 @@ jobs:
       with:
         # Artifact name
         name: com.gridly.csharp-sdk-net8.0
-        path: publish/*net8.0.zip
+        path: publish/com.gridly.csharp-sdk-net8.0.zip
         retention-days: 1
         if-no-files-found: error
 
@@ -95,7 +95,7 @@ jobs:
       with:
         # Artifact name
         name: com.gridly.csharp-sdk-net-9.0
-        path: publish/*net9.0.zip
+        path: publish/com.gridly.csharp-sdk-net9.0.zip
         retention-days: 1
         if-no-files-found: error
 
