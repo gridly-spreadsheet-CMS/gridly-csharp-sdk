@@ -109,7 +109,7 @@ catch (ApiException e)
 
 <a id="delete"></a>
 # **Delete**
-> void Delete (long id)
+> void Delete (string id)
 
 Delete a glossary
 
@@ -135,7 +135,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(config);
-            var id = 789L;  // long | 
+            var id = "id_example";  // string | 
 
             try
             {
@@ -174,7 +174,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **long** |  |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -199,7 +199,7 @@ void (empty response body)
 
 <a id="exportfile"></a>
 # **ExportFile**
-> System.IO.Stream ExportFile (long id, List<string> fields = null, ExportGlossaryFormat? format = null, List<string> langs = null)
+> System.IO.Stream ExportFile (string id, List<string> fields = null, ExportGlossaryFormat? format = null, List<string> langs = null)
 
 Export a glossary
 
@@ -225,7 +225,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(config);
-            var id = 789L;  // long | 
+            var id = "id_example";  // string | 
             var fields = new List<string>(); // List<string> |  (optional) 
             var format = (ExportGlossaryFormat) "csv";  // ExportGlossaryFormat? |  (optional) 
             var langs = new List<string>(); // List<string> |  (optional) 
@@ -271,7 +271,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **long** |  |  |
+| **id** | **string** |  |  |
 | **fields** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
 | **format** | **ExportGlossaryFormat?** |  | [optional]  |
 | **langs** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
@@ -299,7 +299,7 @@ catch (ApiException e)
 
 <a id="get"></a>
 # **Get**
-> Glossary Get (long id)
+> Glossary Get (string id)
 
 Get glossary info
 
@@ -325,7 +325,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(config);
-            var id = 789L;  // long | 
+            var id = "id_example";  // string | 
 
             try
             {
@@ -368,7 +368,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **long** |  |  |
+| **id** | **string** |  |  |
 
 ### Return type
 
@@ -482,7 +482,7 @@ This endpoint does not need any parameter.
 
 <a id="importfile"></a>
 # **ImportFile**
-> void ImportFile (long id, ImportGlossaryOption? importOption = null, System.IO.Stream file = null)
+> void ImportFile (string id, ImportGlossaryOption? importOption = null, System.IO.Stream file = null)
 
 Import a glossary from file
 
@@ -508,7 +508,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(config);
-            var id = 789L;  // long | 
+            var id = "id_example";  // string | 
             var importOption = (ImportGlossaryOption) "ADD";  // ImportGlossaryOption? |  (optional) 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
@@ -549,7 +549,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **long** |  |  |
+| **id** | **string** |  |  |
 | **importOption** | **ImportGlossaryOption?** |  | [optional]  |
 | **file** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
@@ -576,7 +576,7 @@ void (empty response body)
 
 <a id="update"></a>
 # **Update**
-> Glossary Update (long id, UpdateGlossary updateGlossary)
+> Glossary Update (string id, UpdateGlossary updateGlossary)
 
 Update glossary info
 
@@ -602,7 +602,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GlossaryApi(config);
-            var id = 789L;  // long | 
+            var id = "id_example";  // string | 
             var updateGlossary = new UpdateGlossary(); // UpdateGlossary | 
 
             try
@@ -646,7 +646,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **long** |  |  |
+| **id** | **string** |  |  |
 | **updateGlossary** | [**UpdateGlossary**](UpdateGlossary.md) |  |  |
 
 ### Return type

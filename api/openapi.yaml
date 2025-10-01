@@ -29,8 +29,6 @@ tags:
   name: lqa-model
 - description: Translation Memory API
   name: transmem
-- description: Public History API
-  name: history
 paths:
   /v1/views/{viewId}/shares:
     delete:
@@ -2809,8 +2807,7 @@ paths:
         name: id
         required: true
         schema:
-          format: int64
-          type: integer
+          type: string
         style: simple
       responses:
         "204":
@@ -2826,8 +2823,7 @@ paths:
         name: id
         required: true
         schema:
-          format: int64
-          type: integer
+          type: string
         style: simple
       responses:
         "200":
@@ -2846,8 +2842,7 @@ paths:
         name: id
         required: true
         schema:
-          format: int64
-          type: integer
+          type: string
         style: simple
       requestBody:
         content:
@@ -2875,8 +2870,7 @@ paths:
         name: id
         required: true
         schema:
-          format: int64
-          type: integer
+          type: string
         style: simple
       - explode: true
         in: query
@@ -2924,8 +2918,7 @@ paths:
         name: id
         required: true
         schema:
-          format: int64
-          type: integer
+          type: string
         style: simple
       - explode: true
         in: query
@@ -3194,27 +3187,6 @@ paths:
       summary: Import a translation memory from tmx file
       tags:
       - transmem
-  /v1/grid-histories/export:
-    post:
-      operationId: exportGrid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/ExportGridHistory"
-        required: true
-      responses:
-        "200":
-          content:
-            application/octet-stream:
-              schema:
-                format: binary
-                type: string
-        "400":
-          description: Bad Request
-      summary: Export grid history
-      tags:
-      - history
   /v1/automations/{automationId}/trigger:
     post:
       operationId: trigger
@@ -5611,7 +5583,12 @@ components:
           type: string
         templateGridId:
           type: string
+        metadata:
+          additionalProperties:
+            type: string
+          type: object
         recordIdentifierType:
+          default: recordId
           enum:
           - recordId
           - pathTagRecordId
@@ -5620,12 +5597,9 @@ components:
           items:
             $ref: "#/components/schemas/CreateColumn"
           type: array
-        metadata:
-          additionalProperties:
-            type: string
-          type: object
       required:
       - name
+      - recordIdentifierType
       type: object
     Grid:
       example:
@@ -9489,68 +9463,6 @@ components:
             format: int64
             type: integer
           type: array
-      type: object
-    ExportGridHistoryCategory:
-      enum:
-      - NA
-      - GRID
-      - COLUMN
-      - DEPENDENCY
-      - RECORD
-      - TAG
-      - VIEW
-      - VIEW_COLUMN
-      - VIEW_FILTER
-      - VIEW_SORT
-      - VIEW_AGGREGATE
-      type: string
-    ExportGridHistory:
-      example:
-        emails:
-        - emails
-        - emails
-        apiKeyIds:
-        - 0
-        - 0
-        fromDateTime: 2000-01-23T04:56:07.000+00:00
-        dbId: dbId
-        gridId: gridId
-        objectTypes:
-        - NA
-        - NA
-        toDateTime: 2000-01-23T04:56:07.000+00:00
-      properties:
-        dbId:
-          pattern: \S
-          type: string
-        gridId:
-          pattern: \S
-          type: string
-        fromDateTime:
-          format: date-time
-          type: string
-        toDateTime:
-          format: date-time
-          type: string
-        apiKeyIds:
-          items:
-            format: int64
-            type: integer
-          type: array
-          uniqueItems: true
-        emails:
-          items:
-            type: string
-          type: array
-          uniqueItems: true
-        objectTypes:
-          items:
-            $ref: "#/components/schemas/ExportGridHistoryCategory"
-          type: array
-          uniqueItems: true
-      required:
-      - dbId
-      - gridId
       type: object
     ExecutionTriggerRequest:
       example:

@@ -55,8 +55,8 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets RecordIdentifierType
         /// </summary>
-        [DataMember(Name = "recordIdentifierType", EmitDefaultValue = true)]
-        public RecordIdentifierTypeEnum? RecordIdentifierType { get; set; }
+        [DataMember(Name = "recordIdentifierType", IsRequired = true, EmitDefaultValue = true)]
+        public RecordIdentifierTypeEnum RecordIdentifierType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateGrid" /> class.
         /// </summary>
@@ -68,10 +68,10 @@ namespace Com.Gridly.Model
         /// <param name="id">id.</param>
         /// <param name="name">name (required).</param>
         /// <param name="templateGridId">templateGridId.</param>
-        /// <param name="recordIdentifierType">recordIdentifierType.</param>
-        /// <param name="columns">columns.</param>
         /// <param name="metadata">metadata.</param>
-        public CreateGrid(string id = default, string name = default, string templateGridId = default, RecordIdentifierTypeEnum? recordIdentifierType = default, List<CreateColumn> columns = default, Dictionary<string, string> metadata = default)
+        /// <param name="recordIdentifierType">recordIdentifierType (required) (default to RecordIdentifierTypeEnum.RecordId).</param>
+        /// <param name="columns">columns.</param>
+        public CreateGrid(string id = default, string name = default, string templateGridId = default, Dictionary<string, string> metadata = default, RecordIdentifierTypeEnum recordIdentifierType = RecordIdentifierTypeEnum.RecordId, List<CreateColumn> columns = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -79,11 +79,11 @@ namespace Com.Gridly.Model
                 throw new ArgumentNullException("name is a required property for CreateGrid and cannot be null");
             }
             this.Name = name;
+            this.RecordIdentifierType = recordIdentifierType;
             this.Id = id;
             this.TemplateGridId = templateGridId;
-            this.RecordIdentifierType = recordIdentifierType;
-            this.Columns = columns;
             this.Metadata = metadata;
+            this.Columns = columns;
         }
 
         /// <summary>
@@ -105,16 +105,16 @@ namespace Com.Gridly.Model
         public string TemplateGridId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Columns
-        /// </summary>
-        [DataMember(Name = "columns", EmitDefaultValue = true)]
-        public List<CreateColumn> Columns { get; set; }
-
-        /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
         [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Columns
+        /// </summary>
+        [DataMember(Name = "columns", EmitDefaultValue = true)]
+        public List<CreateColumn> Columns { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -127,9 +127,9 @@ namespace Com.Gridly.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  TemplateGridId: ").Append(TemplateGridId).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  RecordIdentifierType: ").Append(RecordIdentifierType).Append("\n");
             sb.Append("  Columns: ").Append(Columns).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

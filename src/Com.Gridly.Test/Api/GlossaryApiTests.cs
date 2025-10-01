@@ -74,7 +74,7 @@ namespace Com.Gridly.Test.Api
         public void DeleteTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long id = null;
+            //string id = null;
             //instance.Delete(id);
         }
 
@@ -85,7 +85,7 @@ namespace Com.Gridly.Test.Api
         public void ExportFileTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long id = null;
+            //string id = null;
             //List<string> fields = null;
             //ExportGlossaryFormat? format = null;
             //List<string> langs = null;
@@ -100,7 +100,7 @@ namespace Com.Gridly.Test.Api
         public void GetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long id = null;
+            //string id = null;
             //var response = instance.Get(id);
             //Assert.IsType<Glossary>(response);
         }
@@ -123,7 +123,7 @@ namespace Com.Gridly.Test.Api
         public void ImportFileTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long id = null;
+            //string id = null;
             //ImportGlossaryOption? importOption = null;
             //System.IO.Stream file = null;
             //instance.ImportFile(id, importOption, file);
@@ -136,7 +136,7 @@ namespace Com.Gridly.Test.Api
         public void UpdateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long id = null;
+            //string id = null;
             //UpdateGlossary updateGlossary = null;
             //var response = instance.Update(id, updateGlossary);
             //Assert.IsType<Glossary>(response);

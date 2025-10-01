@@ -162,7 +162,6 @@ Class | Method | HTTP request | Description
 *GridApi* | [**UpdateCategory**](docs/GridApi.md#updatecategory) | **PUT** /v1/grids/{gridId}/settings/categories/{categoryId} | updateCategory
 *GridApi* | [**UpdateSetting**](docs/GridApi.md#updatesetting) | **PATCH** /v1/grids/{gridId}/settings | updateSetting
 *GridApi* | [**UploadSettingFile**](docs/GridApi.md#uploadsettingfile) | **POST** /v1/grids/{gridId}/settings/categories/{categoryId}/files | uploadSettingFile
-*HistoryApi* | [**ExportGrid**](docs/HistoryApi.md#exportgrid) | **POST** /v1/grid-histories/export | Export grid history
 *LocaleApi* | [**Create**](docs/LocaleApi.md#create) | **GET** /v1/locales/all | create
 *LqaModelApi* | [**GetLQAModel**](docs/LqaModelApi.md#getlqamodel) | **GET** /v1/lqa-models | Get default lqa model
 *PathApi* | [**Create**](docs/PathApi.md#create) | **POST** /v1/views/{viewId}/paths | create
@@ -263,8 +262,6 @@ Class | Method | HTTP request | Description
  - [Model.ExecutionTriggerRequest](docs/ExecutionTriggerRequest.md)
  - [Model.ExportFileHeader](docs/ExportFileHeader.md)
  - [Model.ExportGlossaryFormat](docs/ExportGlossaryFormat.md)
- - [Model.ExportGridHistory](docs/ExportGridHistory.md)
- - [Model.ExportGridHistoryCategory](docs/ExportGridHistoryCategory.md)
  - [Model.ExportRecordHistory](docs/ExportRecordHistory.md)
  - [Model.ExportTransMemFormat](docs/ExportTransMemFormat.md)
  - [Model.FetchFileOption](docs/FetchFileOption.md)

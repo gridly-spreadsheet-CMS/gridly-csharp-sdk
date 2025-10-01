@@ -54,7 +54,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void Delete(long id, int operationIndex = 0);
+        void Delete(string id, int operationIndex = 0);
 
         /// <summary>
         /// Delete a glossary
@@ -66,7 +66,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteWithHttpInfo(long id, int operationIndex = 0);
+        ApiResponse<Object> DeleteWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
         /// Export a glossary
         /// </summary>
@@ -77,7 +77,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ExportFile(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0);
+        System.IO.Stream ExportFile(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0);
 
         /// <summary>
         /// Export a glossary
@@ -92,7 +92,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> ExportFileWithHttpInfo(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0);
+        ApiResponse<System.IO.Stream> ExportFileWithHttpInfo(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0);
         /// <summary>
         /// Get glossary info
         /// </summary>
@@ -100,7 +100,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Glossary</returns>
-        Glossary Get(long id, int operationIndex = 0);
+        Glossary Get(string id, int operationIndex = 0);
 
         /// <summary>
         /// Get glossary info
@@ -112,7 +112,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Glossary</returns>
-        ApiResponse<Glossary> GetWithHttpInfo(long id, int operationIndex = 0);
+        ApiResponse<Glossary> GetWithHttpInfo(string id, int operationIndex = 0);
         /// <summary>
         /// List all glossaries
         /// </summary>
@@ -140,7 +140,7 @@ namespace Com.Gridly.Api
         /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ImportFile(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0);
+        void ImportFile(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0);
 
         /// <summary>
         /// Import a glossary from file
@@ -154,7 +154,7 @@ namespace Com.Gridly.Api
         /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ImportFileWithHttpInfo(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0);
+        ApiResponse<Object> ImportFileWithHttpInfo(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0);
         /// <summary>
         /// Update glossary info
         /// </summary>
@@ -163,7 +163,7 @@ namespace Com.Gridly.Api
         /// <param name="updateGlossary"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Glossary</returns>
-        Glossary Update(long id, UpdateGlossary updateGlossary, int operationIndex = 0);
+        Glossary Update(string id, UpdateGlossary updateGlossary, int operationIndex = 0);
 
         /// <summary>
         /// Update glossary info
@@ -176,7 +176,7 @@ namespace Com.Gridly.Api
         /// <param name="updateGlossary"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Glossary</returns>
-        ApiResponse<Glossary> UpdateWithHttpInfo(long id, UpdateGlossary updateGlossary, int operationIndex = 0);
+        ApiResponse<Glossary> UpdateWithHttpInfo(string id, UpdateGlossary updateGlossary, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -222,7 +222,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeleteAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a glossary
@@ -235,7 +235,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export a glossary
         /// </summary>
@@ -250,7 +250,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> ExportFileAsync(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<System.IO.Stream> ExportFileAsync(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Export a glossary
@@ -266,7 +266,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> ExportFileWithHttpInfoAsync(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get glossary info
         /// </summary>
@@ -278,7 +278,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Glossary</returns>
-        System.Threading.Tasks.Task<Glossary> GetAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Glossary> GetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get glossary info
@@ -291,7 +291,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Glossary)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Glossary>> GetWithHttpInfoAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Glossary>> GetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List all glossaries
         /// </summary>
@@ -328,7 +328,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ImportFileAsync(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ImportFileAsync(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Import a glossary from file
@@ -343,7 +343,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ImportFileWithHttpInfoAsync(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ImportFileWithHttpInfoAsync(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update glossary info
         /// </summary>
@@ -356,7 +356,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Glossary</returns>
-        System.Threading.Tasks.Task<Glossary> UpdateAsync(long id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Glossary> UpdateAsync(string id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update glossary info
@@ -370,7 +370,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Glossary)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Glossary>> UpdateWithHttpInfoAsync(long id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Glossary>> UpdateWithHttpInfoAsync(string id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -655,7 +655,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void Delete(long id, int operationIndex = 0)
+        public void Delete(string id, int operationIndex = 0)
         {
             DeleteWithHttpInfo(id);
         }
@@ -667,8 +667,14 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> DeleteWithHttpInfo(long id, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Object> DeleteWithHttpInfo(string id, int operationIndex = 0)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Delete");
+            }
+
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -724,7 +730,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeleteAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -737,8 +743,14 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> DeleteWithHttpInfoAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> DeleteWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Delete");
+            }
+
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -797,7 +809,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream ExportFile(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0)
+        public System.IO.Stream ExportFile(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<System.IO.Stream> localVarResponse = ExportFileWithHttpInfo(id, fields, format, langs);
             return localVarResponse.Data;
@@ -813,8 +825,14 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Com.Gridly.Client.ApiResponse<System.IO.Stream> ExportFileWithHttpInfo(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<System.IO.Stream> ExportFileWithHttpInfo(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->ExportFile");
+            }
+
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -886,7 +904,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> ExportFileAsync(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<System.IO.Stream> ExportFileAsync(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<System.IO.Stream> localVarResponse = await ExportFileWithHttpInfoAsync(id, fields, format, langs, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -903,8 +921,14 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<System.IO.Stream>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<System.IO.Stream>> ExportFileWithHttpInfoAsync(string id, List<string> fields = default, ExportGlossaryFormat? format = default, List<string> langs = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->ExportFile");
+            }
+
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -973,7 +997,7 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Glossary</returns>
-        public Glossary Get(long id, int operationIndex = 0)
+        public Glossary Get(string id, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<Glossary> localVarResponse = GetWithHttpInfo(id);
             return localVarResponse.Data;
@@ -986,8 +1010,14 @@ namespace Com.Gridly.Api
         /// <param name="id"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Glossary</returns>
-        public Com.Gridly.Client.ApiResponse<Glossary> GetWithHttpInfo(long id, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Glossary> GetWithHttpInfo(string id, int operationIndex = 0)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Get");
+            }
+
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1044,7 +1074,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Glossary</returns>
-        public async System.Threading.Tasks.Task<Glossary> GetAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Glossary> GetAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<Glossary> localVarResponse = await GetWithHttpInfoAsync(id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1058,8 +1088,14 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Glossary)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Glossary>> GetWithHttpInfoAsync(long id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Glossary>> GetWithHttpInfoAsync(string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Get");
+            }
+
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -1255,7 +1291,7 @@ namespace Com.Gridly.Api
         /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ImportFile(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0)
+        public void ImportFile(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0)
         {
             ImportFileWithHttpInfo(id, importOption, file);
         }
@@ -1269,8 +1305,14 @@ namespace Com.Gridly.Api
         /// <param name="file"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> ImportFileWithHttpInfo(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Object> ImportFileWithHttpInfo(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->ImportFile");
+            }
+
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1338,7 +1380,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ImportFileAsync(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ImportFileAsync(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             await ImportFileWithHttpInfoAsync(id, importOption, file, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1353,8 +1395,14 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> ImportFileWithHttpInfoAsync(long id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> ImportFileWithHttpInfoAsync(string id, ImportGlossaryOption? importOption = default, System.IO.Stream file = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->ImportFile");
+            }
+
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -1421,7 +1469,7 @@ namespace Com.Gridly.Api
         /// <param name="updateGlossary"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Glossary</returns>
-        public Glossary Update(long id, UpdateGlossary updateGlossary, int operationIndex = 0)
+        public Glossary Update(string id, UpdateGlossary updateGlossary, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<Glossary> localVarResponse = UpdateWithHttpInfo(id, updateGlossary);
             return localVarResponse.Data;
@@ -1435,8 +1483,14 @@ namespace Com.Gridly.Api
         /// <param name="updateGlossary"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Glossary</returns>
-        public Com.Gridly.Client.ApiResponse<Glossary> UpdateWithHttpInfo(long id, UpdateGlossary updateGlossary, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Glossary> UpdateWithHttpInfo(string id, UpdateGlossary updateGlossary, int operationIndex = 0)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Update");
+            }
+
             // verify the required parameter 'updateGlossary' is set
             if (updateGlossary == null)
             {
@@ -1502,7 +1556,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Glossary</returns>
-        public async System.Threading.Tasks.Task<Glossary> UpdateAsync(long id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Glossary> UpdateAsync(string id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<Glossary> localVarResponse = await UpdateWithHttpInfoAsync(id, updateGlossary, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1517,8 +1571,14 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Glossary)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Glossary>> UpdateWithHttpInfoAsync(long id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Glossary>> UpdateWithHttpInfoAsync(string id, UpdateGlossary updateGlossary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'id' when calling GlossaryApi->Update");
+            }
+
             // verify the required parameter 'updateGlossary' is set
             if (updateGlossary == null)
             {
