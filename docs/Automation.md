@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.Automation
 
 ## Properties
@@ -13,7 +12,5 @@ Name | Type | Description | Notes
 **Triggers** | [**List&lt;AutomationTrigger&gt;**](AutomationTrigger.md) |  | [optional] 
 **Actions** | [**List&lt;AutomationNode&gt;**](AutomationNode.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

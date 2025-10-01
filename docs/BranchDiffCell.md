@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.BranchDiffCell
 
 ## Properties
@@ -16,7 +15,5 @@ Name | Type | Description | Notes
 **SourceValue** | **Object** |  | [optional] 
 **DestinationValue** | **Object** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -2,21 +2,19 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ViewApi.md#create) | **POST** /v1/views | create
-[**Delete**](ViewApi.md#delete) | **DELETE** /v1/views/{viewId} | delete
-[**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export
-[**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
-[**GetStatistic**](ViewApi.md#getstatistic) | **GET** /v1/views/{viewId}/statistic | getStatistic
-[**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView
-[**List**](ViewApi.md#list) | **GET** /v1/views | list
-[**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ViewApi.md#create) | **POST** /v1/views | create |
+| [**Delete**](ViewApi.md#delete) | **DELETE** /v1/views/{viewId} | delete |
+| [**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export |
+| [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get |
+| [**GetStatistic**](ViewApi.md#getstatistic) | **GET** /v1/views/{viewId}/statistic | getStatistic |
+| [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView |
+| [**List**](ViewApi.md#list) | **GET** /v1/views | list |
+| [**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > View Create (CreateView createView)
 
 create
@@ -24,7 +22,6 @@ create
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -38,13 +35,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var createView = new CreateView(); // CreateView | 
 
             try
@@ -53,10 +51,10 @@ namespace Example
                 View result = apiInstance.Create(createView);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -64,12 +62,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<View> response = apiInstance.CreateWithHttpInfo(createView);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createView** | [**CreateView**](CreateView.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createView** | [**CreateView**](CreateView.md) |  |  |
 
 ### Return type
 
@@ -81,8 +98,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -90,14 +107,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string viewId)
 
 delete
@@ -105,7 +118,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -119,13 +131,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
 
             try
@@ -133,10 +146,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(viewId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,12 +157,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(viewId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -161,8 +190,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -170,14 +199,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Export
-
+<a id="export"></a>
+# **Export**
 > System.IO.Stream Export (string viewId, List<string> columnIds = null, ExportFileHeader? fileHeader = null, string query = null, string sort = null, FileType? type = null)
 
 export
@@ -185,7 +210,6 @@ export
 export
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -199,13 +223,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
             var fileHeader = (ExportFileHeader) "none";  // ExportFileHeader? | fileHeader (optional) 
@@ -219,10 +244,10 @@ namespace Example
                 System.IO.Stream result = apiInstance.Export(viewId, columnIds, fileHeader, query, sort, type);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Export: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Export: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -230,17 +255,36 @@ namespace Example
 }
 ```
 
+#### Using the ExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // export
+    ApiResponse<System.IO.Stream> response = apiInstance.ExportWithHttpInfo(viewId, columnIds, fileHeader, query, sort, type);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **fileHeader** | **ExportFileHeader?**| fileHeader | [optional] 
- **query** | **string**| query | [optional] [default to &quot;{}&quot;]
- **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
- **type** | **FileType?**| type | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
+| **fileHeader** | **ExportFileHeader?** | fileHeader | [optional]  |
+| **query** | **string** | query | [optional] [default to &quot;{}&quot;] |
+| **sort** | **string** | sort | [optional] [default to &quot;{}&quot;] |
+| **type** | **FileType?** | type | [optional]  |
 
 ### Return type
 
@@ -252,8 +296,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/octet-stream
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -261,14 +305,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **0** | default response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Get
-
+<a id="get"></a>
+# **Get**
 > View Get (string viewId, List<string> columnIds = null, List<string> include = null, string page = null, string query = null, string sort = null)
 
 get
@@ -276,7 +316,6 @@ get
 get
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -290,13 +329,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
             var include = new List<string>(); // List<string> | include (optional) 
@@ -310,10 +350,10 @@ namespace Example
                 View result = apiInstance.Get(viewId, columnIds, include, page, query, sort);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -321,17 +361,36 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<View> response = apiInstance.GetWithHttpInfo(viewId, columnIds, include, page, query, sort);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **include** | [**List&lt;string&gt;**](string.md)| include | [optional] 
- **page** | **string**| page | [optional] [default to &quot;{}&quot;]
- **query** | **string**| query | [optional] [default to &quot;{}&quot;]
- **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
+| **include** | [**List&lt;string&gt;**](string.md) | include | [optional]  |
+| **page** | **string** | page | [optional] [default to &quot;{}&quot;] |
+| **query** | **string** | query | [optional] [default to &quot;{}&quot;] |
+| **sort** | **string** | sort | [optional] [default to &quot;{}&quot;] |
 
 ### Return type
 
@@ -343,8 +402,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -352,14 +411,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## GetStatistic
-
+<a id="getstatistic"></a>
+# **GetStatistic**
 > ViewStatistic GetStatistic (string viewId, List<string> columnIds = null)
 
 getStatistic
@@ -367,7 +422,6 @@ getStatistic
 getStatistic
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -381,13 +435,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
 
@@ -397,10 +452,10 @@ namespace Example
                 ViewStatistic result = apiInstance.GetStatistic(viewId, columnIds);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.GetStatistic: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.GetStatistic: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -408,13 +463,32 @@ namespace Example
 }
 ```
 
+#### Using the GetStatisticWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // getStatistic
+    ApiResponse<ViewStatistic> response = apiInstance.GetStatisticWithHttpInfo(viewId, columnIds);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.GetStatisticWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
 
 ### Return type
 
@@ -426,8 +500,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -435,14 +509,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## ImportView
-
+<a id="importview"></a>
+# **ImportView**
 > void ImportView (string viewId, System.IO.Stream file, string importRequest = null, FileType? type = null)
 
 importView
@@ -450,7 +520,6 @@ importView
 importView
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -464,13 +533,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | The following file types are supported: csv, tsv, xls, xlsx and json
             var importRequest = "\"{}\"";  // string | importRequest (optional)  (default to "{}")
@@ -481,10 +551,10 @@ namespace Example
                 // importView
                 apiInstance.ImportView(viewId, file, importRequest, type);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.ImportView: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.ImportView: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -492,15 +562,31 @@ namespace Example
 }
 ```
 
+#### Using the ImportViewWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // importView
+    apiInstance.ImportViewWithHttpInfo(viewId, file, importRequest, type);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ImportViewWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **file** | **System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and json | 
- **importRequest** | **string**| importRequest | [optional] [default to &quot;{}&quot;]
- **type** | **FileType?**| type | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **file** | **System.IO.Stream****System.IO.Stream** | The following file types are supported: csv, tsv, xls, xlsx and json |  |
+| **importRequest** | **string** | importRequest | [optional] [default to &quot;{}&quot;] |
+| **type** | **FileType?** | type | [optional]  |
 
 ### Return type
 
@@ -512,8 +598,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: Not defined
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -521,14 +607,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **202** | Accepted |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## List
-
+<a id="list"></a>
+# **List**
 > List&lt;View&gt; List (string branchId = null, string gridId = null, string type = null)
 
 list
@@ -536,7 +618,6 @@ list
 list
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -550,13 +631,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var branchId = "branchId_example";  // string | branchId (optional) 
             var gridId = "gridId_example";  // string | gridId (optional) 
             var type = "defaultView";  // string | type (optional) 
@@ -567,10 +649,10 @@ namespace Example
                 List<View> result = apiInstance.List(branchId, gridId, type);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -578,14 +660,33 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<View>> response = apiInstance.ListWithHttpInfo(branchId, gridId, type);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **branchId** | **string**| branchId | [optional] 
- **gridId** | **string**| gridId | [optional] 
- **type** | **string**| type | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **branchId** | **string** | branchId | [optional]  |
+| **gridId** | **string** | gridId | [optional]  |
+| **type** | **string** | type | [optional]  |
 
 ### Return type
 
@@ -597,8 +698,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -606,14 +707,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Merge
-
+<a id="merge"></a>
+# **Merge**
 > Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
@@ -621,7 +718,6 @@ merge
 merge
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -635,13 +731,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewApi(Configuration.Default);
+            var apiInstance = new ViewApi(config);
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
             var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
@@ -653,10 +750,10 @@ namespace Example
                 Task result = apiInstance.Merge(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Merge: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Merge: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -664,15 +761,34 @@ namespace Example
 }
 ```
 
+#### Using the MergeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // merge
+    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.MergeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **destinationViewId** | **string**| destinationViewId | 
- **viewId** | **string**| viewId | 
- **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md)|  | 
- **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **destinationViewId** | **string** | destinationViewId |  |
+| **viewId** | **string** | viewId |  |
+| **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 
@@ -684,8 +800,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -693,8 +809,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **202** | Accepted |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

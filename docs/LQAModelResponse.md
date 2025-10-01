@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.LQAModelResponse
 
 ## Properties
@@ -14,7 +13,5 @@ Name | Type | Description | Notes
 **Severities** | [**List&lt;LQAModelSeverityResponse&gt;**](LQAModelSeverityResponse.md) |  | [optional] 
 **Projects** | [**List&lt;LQAModelProjectResponse&gt;**](LQAModelProjectResponse.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

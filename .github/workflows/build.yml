@@ -1,0 +1,49 @@
+name: Build Gridly C# SDK
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        framework: [net48, net8.0, net9.0]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore solution
+        run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj
+
+      - name: Run tests
+        run: dotnet test --configuration Release --no-build --verbosity normal src/Com.Gridly.Test/Com.Gridly.Test.csproj
+
+      - name: Publish net48
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/net48
+
+      - name: Publish net8.0
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net8.0 -o ./publish/net8.0
+
+      - name: Publish net9.0
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/net9.0
+        
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.framework }}
+          path: ./publish/${{ matrix.framework }}
+          retention-days: 7

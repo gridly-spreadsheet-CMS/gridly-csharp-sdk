@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.LengthLimitSetting
 
 ## Properties
@@ -9,7 +8,5 @@ Name | Type | Description | Notes
 **Unit** | **string** |  | 
 **UseSourceTextLength** | **bool** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
