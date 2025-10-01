@@ -37,66 +37,41 @@ jobs:
     - name: Setup .NET 8 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: |
+          8.0.x
+          9.0.x
         
     - name: Restore solution
       run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
 
-    - name: Build
-      run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj
+    - name: Build (${{ matrix.framework }})
+      run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj -f ${{ matrix.framework }}
 
-    - name: Run tests
-      run: dotnet test --configuration Release --no-build --verbosity normal src/Com.Gridly.Test/Com.Gridly.Test.csproj
+    - name: Run tests (${{ matrix.framework }})
+      run: dotnet test --configuration Release --no-build --verbosity normal src/Com.Gridly.Test/Com.Gridly.Test.csproj -f ${{ matrix.framework }}
 
-    - name: Publish net48
-      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/com.gridly.csharp-sdk-net48
+    - name: Publish (${{ matrix.framework }})
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f ${{ matrix.framework }} -o ./publish/${{ matrix.framework }}
 
-    - name: Publish net8.0
-      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net8.0 -o ./publish/com.gridly.csharp-sdk-net8.0
-
-    - name: Publish net9.0
-      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/com.gridly.csharp-sdk-net9.0
-      
     - name: Get Version
       id: get_version
       uses: greenygh0st/net-proj-release-version@v1
       with:
           # Filepath of the *.csproj file, relative to root of repository
           PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
-
-    - name: Compress
+ 
+    - name: Compress artifact (${{ matrix.framework }})
       run: |
-        rm -rf publish/**/*.pdb
+        rm -rf publish/${{ matrix.framework }}/*.pdb
         cd publish
-        zip com.gridly.csharp-sdk-net48.zip com.gridly.csharp-sdk-net48/**
-        zip com.gridly.csharp-sdk-net8.0.zip com.gridly.csharp-sdk-net8.0/**
-        zip com.gridly.csharp-sdk-net9.0.zip com.gridly.csharp-sdk-net9.0/**
-        
-    - name: Archive net48 artifact
-      uses: actions/upload-artifact@v4
-      with:
-        # Artifact name
-        name: com.gridly.csharp-sdk-net48
-        path: publish/com.gridly.csharp-sdk-net48.zip
-        retention-days: 1
-        if-no-files-found: error
-        
-    - name: Archive net8.0 artifact
-      uses: actions/upload-artifact@v4
-      with:
-        # Artifact name
-        name: com.gridly.csharp-sdk-net8.0
-        path: publish/com.gridly.csharp-sdk-net8.0.zip
-        retention-days: 1
-        if-no-files-found: error
+        zip -r com.gridly.csharp-sdk-${{ matrix.framework }}.zip ${{ matrix.framework }}
 
-    - name: Archive net9.0 artifact
+    - name: Upload artifact (${{ matrix.framework }})
       uses: actions/upload-artifact@v4
       with:
-        # Artifact name
-        name: com.gridly.csharp-sdk-net-9.0
-        path: publish/com.gridly.csharp-sdk-net9.0.zip
-        retention-days: 1
+        name: com.gridly.csharp-sdk-${{ matrix.framework }}
+        path: publish/com.gridly.csharp-sdk-${{ matrix.framework }}.zip
+        retention-days: 7
         if-no-files-found: error
 
     - name: Github Release
