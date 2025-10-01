@@ -4,7 +4,7 @@ name: Gridly C# SDK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
     tags: 
       - '*'
 jobs:
@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
+        framework: [net48, net8.0, net9.0]
 
     runs-on: ubuntu-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
@@ -33,25 +34,38 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         
-    - name: Restore Solution
-      run: dotnet restore
-    
-    # Build the application
-    - name: Publish Solution
-      run: dotnet publish -c $env:Configuration -o bin/com.gridly.csharp-sdk src/Com.Gridly/Com.Gridly.csproj
-      env:
-        Configuration: ${{ matrix.configuration }}
-        
+    - name: Restore solution
+      run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj
+
+    - name: Run tests
+      run: dotnet test --configuration Release --no-build --verbosity normal src/Com.Gridly.Test/Com.Gridly.Test.csproj
+
+    - name: Publish net48
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/com.gridly.csharp-sdk-net48
+
+    - name: Publish net8.0
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net8.0 -o ./publish/com.gridly.csharp-sdk-net8.0
+
+    - name: Publish net9.0
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/com.gridly.csharp-sdk-net9.0
+      
     - name: Get Version
       id: get_version
       uses: greenygh0st/net-proj-release-version@v1
       with:
           # Filepath of the *.csproj file, relative to root of repository
           PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
-    - name: Compress artifact
+
+    - name: Compress
       run: |
-        rm -rf bin/**/*.pdb
-        cd bin && zip com.gridly.csharp-sdk.zip com.gridly.csharp-sdk/**
+        rm -rf publish/**/*.pdb
+        cd publish
+        zip com.gridly.csharp-sdk-net48.zip com.gridly.csharp-sdk-net48/**
+        zip com.gridly.csharp-sdk-net8.0.zip com.gridly.csharp-sdk-net8.0/**
+        zip com.gridly.csharp-sdk-net9.0.zip com.gridly.csharp-sdk-net9.0/**
         
     - name: Archive Artifact
       uses: actions/upload-artifact@v4
@@ -59,7 +73,7 @@ jobs:
         # Artifact name
         name: com.gridly.csharp-sdk
         # A file, directory or wildcard pattern that describes what to upload
-        path: bin/*.zip
+        path: publish/*.zip
         retention-days: 1
         if-no-files-found: error
         
@@ -70,6 +84,6 @@ jobs:
         draft: false
         prerelease: true
         tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
-        files: bin/*.zip
+        files: publish/*.zip
       env:
         GITHUB_TOKEN: ${{ github.token }}
