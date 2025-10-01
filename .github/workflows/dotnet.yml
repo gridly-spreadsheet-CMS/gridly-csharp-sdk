@@ -7,6 +7,11 @@ on:
     branches: [ main, develop ]
     tags: 
       - '*'
+  pull_request:
+    branches:
+      - main
+      - develop
+
 jobs:
 
   build:
