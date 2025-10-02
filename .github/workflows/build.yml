@@ -40,7 +40,7 @@ jobs:
         run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/net9.0
 
       - name: Pack
-        run: dotnet pack src/YourProject.csproj -c Release -o publish
+        run: dotnet pack -c Release -o publish
 
       - name: Compress artifact (${{ matrix.framework }})
         run: |

@@ -82,7 +82,7 @@ jobs:
         path: publish/com.gridly.csharp-sdk-net9.0.zip
 
     - name: Pack NuGet package
-      run: dotnet pack src/Com.Gridly/Com.Gridly.csproj -c Release -o publish
+      run: dotnet pack -c Release -o publish
 
     - name: Push to NuGet
       run: dotnet nuget push ./publish/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
