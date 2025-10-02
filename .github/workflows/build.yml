@@ -39,10 +39,7 @@ jobs:
       - name: Publish net 9.0
         run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/com.gridly.csharp-sdk-net9.0
 
-      - name: Pack NuGet package
-        run: dotnet pack -c Release -o publish
-
-      - name: Compress artifact (${{ matrix.framework }})
+      - name: Compress artifacts
         run: |
           rm -rf publish/**/*.pdb
           cd publish
@@ -67,3 +64,6 @@ jobs:
         with:
           name: com.gridly.csharp-sdk-net9.0
           path: publish/com.gridly.csharp-sdk-net9.0.zip
+
+      - name: Pack NuGet package
+        run: dotnet pack -c Release -o ./artifacts
