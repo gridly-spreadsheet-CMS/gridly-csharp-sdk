@@ -40,7 +40,7 @@ jobs:
       run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore src/Com.Gridly/Com.Gridly.csproj -f ${{ matrix.framework }}
+      run: dotnet build src/Com.Gridly/Com.Gridly.csproj -c Release --no-restore 
     
     - name: Publish net48
       run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/com.gridly.csharp-sdk-net48
