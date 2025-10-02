@@ -18,6 +18,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,5 +36,8 @@
   <ItemGroup>
     <Reference Include="System.Web" />
     <Reference Include="System.Net.Http" />
-  </ItemGroup>
+  </ItemGroup> 
+  <ItemGroup>
+      <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 </Project>
