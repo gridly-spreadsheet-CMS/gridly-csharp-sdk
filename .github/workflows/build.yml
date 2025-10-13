@@ -1,0 +1,69 @@
+name: Build Gridly C# SDK
+
+on:
+  push:
+    branches:
+      - 'GRIDLY**'
+    tags-ignore:
+      - '*'
+  pull_request:
+    branches:
+      - 'GRIDLY**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+
+      - name: Restore solution
+        run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
+
+      - name: Build
+        run: dotnet build src/Com.Gridly/Com.Gridly.csproj -c Release --no-restore 
+
+      - name: Publish net48
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/com.gridly.csharp-sdk-net48
+
+      - name: Publish net8.0
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net8.0 -o ./publish/com.gridly.csharp-sdk-net8.0
+
+      - name: Publish net 9.0
+        run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/com.gridly.csharp-sdk-net9.0
+
+      - name: Compress artifacts
+        run: |
+          rm -rf publish/**/*.pdb
+          cd publish
+          zip -r com.gridly.csharp-sdk-net48.zip com.gridly.csharp-sdk-net48/**
+          zip -r com.gridly.csharp-sdk-net8.0.zip com.gridly.csharp-sdk-net8.0/**
+          zip -r com.gridly.csharp-sdk-net9.0.zip com.gridly.csharp-sdk-net9.0/**
+
+      - name: Upload Artifact net48
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.gridly.csharp-sdk-net48
+          path: publish/com.gridly.csharp-sdk-net48.zip
+
+      - name: Upload Artifact net8.0
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.gridly.csharp-sdk-net8.0
+          path: publish/com.gridly.csharp-sdk-net8.0.zip
+
+      - name: Upload Artifact net9.0
+        uses: actions/upload-artifact@v4
+        with:
+          name: com.gridly.csharp-sdk-net9.0
+          path: publish/com.gridly.csharp-sdk-net9.0.zip
+
+      - name: Pack NuGet package
+        run: dotnet pack -c Release -o ./artifacts

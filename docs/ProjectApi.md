@@ -2,24 +2,21 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ProjectApi.md#create) | **POST** /v1/projects | create
-[**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
-[**FindOne**](ProjectApi.md#findone) | **GET** /v1/projects/{projectId} | findOne
-[**List**](ProjectApi.md#list) | **GET** /v1/projects | list
-[**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ProjectApi.md#create) | **POST** /v1/projects | create |
+| [**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete |
+| [**FindOne**](ProjectApi.md#findone) | **GET** /v1/projects/{projectId} | findOne |
+| [**List**](ProjectApi.md#list) | **GET** /v1/projects | list |
+| [**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > Project Create (CreateProject createProject)
 
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,13 +30,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectApi(Configuration.Default);
+            var apiInstance = new ProjectApi(config);
             var createProject = new CreateProject(); // CreateProject | 
 
             try
@@ -48,10 +46,10 @@ namespace Example
                 Project result = apiInstance.Create(createProject);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -59,12 +57,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Project> response = apiInstance.CreateWithHttpInfo(createProject);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createProject** | [**CreateProject**](CreateProject.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createProject** | [**CreateProject**](CreateProject.md) |  |  |
 
 ### Return type
 
@@ -76,8 +93,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -85,20 +102,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (long projectId)
 
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -112,13 +124,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectApi(Configuration.Default);
+            var apiInstance = new ProjectApi(config);
             var projectId = 789L;  // long | projectId
 
             try
@@ -126,10 +139,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(projectId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -137,12 +150,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(projectId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
 
 ### Return type
 
@@ -154,8 +183,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -163,20 +192,15 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindOne
-
+<a id="findone"></a>
+# **FindOne**
 > ProjectDetail FindOne (long projectId)
 
 findOne
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -190,13 +214,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectApi(Configuration.Default);
+            var apiInstance = new ProjectApi(config);
             var projectId = 789L;  // long | projectId
 
             try
@@ -205,10 +230,10 @@ namespace Example
                 ProjectDetail result = apiInstance.FindOne(projectId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.FindOne: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.FindOne: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -216,12 +241,31 @@ namespace Example
 }
 ```
 
+#### Using the FindOneWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // findOne
+    ApiResponse<ProjectDetail> response = apiInstance.FindOneWithHttpInfo(projectId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.FindOneWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
 
 ### Return type
 
@@ -233,8 +277,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -242,20 +286,15 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## List
-
+<a id="list"></a>
+# **List**
 > List&lt;Project&gt; List ()
 
 list
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -269,13 +308,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectApi(Configuration.Default);
+            var apiInstance = new ProjectApi(config);
 
             try
             {
@@ -283,10 +323,10 @@ namespace Example
                 List<Project> result = apiInstance.List();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -294,10 +334,28 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Project>> response = apiInstance.ListWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
-
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;Project&gt;**](Project.md)
@@ -308,8 +366,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -317,20 +375,15 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Update
-
+<a id="update"></a>
+# **Update**
 > Project Update (long projectId, UpdateProject updateProject)
 
 update
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -344,13 +397,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ProjectApi(Configuration.Default);
+            var apiInstance = new ProjectApi(config);
             var projectId = 789L;  // long | projectId
             var updateProject = new UpdateProject(); // UpdateProject | 
 
@@ -360,10 +414,10 @@ namespace Example
                 Project result = apiInstance.Update(projectId, updateProject);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -371,13 +425,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Project> response = apiInstance.UpdateWithHttpInfo(projectId, updateProject);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
- **updateProject** | [**UpdateProject**](UpdateProject.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
+| **updateProject** | [**UpdateProject**](UpdateProject.md) |  |  |
 
 ### Return type
 
@@ -389,8 +462,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -398,8 +471,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

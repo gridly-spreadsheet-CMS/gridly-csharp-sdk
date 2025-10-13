@@ -2,17 +2,15 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Delete**](ViewFileApi.md#delete) | **DELETE** /v1/views/{viewId}/files | delete
-[**Download**](ViewFileApi.md#download) | **GET** /v1/views/{viewId}/files/{fileId} | download
-[**Upload**](ViewFileApi.md#upload) | **POST** /v1/views/{viewId}/files | upload
-[**UploadZip**](ViewFileApi.md#uploadzip) | **POST** /v1/views/{viewId}/files/zip | uploadZip
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Delete**](ViewFileApi.md#delete) | **DELETE** /v1/views/{viewId}/files | delete |
+| [**Download**](ViewFileApi.md#download) | **GET** /v1/views/{viewId}/files/{fileId} | download |
+| [**Upload**](ViewFileApi.md#upload) | **POST** /v1/views/{viewId}/files | upload |
+| [**UploadZip**](ViewFileApi.md#uploadzip) | **POST** /v1/views/{viewId}/files/zip | uploadZip |
 
-
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFile)
 
 delete
@@ -20,7 +18,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,13 +31,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewFileApi(Configuration.Default);
+            var apiInstance = new ViewFileApi(config);
             var columnId = "columnId_example";  // string | columnId
             var recordId = "recordId_example";  // string | recordId
             var viewId = "viewId_example";  // string | viewId
@@ -51,10 +49,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(columnId, recordId, viewId, deleteFile);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,15 +60,31 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(columnId, recordId, viewId, deleteFile);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **recordId** | **string**| recordId | 
- **viewId** | **string**| viewId | 
- **deleteFile** | [**DeleteFile**](DeleteFile.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **recordId** | **string** | recordId |  |
+| **viewId** | **string** | viewId |  |
+| **deleteFile** | [**DeleteFile**](DeleteFile.md) |  |  |
 
 ### Return type
 
@@ -82,8 +96,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -91,14 +105,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Download
-
+<a id="download"></a>
+# **Download**
 > System.IO.Stream Download (string fileId, string viewId)
 
 download
@@ -106,7 +116,6 @@ download
 download
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -120,13 +129,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewFileApi(Configuration.Default);
+            var apiInstance = new ViewFileApi(config);
             var fileId = "fileId_example";  // string | fileId
             var viewId = "viewId_example";  // string | viewId
 
@@ -136,10 +146,10 @@ namespace Example
                 System.IO.Stream result = apiInstance.Download(fileId, viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Download: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Download: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -147,13 +157,32 @@ namespace Example
 }
 ```
 
+#### Using the DownloadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // download
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadWithHttpInfo(fileId, viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.DownloadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fileId** | **string**| fileId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **fileId** | **string** | fileId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -165,8 +194,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/octet-stream
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -174,14 +203,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **0** | default response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Upload
-
+<a id="upload"></a>
+# **Upload**
 > UploadedFile Upload (string viewId, string columnId, string recordId, System.IO.Stream file)
 
 upload
@@ -189,7 +214,6 @@ upload
 upload
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -203,13 +227,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewFileApi(Configuration.Default);
+            var apiInstance = new ViewFileApi(config);
             var viewId = "viewId_example";  // string | viewId
             var columnId = "columnId_example";  // string | columnId
             var recordId = "recordId_example";  // string | recordId
@@ -221,10 +246,10 @@ namespace Example
                 UploadedFile result = apiInstance.Upload(viewId, columnId, recordId, file);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Upload: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Upload: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -232,15 +257,34 @@ namespace Example
 }
 ```
 
+#### Using the UploadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // upload
+    ApiResponse<UploadedFile> response = apiInstance.UploadWithHttpInfo(viewId, columnId, recordId, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.UploadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnId** | **string**| columnId | 
- **recordId** | **string**| recordId | 
- **file** | **System.IO.Stream**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnId** | **string** | columnId |  |
+| **recordId** | **string** | recordId |  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
 
 ### Return type
 
@@ -252,8 +296,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -261,14 +305,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## UploadZip
-
+<a id="uploadzip"></a>
+# **UploadZip**
 > List&lt;Record&gt; UploadZip (string viewId, string columnId, string fileMappings, System.IO.Stream file)
 
 uploadZip
@@ -276,7 +316,6 @@ uploadZip
 uploadZip
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -290,13 +329,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewFileApi(Configuration.Default);
+            var apiInstance = new ViewFileApi(config);
             var viewId = "viewId_example";  // string | viewId
             var columnId = "columnId_example";  // string | 
             var fileMappings = "fileMappings_example";  // string | 
@@ -308,10 +348,10 @@ namespace Example
                 List<Record> result = apiInstance.UploadZip(viewId, columnId, fileMappings, file);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.UploadZip: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.UploadZip: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -319,15 +359,34 @@ namespace Example
 }
 ```
 
+#### Using the UploadZipWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // uploadZip
+    ApiResponse<List<Record>> response = apiInstance.UploadZipWithHttpInfo(viewId, columnId, fileMappings, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.UploadZipWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnId** | **string**|  | 
- **fileMappings** | **string**|  | 
- **file** | **System.IO.Stream**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnId** | **string** |  |  |
+| **fileMappings** | **string** |  |  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
 
 ### Return type
 
@@ -339,8 +398,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -348,8 +407,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **0** | default response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

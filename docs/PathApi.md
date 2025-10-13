@@ -2,18 +2,17 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](PathApi.md#create) | **POST** /v1/views/{viewId}/paths | create
-[**Delete**](PathApi.md#delete) | **DELETE** /v1/views/{viewId}/paths | delete
-[**List**](PathApi.md#list) | **GET** /v1/views/{viewId}/paths/tree | list
-[**Move**](PathApi.md#move) | **POST** /v1/views/{viewId}/paths/move | move
-[**Update**](PathApi.md#update) | **PUT** /v1/views/{viewId}/paths/{path} | update
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](PathApi.md#create) | **POST** /v1/views/{viewId}/paths | create |
+| [**Delete**](PathApi.md#delete) | **DELETE** /v1/views/{viewId}/paths | delete |
+| [**List**](PathApi.md#list) | **GET** /v1/views/{viewId}/paths/tree | list |
+| [**Move**](PathApi.md#move) | **POST** /v1/views/{viewId}/paths/move | move |
+| [**Update**](PathApi.md#update) | **PUT** /v1/views/{viewId}/paths/{path} | update |
+| [**UpdatePathNode**](PathApi.md#updatepathnode) | **PUT** /v1/views/{viewId}/paths | updatePathNode |
 
-
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > PathList Create (string viewId, CreatePath createPath)
 
 create
@@ -21,7 +20,6 @@ create
 create
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,13 +33,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new PathApi(Configuration.Default);
+            var apiInstance = new PathApi(config);
             var viewId = "viewId_example";  // string | viewId
             var createPath = new CreatePath(); // CreatePath | 
 
@@ -51,10 +50,10 @@ namespace Example
                 PathList result = apiInstance.Create(viewId, createPath);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PathApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PathApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,13 +61,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<PathList> response = apiInstance.CreateWithHttpInfo(viewId, createPath);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **createPath** | [**CreatePath**](CreatePath.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **createPath** | [**CreatePath**](CreatePath.md) |  |  |
 
 ### Return type
 
@@ -80,8 +98,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -89,14 +107,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string viewId, DeletePath deletePath)
 
 delete
@@ -104,7 +118,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -118,13 +131,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new PathApi(Configuration.Default);
+            var apiInstance = new PathApi(config);
             var viewId = "viewId_example";  // string | viewId
             var deletePath = new DeletePath(); // DeletePath | 
 
@@ -133,10 +147,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(viewId, deletePath);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PathApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PathApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,13 +158,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(viewId, deletePath);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **deletePath** | [**DeletePath**](DeletePath.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **deletePath** | [**DeletePath**](DeletePath.md) |  |  |
 
 ### Return type
 
@@ -162,8 +192,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -171,14 +201,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## List
-
+<a id="list"></a>
+# **List**
 > List&lt;PathNode&gt; List (string viewId, string rootPath = null)
 
 list
@@ -186,7 +212,6 @@ list
 list
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -200,13 +225,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new PathApi(Configuration.Default);
+            var apiInstance = new PathApi(config);
             var viewId = "viewId_example";  // string | viewId
             var rootPath = "rootPath_example";  // string | rootPath (optional) 
 
@@ -216,10 +242,10 @@ namespace Example
                 List<PathNode> result = apiInstance.List(viewId, rootPath);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PathApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PathApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -227,13 +253,32 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<PathNode>> response = apiInstance.ListWithHttpInfo(viewId, rootPath);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **rootPath** | **string**| rootPath | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **rootPath** | **string** | rootPath | [optional]  |
 
 ### Return type
 
@@ -245,8 +290,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -254,14 +299,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Move
-
+<a id="move"></a>
+# **Move**
 > PathList Move (string viewId, MovePath movePath)
 
 move
@@ -269,7 +310,6 @@ move
 move
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -283,13 +323,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new PathApi(Configuration.Default);
+            var apiInstance = new PathApi(config);
             var viewId = "viewId_example";  // string | viewId
             var movePath = new MovePath(); // MovePath | 
 
@@ -299,10 +340,10 @@ namespace Example
                 PathList result = apiInstance.Move(viewId, movePath);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PathApi.Move: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PathApi.Move: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -310,13 +351,32 @@ namespace Example
 }
 ```
 
+#### Using the MoveWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // move
+    ApiResponse<PathList> response = apiInstance.MoveWithHttpInfo(viewId, movePath);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.MoveWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **movePath** | [**MovePath**](MovePath.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **movePath** | [**MovePath**](MovePath.md) |  |  |
 
 ### Return type
 
@@ -328,8 +388,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -337,14 +397,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Update
-
+<a id="update"></a>
+# **Update**
 > PathSingle Update (string viewId, string path, UpdatePath updatePath)
 
 update
@@ -352,7 +408,6 @@ update
 update
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -366,13 +421,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new PathApi(Configuration.Default);
+            var apiInstance = new PathApi(config);
             var viewId = "viewId_example";  // string | viewId
             var path = "path_example";  // string | path
             var updatePath = new UpdatePath(); // UpdatePath | 
@@ -383,10 +439,10 @@ namespace Example
                 PathSingle result = apiInstance.Update(viewId, path, updatePath);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PathApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling PathApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -394,14 +450,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<PathSingle> response = apiInstance.UpdateWithHttpInfo(viewId, path, updatePath);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **path** | **string**| path | 
- **updatePath** | [**UpdatePath**](UpdatePath.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **path** | **string** | path |  |
+| **updatePath** | [**UpdatePath**](UpdatePath.md) |  |  |
 
 ### Return type
 
@@ -413,8 +488,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -422,8 +497,103 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatepathnode"></a>
+# **UpdatePathNode**
+> PathSingle UpdatePathNode (string viewId, UpdatePath updatePath)
+
+updatePathNode
+
+updatePathNode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class UpdatePathNodeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PathApi(config);
+            var viewId = "viewId_example";  // string | viewId
+            var updatePath = new UpdatePath(); // UpdatePath | 
+
+            try
+            {
+                // updatePathNode
+                PathSingle result = apiInstance.UpdatePathNode(viewId, updatePath);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PathApi.UpdatePathNode: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdatePathNodeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // updatePathNode
+    ApiResponse<PathSingle> response = apiInstance.UpdatePathNodeWithHttpInfo(viewId, updatePath);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PathApi.UpdatePathNodeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **updatePath** | [**UpdatePath**](UpdatePath.md) |  |  |
+
+### Return type
+
+[**PathSingle**](PathSingle.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

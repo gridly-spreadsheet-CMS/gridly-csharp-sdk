@@ -1,0 +1,102 @@
+# This workflow to build and release Gridly CSharp SDK
+
+name: Gridly C# SDK
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags: 
+      - '*'
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: Com.Gridly.sln
+      Test_Project_Path: src/Com.Gridly.Test/Com.Gridly.Test.csproj
+      
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET 8 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: |
+          8.0.x
+          9.0.x
+        
+    - name: Restore solution
+      run: dotnet restore src/Com.Gridly/Com.Gridly.csproj
+
+    - name: Build
+      run: dotnet build src/Com.Gridly/Com.Gridly.csproj -c Release --no-restore 
+    
+    - name: Publish net48
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net48 -o ./publish/com.gridly.csharp-sdk-net48
+
+    - name: Publish net8.0
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net8.0 -o ./publish/com.gridly.csharp-sdk-net8.0
+
+    - name: Publish net 9.0
+      run: dotnet publish src/Com.Gridly/Com.Gridly.csproj -c Release -f net9.0 -o ./publish/com.gridly.csharp-sdk-net9.0
+
+    - name: Get Version
+      id: get_version
+      uses: greenygh0st/net-proj-release-version@v1
+      with:
+          # Filepath of the *.csproj file, relative to root of repository
+          PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
+ 
+    - name: Compress artifacts
+      run: |
+        rm -rf publish/${{ matrix.framework }}/*.pdb
+        cd publish
+        zip -r com.gridly.csharp-sdk-net48.zip com.gridly.csharp-sdk-net48/**
+        zip -r com.gridly.csharp-sdk-net8.0.zip com.gridly.csharp-sdk-net8.0/**
+        zip -r com.gridly.csharp-sdk-net9.0.zip com.gridly.csharp-sdk-net9.0/**
+
+    - name: Upload Artifact net48
+      uses: actions/upload-artifact@v4
+      with:
+        name: com.gridly.csharp-sdk-net48
+        path: publish/com.gridly.csharp-sdk-net48.zip
+
+    - name: Upload Artifact net8.0
+      uses: actions/upload-artifact@v4
+      with:
+        name: com.gridly.csharp-sdk-net8.0
+        path: publish/com.gridly.csharp-sdk-net8.0.zip
+
+    - name: Upload Artifact net9.0
+      uses: actions/upload-artifact@v4
+      with:
+        name: com.gridly.csharp-sdk-net9.0
+        path: publish/com.gridly.csharp-sdk-net9.0.zip
+
+    - name: Pack NuGet package
+      run: dotnet pack -c Release -o artifacts
+
+    - name: Push to NuGet
+      run: dotnet nuget push artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+
+    - name: Github Release
+      uses: softprops/action-gh-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: true
+        tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
+        files: publish/*.zip
+      env:
+        GITHUB_TOKEN: ${{ github.token }}

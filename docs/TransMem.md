@@ -1,4 +1,3 @@
-
 # Com.Gridly.Model.TransMem
 
 ## Properties
@@ -11,13 +10,11 @@ Name | Type | Description | Notes
 **IsPausedConsuming** | **bool** |  | [optional] 
 **PopulateTranslationStatus** | **TranslationStatus** |  | [optional] 
 **ContextLookup** | **bool** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **FuzzyMatch** | **bool** |  | [optional] 
 **AllowAlternative** | **bool** |  | [optional] 
 **AllowAlternativeHasSameRecordId** | **bool** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

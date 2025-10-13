@@ -2,20 +2,18 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Add**](ViewColumnApi.md#add) | **POST** /v1/views/{viewId}/columns/{columnId}/add | add
-[**BulkCreate**](ViewColumnApi.md#bulkcreate) | **POST** /v1/views/{viewId}/columns/bulk | bulkCreate
-[**Create**](ViewColumnApi.md#create) | **POST** /v1/views/{viewId}/columns | create
-[**Delete**](ViewColumnApi.md#delete) | **DELETE** /v1/views/{viewId}/columns/{columnId} | delete
-[**Get**](ViewColumnApi.md#get) | **GET** /v1/views/{viewId}/columns/{columnId} | get
-[**Remove**](ViewColumnApi.md#remove) | **POST** /v1/views/{viewId}/columns/{columnId}/remove | remove
-[**Update**](ViewColumnApi.md#update) | **PATCH** /v1/views/{viewId}/columns/{columnId} | update
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Add**](ViewColumnApi.md#add) | **POST** /v1/views/{viewId}/columns/{columnId}/add | add |
+| [**BulkCreate**](ViewColumnApi.md#bulkcreate) | **POST** /v1/views/{viewId}/columns/bulk | bulkCreate |
+| [**Create**](ViewColumnApi.md#create) | **POST** /v1/views/{viewId}/columns | create |
+| [**Delete**](ViewColumnApi.md#delete) | **DELETE** /v1/views/{viewId}/columns/{columnId} | delete |
+| [**Get**](ViewColumnApi.md#get) | **GET** /v1/views/{viewId}/columns/{columnId} | get |
+| [**Remove**](ViewColumnApi.md#remove) | **POST** /v1/views/{viewId}/columns/{columnId}/remove | remove |
+| [**Update**](ViewColumnApi.md#update) | **PATCH** /v1/views/{viewId}/columns/{columnId} | update |
 
-
-
-## Add
-
+<a id="add"></a>
+# **Add**
 > ViewColumn Add (string columnId, string viewId)
 
 add
@@ -23,7 +21,6 @@ add
 add
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,13 +34,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var columnId = "columnId_example";  // string | columnId
             var viewId = "viewId_example";  // string | viewId
 
@@ -53,10 +51,10 @@ namespace Example
                 ViewColumn result = apiInstance.Add(columnId, viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Add: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Add: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -64,13 +62,32 @@ namespace Example
 }
 ```
 
+#### Using the AddWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // add
+    ApiResponse<ViewColumn> response = apiInstance.AddWithHttpInfo(columnId, viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.AddWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -82,8 +99,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -91,14 +108,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## BulkCreate
-
+<a id="bulkcreate"></a>
+# **BulkCreate**
 > List&lt;ViewColumn&gt; BulkCreate (string viewId, List<CreateColumn> createColumn)
 
 bulkCreate
@@ -106,7 +119,6 @@ bulkCreate
 bulkCreate
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -120,13 +132,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var viewId = "viewId_example";  // string | viewId
             var createColumn = new List<CreateColumn>(); // List<CreateColumn> | 
 
@@ -136,10 +149,10 @@ namespace Example
                 List<ViewColumn> result = apiInstance.BulkCreate(viewId, createColumn);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.BulkCreate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.BulkCreate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -147,13 +160,32 @@ namespace Example
 }
 ```
 
+#### Using the BulkCreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // bulkCreate
+    ApiResponse<List<ViewColumn>> response = apiInstance.BulkCreateWithHttpInfo(viewId, createColumn);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.BulkCreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **createColumn** | [**List&lt;CreateColumn&gt;**](CreateColumn.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **createColumn** | [**List&lt;CreateColumn&gt;**](CreateColumn.md) |  |  |
 
 ### Return type
 
@@ -165,8 +197,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -174,14 +206,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Create
-
+<a id="create"></a>
+# **Create**
 > ViewColumn Create (string viewId, CreateColumn createColumn)
 
 create
@@ -189,7 +217,6 @@ create
 Create a Column
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -203,13 +230,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var viewId = "viewId_example";  // string | viewId
             var createColumn = new CreateColumn(); // CreateColumn | 
 
@@ -219,10 +247,10 @@ namespace Example
                 ViewColumn result = apiInstance.Create(viewId, createColumn);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -230,13 +258,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<ViewColumn> response = apiInstance.CreateWithHttpInfo(viewId, createColumn);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **createColumn** | [**CreateColumn**](CreateColumn.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **createColumn** | [**CreateColumn**](CreateColumn.md) |  |  |
 
 ### Return type
 
@@ -248,8 +295,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -257,14 +304,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Delete
-
+<a id="delete"></a>
+# **Delete**
 > void Delete (string columnId, string viewId)
 
 delete
@@ -272,7 +315,6 @@ delete
 delete
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -286,13 +328,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var columnId = "columnId_example";  // string | columnId
             var viewId = "viewId_example";  // string | viewId
 
@@ -301,10 +344,10 @@ namespace Example
                 // delete
                 apiInstance.Delete(columnId, viewId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -312,13 +355,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(columnId, viewId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -330,8 +389,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -339,14 +398,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Get
-
+<a id="get"></a>
+# **Get**
 > ViewColumn Get (string columnId, string viewId)
 
 get
@@ -354,7 +409,6 @@ get
 get
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -368,13 +422,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var columnId = "columnId_example";  // string | columnId
             var viewId = "viewId_example";  // string | viewId
 
@@ -384,10 +439,10 @@ namespace Example
                 ViewColumn result = apiInstance.Get(columnId, viewId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -395,13 +450,32 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<ViewColumn> response = apiInstance.GetWithHttpInfo(columnId, viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -413,8 +487,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -422,14 +496,10 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Remove
-
+<a id="remove"></a>
+# **Remove**
 > void Remove (string columnId, string viewId)
 
 remove
@@ -437,7 +507,6 @@ remove
 remove
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -451,13 +520,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var columnId = "columnId_example";  // string | columnId
             var viewId = "viewId_example";  // string | viewId
 
@@ -466,10 +536,10 @@ namespace Example
                 // remove
                 apiInstance.Remove(columnId, viewId);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Remove: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Remove: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -477,13 +547,29 @@ namespace Example
 }
 ```
 
+#### Using the RemoveWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // remove
+    apiInstance.RemoveWithHttpInfo(columnId, viewId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.RemoveWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -495,8 +581,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -504,14 +590,10 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## Update
-
+<a id="update"></a>
+# **Update**
 > ViewColumn Update (string columnId, string viewId, UpdateColumn updateColumn)
 
 update
@@ -519,7 +601,6 @@ update
 update
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -533,13 +614,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.gridly.com";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
             // Configure API key authorization: ApiKey
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new ViewColumnApi(Configuration.Default);
+            var apiInstance = new ViewColumnApi(config);
             var columnId = "columnId_example";  // string | columnId
             var viewId = "viewId_example";  // string | viewId
             var updateColumn = new UpdateColumn(); // UpdateColumn | 
@@ -550,10 +632,10 @@ namespace Example
                 ViewColumn result = apiInstance.Update(columnId, viewId, updateColumn);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewColumnApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewColumnApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -561,14 +643,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<ViewColumn> response = apiInstance.UpdateWithHttpInfo(columnId, viewId, updateColumn);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewColumnApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **viewId** | **string**| viewId | 
- **updateColumn** | [**UpdateColumn**](UpdateColumn.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **viewId** | **string** | viewId |  |
+| **updateColumn** | [**UpdateColumn**](UpdateColumn.md) |  |  |
 
 ### Return type
 
@@ -580,8 +681,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -589,8 +690,5 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
