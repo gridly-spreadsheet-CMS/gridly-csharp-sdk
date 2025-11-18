@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Color** | **string** |  | [optional] 
 **ColumnId** | **string** |  | [optional] 
 **DependencyStatus** | **string** |  | [optional] 
 **LengthLimit** | **int** |  | [optional] 

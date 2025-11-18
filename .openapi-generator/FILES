@@ -72,6 +72,7 @@ docs/LqaModelApi.md
 docs/MergeBranchRequest.md
 docs/MergeCellConflict.md
 docs/MergeRecordConflict.md
+docs/MergeRecordOption.md
 docs/MovePath.md
 docs/NumberFormat.md
 docs/PathApi.md
@@ -238,6 +239,7 @@ src/Com.Gridly/Model/LengthLimitSetting.cs
 src/Com.Gridly/Model/MergeBranchRequest.cs
 src/Com.Gridly/Model/MergeCellConflict.cs
 src/Com.Gridly/Model/MergeRecordConflict.cs
+src/Com.Gridly/Model/MergeRecordOption.cs
 src/Com.Gridly/Model/MovePath.cs
 src/Com.Gridly/Model/NumberFormat.cs
 src/Com.Gridly/Model/PathList.cs

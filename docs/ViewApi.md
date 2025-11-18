@@ -105,7 +105,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -711,7 +711,7 @@ catch (ApiException e)
 
 <a id="merge"></a>
 # **Merge**
-> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = null)
 
 merge
 
@@ -742,7 +742,7 @@ namespace Example
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
             var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
-            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
+            var mergeRecordOptions = new List<MergeRecordOption>(); // List<MergeRecordOption> | mergeRecordOptions (optional) 
 
             try
             {
@@ -788,7 +788,7 @@ catch (ApiException e)
 | **destinationViewId** | **string** | destinationViewId |  |
 | **viewId** | **string** | viewId |  |
 | **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
-| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
+| **mergeRecordOptions** | [**List&lt;MergeRecordOption&gt;**](MergeRecordOption.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 

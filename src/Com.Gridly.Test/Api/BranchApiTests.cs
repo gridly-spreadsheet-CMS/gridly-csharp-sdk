@@ -113,7 +113,7 @@ namespace Com.Gridly.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string taskId = null;
-            //List<string> mergeRecordOptions = null;
+            //List<MergeRecordOption> mergeRecordOptions = null;
             //string query = null;
             //string page = null;
             //var response = instance.GetDiffCheck(taskId, mergeRecordOptions, query, page);
@@ -142,7 +142,7 @@ namespace Com.Gridly.Test.Api
             //string branchId = null;
             //string destinationBranchId = null;
             //MergeBranchRequest mergeBranchRequest = null;
-            //List<string> mergeRecordOptions = null;
+            //List<MergeRecordOption> mergeRecordOptions = null;
             //var response = instance.Merge(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
             //Assert.IsType<Task>(response);
         }

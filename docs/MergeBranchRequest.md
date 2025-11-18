@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MergeRecordOptions** | **List&lt;MergeBranchRequest.MergeRecordOptionsEnum&gt;** |  | [optional] 
+**MergeRecordOptions** | [**List&lt;MergeRecordOption&gt;**](MergeRecordOption.md) |  | [optional] 
 **MergeRecordConflicts** | [**List&lt;MergeRecordConflict&gt;**](MergeRecordConflict.md) |  | [optional] 
 **UseLastMergeResolve** | **bool** |  | [optional] 
 **CheckMismatchedColumnType** | **bool** |  | [optional] 

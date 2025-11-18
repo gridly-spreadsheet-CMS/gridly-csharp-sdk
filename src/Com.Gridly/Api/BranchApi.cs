@@ -138,7 +138,7 @@ namespace Com.Gridly.Api
         /// <param name="page">page (optional, default to &quot;{}&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;BranchDiffRecord&gt;</returns>
-        List<BranchDiffRecord> GetDiffCheck(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0);
+        List<BranchDiffRecord> GetDiffCheck(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0);
 
         /// <summary>
         /// getDiffCheck
@@ -153,7 +153,7 @@ namespace Com.Gridly.Api
         /// <param name="page">page (optional, default to &quot;{}&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;BranchDiffRecord&gt;</returns>
-        ApiResponse<List<BranchDiffRecord>> GetDiffCheckWithHttpInfo(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0);
+        ApiResponse<List<BranchDiffRecord>> GetDiffCheckWithHttpInfo(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0);
         /// <summary>
         /// list
         /// </summary>
@@ -190,7 +190,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Task</returns>
-        Task Merge(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0);
+        Task Merge(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0);
 
         /// <summary>
         /// merge
@@ -205,7 +205,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Task</returns>
-        ApiResponse<Task> MergeWithHttpInfo(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0);
+        ApiResponse<Task> MergeWithHttpInfo(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -335,7 +335,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BranchDiffRecord&gt;</returns>
-        System.Threading.Tasks.Task<List<BranchDiffRecord>> GetDiffCheckAsync(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<BranchDiffRecord>> GetDiffCheckAsync(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// getDiffCheck
@@ -351,7 +351,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BranchDiffRecord&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BranchDiffRecord>>> GetDiffCheckWithHttpInfoAsync(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<BranchDiffRecord>>> GetDiffCheckWithHttpInfoAsync(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// list
         /// </summary>
@@ -391,7 +391,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Task</returns>
-        System.Threading.Tasks.Task<Task> MergeAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Task> MergeAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// merge
@@ -407,7 +407,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Task)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Task>> MergeWithHttpInfoAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Task>> MergeWithHttpInfoAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1198,7 +1198,7 @@ namespace Com.Gridly.Api
         /// <param name="page">page (optional, default to &quot;{}&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;BranchDiffRecord&gt;</returns>
-        public List<BranchDiffRecord> GetDiffCheck(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0)
+        public List<BranchDiffRecord> GetDiffCheck(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>> localVarResponse = GetDiffCheckWithHttpInfo(taskId, mergeRecordOptions, query, page);
             return localVarResponse.Data;
@@ -1214,7 +1214,7 @@ namespace Com.Gridly.Api
         /// <param name="page">page (optional, default to &quot;{}&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;BranchDiffRecord&gt;</returns>
-        public Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>> GetDiffCheckWithHttpInfo(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>> GetDiffCheckWithHttpInfo(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -1293,7 +1293,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BranchDiffRecord&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BranchDiffRecord>> GetDiffCheckAsync(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<BranchDiffRecord>> GetDiffCheckAsync(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>> localVarResponse = await GetDiffCheckWithHttpInfoAsync(taskId, mergeRecordOptions, query, page, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1310,7 +1310,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BranchDiffRecord&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>>> GetDiffCheckWithHttpInfoAsync(string taskId, List<string> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<BranchDiffRecord>>> GetDiffCheckWithHttpInfoAsync(string taskId, List<MergeRecordOption> mergeRecordOptions = default, string query = default, string page = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'taskId' is set
             if (taskId == null)
@@ -1544,7 +1544,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Task</returns>
-        public Task Merge(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0)
+        public Task Merge(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<Task> localVarResponse = MergeWithHttpInfo(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
             return localVarResponse.Data;
@@ -1560,7 +1560,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Task</returns>
-        public Com.Gridly.Client.ApiResponse<Task> MergeWithHttpInfo(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Task> MergeWithHttpInfo(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0)
         {
             // verify the required parameter 'branchId' is set
             if (branchId == null)
@@ -1646,7 +1646,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Task</returns>
-        public async System.Threading.Tasks.Task<Task> MergeAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Task> MergeAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<Task> localVarResponse = await MergeWithHttpInfoAsync(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1663,7 +1663,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Task)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Task>> MergeWithHttpInfoAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Task>> MergeWithHttpInfoAsync(string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'branchId' is set
             if (branchId == null)

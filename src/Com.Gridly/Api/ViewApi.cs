@@ -233,7 +233,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Task</returns>
-        Task Merge(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0);
+        Task Merge(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0);
 
         /// <summary>
         /// merge
@@ -248,7 +248,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Task</returns>
-        ApiResponse<Task> MergeWithHttpInfo(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0);
+        ApiResponse<Task> MergeWithHttpInfo(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -479,7 +479,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Task</returns>
-        System.Threading.Tasks.Task<Task> MergeAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Task> MergeAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// merge
@@ -495,7 +495,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Task)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Task>> MergeWithHttpInfoAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Task>> MergeWithHttpInfoAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1899,7 +1899,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Task</returns>
-        public Task Merge(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0)
+        public Task Merge(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0)
         {
             Com.Gridly.Client.ApiResponse<Task> localVarResponse = MergeWithHttpInfo(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
             return localVarResponse.Data;
@@ -1915,7 +1915,7 @@ namespace Com.Gridly.Api
         /// <param name="mergeRecordOptions">mergeRecordOptions (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Task</returns>
-        public Com.Gridly.Client.ApiResponse<Task> MergeWithHttpInfo(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Task> MergeWithHttpInfo(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0)
         {
             // verify the required parameter 'destinationViewId' is set
             if (destinationViewId == null)
@@ -2001,7 +2001,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Task</returns>
-        public async System.Threading.Tasks.Task<Task> MergeAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Task> MergeAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             Com.Gridly.Client.ApiResponse<Task> localVarResponse = await MergeWithHttpInfoAsync(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2018,7 +2018,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Task)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Task>> MergeWithHttpInfoAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Task>> MergeWithHttpInfoAsync(string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'destinationViewId' is set
             if (destinationViewId == null)

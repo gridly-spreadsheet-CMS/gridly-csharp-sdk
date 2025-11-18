@@ -163,7 +163,7 @@ namespace Com.Gridly.Test.Api
             //string destinationViewId = null;
             //string viewId = null;
             //MergeBranchRequest mergeBranchRequest = null;
-            //List<string> mergeRecordOptions = null;
+            //List<MergeRecordOption> mergeRecordOptions = null;
             //var response = instance.Merge(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
             //Assert.IsType<Task>(response);
         }

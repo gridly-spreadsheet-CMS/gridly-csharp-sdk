@@ -9,10 +9,10 @@
     <Authors>Gridly AB</Authors>
     <Company>Gridly AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly CSharp SDK 1.5.0</Description>
+    <Description>Gridly CSharp SDK 1.5.1</Description>
     <Copyright>Copyright @ 2025 Gridly AB</Copyright>
     <RootNamespace>Com.Gridly</RootNamespace>
-    <Version>1.5.0</Version>
+    <Version>1.5.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Com.Gridly.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/gridly-spreadsheet-CMS/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
