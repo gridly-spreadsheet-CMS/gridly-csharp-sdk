@@ -116,6 +116,7 @@ namespace Com.Gridly.Model
         /// Initializes a new instance of the <see cref="Cell" /> class.
         /// </summary>
         /// <param name="columnId">columnId.</param>
+        /// <param name="color">color.</param>
         /// <param name="dependencyStatus">dependencyStatus.</param>
         /// <param name="lengthLimit">lengthLimit.</param>
         /// <param name="lineLimit">lineLimit.</param>
@@ -125,9 +126,10 @@ namespace Com.Gridly.Model
         /// <param name="sourceStatus">sourceStatus.</param>
         /// <param name="tm">tm.</param>
         /// <param name="value">value.</param>
-        public Cell(string columnId = default, DependencyStatusEnum? dependencyStatus = default, int lengthLimit = default, int lineLimit = default, bool mt = default, bool readOnly = default, List<string> referencedIds = default, SourceStatusEnum? sourceStatus = default, bool tm = default, Object value = default)
+        public Cell(string columnId = default, string color = default, DependencyStatusEnum? dependencyStatus = default, int lengthLimit = default, int lineLimit = default, bool mt = default, bool readOnly = default, List<string> referencedIds = default, SourceStatusEnum? sourceStatus = default, bool tm = default, Object value = default)
         {
             this.ColumnId = columnId;
+            this.Color = color;
             this.DependencyStatus = dependencyStatus;
             this.LengthLimit = lengthLimit;
             this.LineLimit = lineLimit;
@@ -144,6 +146,12 @@ namespace Com.Gridly.Model
         /// </summary>
         [DataMember(Name = "columnId", EmitDefaultValue = true)]
         public string ColumnId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Color
+        /// </summary>
+        [DataMember(Name = "color", EmitDefaultValue = true)]
+        public string Color { get; set; }
 
         /// <summary>
         /// Gets or Sets LengthLimit
@@ -196,6 +204,7 @@ namespace Com.Gridly.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Cell {\n");
             sb.Append("  ColumnId: ").Append(ColumnId).Append("\n");
+            sb.Append("  Color: ").Append(Color).Append("\n");
             sb.Append("  DependencyStatus: ").Append(DependencyStatus).Append("\n");
             sb.Append("  LengthLimit: ").Append(LengthLimit).Append("\n");
             sb.Append("  LineLimit: ").Append(LineLimit).Append("\n");

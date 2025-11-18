@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ColumnId** | **string** |  | [optional] 
+**Color** | **string** |  | [optional] 
 **DependencyStatus** | **string** |  | [optional] 
 **LengthLimit** | **int** |  | [optional] 
 **LineLimit** | **int** |  | [optional] 

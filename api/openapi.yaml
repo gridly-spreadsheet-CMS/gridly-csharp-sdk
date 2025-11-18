@@ -151,12 +151,12 @@ paths:
               $ref: "#/components/schemas/CreatePath"
         required: true
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PathList"
-          description: OK
+          description: Created
       security:
       - ApiKey: []
       summary: create
@@ -507,12 +507,12 @@ paths:
               $ref: "#/components/schemas/CreateView"
         required: true
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/View"
-          description: OK
+          description: Created
       security:
       - ApiKey: []
       summary: create
@@ -4125,6 +4125,7 @@ components:
     Cell:
       example:
         sourceStatus: unset
+        color: color
         lengthLimit: 1
         columnId: columnId
         lineLimit: 5
@@ -4135,9 +4136,11 @@ components:
         referencedIds:
         - referencedIds
         - referencedIds
-        value: ""
+        value: "{}"
       properties:
         columnId:
+          type: string
+        color:
           type: string
         dependencyStatus:
           enum:
@@ -4171,7 +4174,7 @@ components:
         tm:
           type: boolean
         value:
-          type: AnyType
+          type: object
       type: object
     ColumnReference:
       example:
@@ -4231,6 +4234,7 @@ components:
         path: path
         cells:
         - sourceStatus: unset
+          color: color
           lengthLimit: 1
           columnId: columnId
           lineLimit: 5
@@ -4241,8 +4245,9 @@ components:
           referencedIds:
           - referencedIds
           - referencedIds
-          value: ""
+          value: "{}"
         - sourceStatus: unset
+          color: color
           lengthLimit: 1
           columnId: columnId
           lineLimit: 5
@@ -4253,7 +4258,7 @@ components:
           referencedIds:
           - referencedIds
           - referencedIds
-          value: ""
+          value: "{}"
         lastModifiedTime: 2000-01-23T04:56:07.000+00:00
         lastModifiedBy: lastModifiedBy
         id: id
@@ -4305,6 +4310,7 @@ components:
         - path: path
           cells:
           - sourceStatus: unset
+            color: color
             lengthLimit: 1
             columnId: columnId
             lineLimit: 5
@@ -4315,8 +4321,9 @@ components:
             referencedIds:
             - referencedIds
             - referencedIds
-            value: ""
+            value: "{}"
           - sourceStatus: unset
+            color: color
             lengthLimit: 1
             columnId: columnId
             lineLimit: 5
@@ -4327,13 +4334,14 @@ components:
             referencedIds:
             - referencedIds
             - referencedIds
-            value: ""
+            value: "{}"
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           lastModifiedBy: lastModifiedBy
           id: id
         - path: path
           cells:
           - sourceStatus: unset
+            color: color
             lengthLimit: 1
             columnId: columnId
             lineLimit: 5
@@ -4344,8 +4352,9 @@ components:
             referencedIds:
             - referencedIds
             - referencedIds
-            value: ""
+            value: "{}"
           - sourceStatus: unset
+            color: color
             lengthLimit: 1
             columnId: columnId
             lineLimit: 5
@@ -4356,7 +4365,7 @@ components:
             referencedIds:
             - referencedIds
             - referencedIds
-            value: ""
+            value: "{}"
           lastModifiedTime: 2000-01-23T04:56:07.000+00:00
           lastModifiedBy: lastModifiedBy
           id: id
@@ -4642,14 +4651,17 @@ components:
     SetCell:
       example:
         sourceStatus: unset
+        color: color
         lengthLimit: 0
         columnId: columnId
         dependencyStatus: upToDate
         referencedIds:
         - referencedIds
         - referencedIds
-        value: ""
+        value: "{}"
       properties:
+        color:
+          type: string
         columnId:
           type: string
         dependencyStatus:
@@ -4675,28 +4687,30 @@ components:
           - lockAllLanguages
           type: string
         value:
-          type: AnyType
+          type: object
       type: object
     SetRecord:
       example:
         path: path
         cells:
         - sourceStatus: unset
+          color: color
           lengthLimit: 0
           columnId: columnId
           dependencyStatus: upToDate
           referencedIds:
           - referencedIds
           - referencedIds
-          value: ""
+          value: "{}"
         - sourceStatus: unset
+          color: color
           lengthLimit: 0
           columnId: columnId
           dependencyStatus: upToDate
           referencedIds:
           - referencedIds
           - referencedIds
-          value: ""
+          value: "{}"
         markUpdatedCellsWithMTFlag: true
         id: id
       properties:
@@ -7173,6 +7187,7 @@ components:
           - path: path
             cells:
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7183,8 +7198,9 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7195,13 +7211,14 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             lastModifiedTime: 2000-01-23T04:56:07.000+00:00
             lastModifiedBy: lastModifiedBy
             id: id
           - path: path
             cells:
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7212,8 +7229,9 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7224,7 +7242,7 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             lastModifiedTime: 2000-01-23T04:56:07.000+00:00
             lastModifiedBy: lastModifiedBy
             id: id
@@ -7355,6 +7373,7 @@ components:
           - path: path
             cells:
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7365,8 +7384,9 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7377,13 +7397,14 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             lastModifiedTime: 2000-01-23T04:56:07.000+00:00
             lastModifiedBy: lastModifiedBy
             id: id
           - path: path
             cells:
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7394,8 +7415,9 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             - sourceStatus: unset
+              color: color
               lengthLimit: 1
               columnId: columnId
               lineLimit: 5
@@ -7406,7 +7428,7 @@ components:
               referencedIds:
               - referencedIds
               - referencedIds
-              value: ""
+              value: "{}"
             lastModifiedTime: 2000-01-23T04:56:07.000+00:00
             lastModifiedBy: lastModifiedBy
             id: id
@@ -7949,6 +7971,7 @@ components:
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -7959,8 +7982,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -7971,13 +7995,14 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -7988,8 +8013,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8000,7 +8026,7 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
@@ -8131,6 +8157,7 @@ components:
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8141,8 +8168,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8153,13 +8181,14 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8170,8 +8199,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8182,7 +8212,7 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
@@ -8602,6 +8632,7 @@ components:
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8612,8 +8643,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8624,13 +8656,14 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8641,8 +8674,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8653,7 +8687,7 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
@@ -8784,6 +8818,7 @@ components:
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8794,8 +8829,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8806,13 +8842,14 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
             - path: path
               cells:
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8823,8 +8860,9 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               - sourceStatus: unset
+                color: color
                 lengthLimit: 1
                 columnId: columnId
                 lineLimit: 5
@@ -8835,7 +8873,7 @@ components:
                 referencedIds:
                 - referencedIds
                 - referencedIds
-                value: ""
+                value: "{}"
               lastModifiedTime: 2000-01-23T04:56:07.000+00:00
               lastModifiedBy: lastModifiedBy
               id: id
