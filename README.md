@@ -287,7 +287,6 @@ Class | Method | HTTP request | Description
  - [Model.MergeBranchRequest](docs/MergeBranchRequest.md)
  - [Model.MergeCellConflict](docs/MergeCellConflict.md)
  - [Model.MergeRecordConflict](docs/MergeRecordConflict.md)
- - [Model.MergeRecordOption](docs/MergeRecordOption.md)
  - [Model.MovePath](docs/MovePath.md)
  - [Model.NumberFormat](docs/NumberFormat.md)
  - [Model.PathList](docs/PathList.md)

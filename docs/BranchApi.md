@@ -400,7 +400,7 @@ catch (ApiException e)
 
 <a id="getdiffcheck"></a>
 # **GetDiffCheck**
-> List&lt;BranchDiffRecord&gt; GetDiffCheck (string taskId, List<MergeRecordOption> mergeRecordOptions = null, string query = null, string page = null)
+> List&lt;BranchDiffRecord&gt; GetDiffCheck (string taskId, List<string> mergeRecordOptions = null, string query = null, string page = null)
 
 getDiffCheck
 
@@ -429,7 +429,7 @@ namespace Example
 
             var apiInstance = new BranchApi(config);
             var taskId = "taskId_example";  // string | taskId
-            var mergeRecordOptions = new List<MergeRecordOption>(); // List<MergeRecordOption> | mergeRecordOptions (optional) 
+            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
             var query = "\"{}\"";  // string | query (optional)  (default to "{}")
             var page = "\"{}\"";  // string | page (optional)  (default to "{}")
 
@@ -475,7 +475,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **taskId** | **string** | taskId |  |
-| **mergeRecordOptions** | [**List&lt;MergeRecordOption&gt;**](MergeRecordOption.md) | mergeRecordOptions | [optional]  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 | **query** | **string** | query | [optional] [default to &quot;{}&quot;] |
 | **page** | **string** | page | [optional] [default to &quot;{}&quot;] |
 
@@ -598,7 +598,7 @@ catch (ApiException e)
 
 <a id="merge"></a>
 # **Merge**
-> Task Merge (string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = null)
+> Task Merge (string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -629,7 +629,7 @@ namespace Example
             var branchId = "branchId_example";  // string | branchId
             var destinationBranchId = "destinationBranchId_example";  // string | destinationBranchId
             var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
-            var mergeRecordOptions = new List<MergeRecordOption>(); // List<MergeRecordOption> | mergeRecordOptions (optional) 
+            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
@@ -675,7 +675,7 @@ catch (ApiException e)
 | **branchId** | **string** | branchId |  |
 | **destinationBranchId** | **string** | destinationBranchId |  |
 | **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
-| **mergeRecordOptions** | [**List&lt;MergeRecordOption&gt;**](MergeRecordOption.md) | mergeRecordOptions | [optional]  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 

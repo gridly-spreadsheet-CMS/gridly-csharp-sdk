@@ -711,7 +711,7 @@ catch (ApiException e)
 
 <a id="merge"></a>
 # **Merge**
-> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<MergeRecordOption> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -742,7 +742,7 @@ namespace Example
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
             var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
-            var mergeRecordOptions = new List<MergeRecordOption>(); // List<MergeRecordOption> | mergeRecordOptions (optional) 
+            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
@@ -788,7 +788,7 @@ catch (ApiException e)
 | **destinationViewId** | **string** | destinationViewId |  |
 | **viewId** | **string** | viewId |  |
 | **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
-| **mergeRecordOptions** | [**List&lt;MergeRecordOption&gt;**](MergeRecordOption.md) | mergeRecordOptions | [optional]  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 

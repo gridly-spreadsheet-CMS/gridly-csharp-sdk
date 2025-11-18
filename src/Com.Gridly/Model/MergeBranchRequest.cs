@@ -33,6 +33,37 @@ namespace Com.Gridly.Model
     public partial class MergeBranchRequest : IValidatableObject
     {
         /// <summary>
+        /// Defines MergeRecordOptions
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MergeRecordOptionsEnum
+        {
+            /// <summary>
+            /// Enum Add for value: add
+            /// </summary>
+            [EnumMember(Value = "add")]
+            Add = 1,
+
+            /// <summary>
+            /// Enum Update for value: update
+            /// </summary>
+            [EnumMember(Value = "update")]
+            Update = 2,
+
+            /// <summary>
+            /// Enum Delete for value: delete
+            /// </summary>
+            [EnumMember(Value = "delete")]
+            Delete = 3,
+
+            /// <summary>
+            /// Enum Override for value: override
+            /// </summary>
+            [EnumMember(Value = "override")]
+            Override = 4
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="MergeBranchRequest" /> class.
         /// </summary>
         /// <param name="mergeRecordOptions">mergeRecordOptions.</param>
@@ -40,7 +71,7 @@ namespace Com.Gridly.Model
         /// <param name="useLastMergeResolve">useLastMergeResolve.</param>
         /// <param name="checkMismatchedColumnType">checkMismatchedColumnType.</param>
         /// <param name="query">query.</param>
-        public MergeBranchRequest(List<MergeRecordOption> mergeRecordOptions = default, List<MergeRecordConflict> mergeRecordConflicts = default, bool useLastMergeResolve = default, bool checkMismatchedColumnType = default, List<FilterField> query = default)
+        public MergeBranchRequest(List<MergeRecordOptionsEnum> mergeRecordOptions = default, List<MergeRecordConflict> mergeRecordConflicts = default, bool useLastMergeResolve = default, bool checkMismatchedColumnType = default, List<FilterField> query = default)
         {
             this.MergeRecordOptions = mergeRecordOptions;
             this.MergeRecordConflicts = mergeRecordConflicts;
@@ -53,7 +84,7 @@ namespace Com.Gridly.Model
         /// Gets or Sets MergeRecordOptions
         /// </summary>
         [DataMember(Name = "mergeRecordOptions", EmitDefaultValue = true)]
-        public List<MergeRecordOption> MergeRecordOptions { get; set; }
+        public List<MergeBranchRequest.MergeRecordOptionsEnum> MergeRecordOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets MergeRecordConflicts

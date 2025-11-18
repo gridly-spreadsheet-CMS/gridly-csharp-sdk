@@ -798,7 +798,12 @@ paths:
         schema:
           default: []
           items:
-            $ref: "#/components/schemas/MergeRecordOption"
+            enum:
+            - add
+            - update
+            - delete
+            - override
+            type: string
           nullable: true
           type: array
         style: form
@@ -1426,7 +1431,12 @@ paths:
         schema:
           default: []
           items:
-            $ref: "#/components/schemas/MergeRecordOption"
+            enum:
+            - add
+            - update
+            - delete
+            - override
+            type: string
           nullable: true
           type: array
         style: form
@@ -2341,7 +2351,12 @@ paths:
           - update
           - delete
           items:
-            $ref: "#/components/schemas/MergeRecordOption"
+            enum:
+            - add
+            - update
+            - delete
+            - override
+            type: string
           nullable: true
           type: array
         style: form
@@ -4815,18 +4830,6 @@ components:
         moveAfter:
           type: string
       type: object
-    MergeRecordOption:
-      enum:
-      - add
-      - update
-      - delete
-      - override
-      x-enum-varnames:
-      - add
-      - update
-      - delete
-      - override
-      type: string
     FilterField:
       example:
         caseSensitive: true
@@ -4992,7 +4995,12 @@ components:
       properties:
         mergeRecordOptions:
           items:
-            $ref: "#/components/schemas/MergeRecordOption"
+            enum:
+            - add
+            - update
+            - delete
+            - override
+            type: string
           type: array
         mergeRecordConflicts:
           items:
